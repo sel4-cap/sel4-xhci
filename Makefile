@@ -28,13 +28,13 @@ LD := $(TOOLCHAIN)-ld
 AS := $(TOOLCHAIN)-as
 SEL4CP_TOOL ?= $(SEL4CP_SDK)/bin/sel4cp
 
-XHCI_STUB_OBJS 		:=  xhci_stub.o dev_verbose.o subr_device.o imx8mq_usbphy.o usbdi_util.o usbdi.o usbroothub.o sel4_bus_funcs.o tinyalloc.o dwc3_fdt.o printf.o dma.o usb.o usb_quirks.o usb_subr.o xhci.o usb_mem.o util.o uhub.o timer.o hid.o uhidev.o ukbd.o hidkbdmap.o 
-PIPE_HANDLE_OBJS 	:=  pipe_handler.o dev_verbose.o subr_device.o imx8mq_usbphy.o usbdi_util.o usbdi.o usbroothub.o sel4_bus_funcs.o tinyalloc.o dwc3_fdt.o printf.o dma.o usb.o usb_quirks.o usb_subr.o xhci.o usb_mem.o util.o uhub.o timer.o hid.o ukbd.o uhidev.o hidkbdmap.o
+XHCI_STUB_OBJS 		:=  xhci_stub.o dev_verbose.o subr_device.o imx8mq_usbphy.o usbdi_util.o usbdi.o usbroothub.o sel4_bus_funcs.o tinyalloc.o dwc3_fdt.o printf.o dma.o usb.o usb_quirks.o usb_subr.o xhci.o usb_mem.o util.o uhub.o timer.o hid.o uhidev.o ukbd.o hidkbdmap.o shared_ringbuffer.o
+PIPE_HANDLE_OBJS 	:=  pipe_handler.o dev_verbose.o subr_device.o imx8mq_usbphy.o usbdi_util.o usbdi.o usbroothub.o sel4_bus_funcs.o tinyalloc.o dwc3_fdt.o printf.o dma.o usb.o usb_quirks.o usb_subr.o xhci.o usb_mem.o util.o uhub.o timer.o hid.o ukbd.o uhidev.o hidkbdmap.o shared_ringbuffer.o
 # TIMER_OBJS 		:=  timer.o subr_device.o imx8mq_usbphy.o usbdi_util.o usbdi.o usbroothub.o sel4_bus_funcs.o tinyalloc.o dwc3_fdt.o printf.o dma.o usb.o usb_quirks.o usb_subr.o xhci.o usb_mem.o util.o uhub.o
-SOFTWARE_OBJS 		:=  software_interrupts.o dev_verbose.o subr_device.o imx8mq_usbphy.o usbdi_util.o usbdi.o usbroothub.o sel4_bus_funcs.o tinyalloc.o dwc3_fdt.o printf.o dma.o usb.o usb_quirks.o usb_subr.o xhci.o usb_mem.o util.o uhub.o timer.o hid.o ukbd.o uhidev.o hidkbdmap.o
+SOFTWARE_OBJS 		:=  software_interrupts.o dev_verbose.o subr_device.o imx8mq_usbphy.o usbdi_util.o usbdi.o usbroothub.o sel4_bus_funcs.o tinyalloc.o dwc3_fdt.o printf.o dma.o usb.o usb_quirks.o usb_subr.o xhci.o usb_mem.o util.o uhub.o timer.o hid.o ukbd.o uhidev.o hidkbdmap.o shared_ringbuffer.o
 HARDWARE_OBJS 		:=  hardware_interrupts.o sel4_bus_funcs.o tinyalloc.o printf.o util.o timer.o
 MEM_OBJS			:=  mem_handler.o tinyalloc.o tinyalloc.o printf.o
-KBD_LOGGER_OBJS 	:=  kbd_logger.o shared_ringbuffer.o printf.o tinyalloc.o
+KBD_LOGGER_OBJS 	:=  kbd_logger.o shared_ringbuffer.o printf.o tinyalloc.o hidkbdmap.o 
 SIMULATED_KBD_OBJS	:=  simulated_kbd.o printf.o tinyalloc.o
 
 BOARD_DIR := $(SEL4CP_SDK)/board/$(SEL4CP_BOARD)/$(SEL4CP_CONFIG)

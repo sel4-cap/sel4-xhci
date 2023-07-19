@@ -201,14 +201,14 @@ handle_keypress()
     // We need to put in an empty condition here. 
     while ((kbd_ring.remain > 1) && !driver_dequeue(kbd_buffer_ring->used_ring, (uintptr_t**)&buffer, &len, &cookie)) {
         // bool keydown = false; // Key releases consist of all 0s
-        for (int i = 0; i < 7; i++) {
+        // for (int i = 0; i < 7; i++) {
         //     char key = ((char *)buffer)[i];
         //     printf("Key is %x\n", key);
         //     // uint64_t keyValue = xtou64(key);
         //     // printf("KeyValue is %d\n", keyValue);
             // printf("%d:0x%02x ", i, ((char *)buffer)[i]);
             // printf("\n");
-        }
+        // }
         // if (keydown)
 
         // printf("if keydown triggered: %02x\n", ((char *)buffer)[2]);
