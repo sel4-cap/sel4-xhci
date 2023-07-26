@@ -11,8 +11,6 @@
 #include <sel4cp.h>
 #include "fence.h"
 
-#include <dev/wscons/wsksymvar.h>
-
 #define SIZE 512
 
 /* Function pointer to be used to 'notify' components on either end of the shared memory */

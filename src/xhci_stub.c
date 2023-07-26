@@ -17,7 +17,7 @@
 #include <sys/kmem.h>
 #include <dev/usb/ukbd.h>
 
-#include <timer.h>
+#include <timer_xhci.h>
 #include <shared_ringbuffer.h>
 #include <dev/usb/usb.h>
 #include <dev/usb/usbdi.h>

@@ -50,7 +50,7 @@ __KERNEL_RCSID(0, "$NetBSD: usb_subr.c,v 1.277 2022/04/06 22:01:45 mlelstv Exp $
 #include <sys/proc.h>
 
 #include <sys/bus.h>
-#include <timer.h>
+#include <timer_xhci.h>
 // #include <sys/module.h>
 
 #include <dev/usb/usb.h>

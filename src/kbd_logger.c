@@ -6,6 +6,7 @@
 #include <tinyalloc.h>
 
 #include <dev/wscons/wsksymdef.h>
+#include <dev/wscons/wsksymvar.h>
 
 #define INIT  44
 #define TX_CH 43
