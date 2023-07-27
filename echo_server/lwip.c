@@ -71,8 +71,15 @@ typedef struct state {
      */
     ethernet_buffer_t buffer_metadata[NUM_BUFFERS * 2];
 } state_t;
-
 state_t state;
+// state_t state = {
+//     .mac[0] = 12,
+//     .mac[1] = 34,
+//     .mac[2] = 56,
+//     .mac[3] = 78,
+//     .mac[4] = 90,
+//     .mac[5] = 12
+// };
 
 /* LWIP mempool declare literally just initialises an array big enough with the correct alignment */
 typedef struct lwip_custom_pbuf { 
@@ -290,6 +297,9 @@ static void netif_status_callback(struct netif *netif)
 
 static void get_mac(void)
 {
+    sel4cp_dbg_puts("lwip get mac\n");
+    // sel4cp_dbg_puts((char) state.mac[0]);
+
     sel4cp_ppcall(INIT, sel4cp_msginfo_new(0, 0));
     uint32_t palr = sel4cp_mr_get(0);
     uint32_t paur = sel4cp_mr_get(1);

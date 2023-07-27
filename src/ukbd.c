@@ -552,7 +552,7 @@ ukbd_attach(device_t parent, device_t self, void *aux)
     ring_init(kbd_buffer_ring, (ring_buffer_t *)rx_free, (ring_buffer_t *)rx_used, NULL, 1);
 	// printf("rx_free is %p\n", rx_free);
 	// printf("free_ring is %p\n", kbd_buffer_ring->free_ring);
-	sel4cp_notify(42);
+	sel4cp_notify(42); // notify kbd_logger#
 	return;
 }
 

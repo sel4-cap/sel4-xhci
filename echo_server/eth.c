@@ -67,12 +67,12 @@ ring_handle_t tx_ring;
 
 static uint8_t mac[6];
 
-volatile struct enet_regs *eth = (void *)(uintptr_t)0x2000000;
+volatile struct enet_regs *eth = (void *)(uintptr_t)0x9000000;
 
 static void get_mac_addr(volatile struct enet_regs *reg, uint8_t *mac)
 {
     uint32_t l, h;
-    l = reg->palr;
+    l = reg->palr; // cause of fault
     h = reg->paur;
 
     mac[0] = l >> 24;
@@ -99,6 +99,7 @@ dump_mac(uint8_t *mac)
             sel4cp_dbg_putc(':');
         }
     }
+    sel4cp_dbg_putc('!');
 }
 
 static uintptr_t 
@@ -374,7 +375,8 @@ handle_tx(volatile struct enet_regs *eth)
 static void 
 eth_setup(void)
 {
-    get_mac_addr(eth, mac);
+    sel4cp_dbg_puts("about to get MAC\n");
+    // get_mac_addr(eth, mac);
     sel4cp_dbg_puts("MAC: ");
     dump_mac(mac);
     sel4cp_dbg_puts("\n");
@@ -397,7 +399,7 @@ eth_setup(void)
     tx.descr = (volatile struct descriptor *)(eth_hw_ring_buffer_vaddr + (sizeof(struct descriptor) * RX_COUNT));
 
     /* Perform reset */
-    eth->ecr = ECR_RESET;
+    eth->ecr = ECR_RESET; // fails here
     while (eth->ecr & ECR_RESET);
     eth->ecr |= ECR_DBSWP;
 
@@ -496,6 +498,7 @@ void init(void)
 seL4_MessageInfo_t
 protected(sel4cp_channel ch, sel4cp_msginfo msginfo)
 {
+    sel4cp_dbg_puts("entering ppcall from lwip to eth\n");
     switch (ch) {
         case INIT:
             // return the MAC address. 
