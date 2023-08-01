@@ -56,6 +56,8 @@ uintptr_t rx_free;
 uintptr_t rx_used;
 uintptr_t tx_free;
 uintptr_t tx_used;
+uintptr_t eth_tx_free;
+uintptr_t eth_tx_used;
 
 bool pipe_thread;
 
@@ -73,6 +75,7 @@ uintptr_t software_heap;
 
 /* Pointers to shared_ringbuffers */
 ring_handle_t *kbd_buffer_ring;
+ring_handle_t *tx_ring;
 
 typedef struct state {
     /* Pointers to shared buffers */
@@ -103,6 +106,8 @@ init(void) {
 
     kbd_buffer_ring = kmem_alloc(sizeof(*kbd_buffer_ring), 0);
     ring_init(kbd_buffer_ring, (ring_buffer_t *)rx_free, (ring_buffer_t *)rx_used, NULL, 0);
+    tx_ring = kmem_alloc(sizeof(*tx_ring), 0);
+    ring_init(tx_ring, (ring_buffer_t *)eth_tx_free, (ring_buffer_t *)eth_tx_used, NULL, 0);
 }
 
 void

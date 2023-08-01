@@ -8,6 +8,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
+#include <printf.h>
 #include <sel4cp.h>
 #include "fence.h"
 
@@ -59,6 +60,8 @@ void ring_init(ring_handle_t *ring, ring_buffer_t *free, ring_buffer_t *used, no
  */
 static inline int ring_empty(ring_buffer_t *ring)
 {
+    printf("ring empty start write idx is %d\n", ring->write_idx);
+    printf("ring empty start read idx is %d\n", ring->read_idx);
     return !((ring->write_idx - ring->read_idx) % SIZE);
 }
 
@@ -106,11 +109,12 @@ static inline int enqueue(ring_buffer_t *ring, uintptr_t buffer, unsigned int le
         sel4cp_dbg_puts("Ring full");
         return -1;
     }
-
+    sel4cp_dbg_puts("Enqueing to ring\n");
     ring->buffers[ring->write_idx % SIZE].encoded_addr = buffer;
     ring->buffers[ring->write_idx % SIZE].len = len;
     ring->buffers[ring->write_idx % SIZE].cookie = cookie;
     ring->write_idx++;
+    // sel4cp_dbg_puts("Write idx ++\n");
 
     THREAD_MEMORY_RELEASE();
 
@@ -220,6 +224,7 @@ static inline int dequeue_used(ring_handle_t *ring, uintptr_t *addr, unsigned in
  */
 static int driver_dequeue(ring_buffer_t *ring, uintptr_t *addr, unsigned int *len, void **cookie)
 {
+    printf("start of driver_dequeue write idx is %d\n", ring->write_idx);
     if (!((ring->write_idx - ring->read_idx) % SIZE)) {
         return -1;
     }

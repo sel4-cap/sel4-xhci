@@ -5,14 +5,16 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include <printf.h>
 #include <sel4cp.h>
 #include <sel4/sel4.h>
 #include "include/eth.h"
 #include "../../xhci_stub/include/dma/shared_ringbuffer.h"
 #include "include/util.h"
+#include <kmem.h>
 
 #define IRQ_CH 1
-#define TX_CH  2
+#define TX_CH  14
 #define RX_CH  2
 #define INIT   4
 
@@ -30,6 +32,7 @@ uintptr_t eth_rx_used;
 uintptr_t eth_tx_free;
 uintptr_t eth_tx_used;
 uintptr_t uart_base;
+uintptr_t heap_base;
 
 /* Make the minimum frame buffer 2k. This is a bit of a waste of memory, but ensures alignment */
 #define PACKET_BUFFER_SIZE  2048
@@ -62,8 +65,8 @@ ring_ctx_t tx;
 unsigned int tx_lengths[TX_COUNT];
 
 /* Pointers to shared_ringbuffers */
-ring_handle_t rx_ring;
-ring_handle_t tx_ring;
+ring_handle_t *rx_ring;
+ring_handle_t *tx_ring;
 
 static uint8_t mac[6];
 
@@ -99,7 +102,6 @@ dump_mac(uint8_t *mac)
             sel4cp_dbg_putc(':');
         }
     }
-    sel4cp_dbg_putc('!');
 }
 
 static uintptr_t 
@@ -147,9 +149,9 @@ alloc_rx_buf(size_t buf_size, void **cookie)
 {
     uintptr_t addr;
     unsigned int len;
-
+    printf("start of alloc_rx_buf write idx is %d\n", rx_ring->free_ring->write_idx);
     /* Try to grab a buffer from the free ring */
-    if (driver_dequeue(rx_ring.free_ring, &addr, &len, cookie)) {
+    if (driver_dequeue(rx_ring->free_ring, &addr, &len, cookie)) {
         print("RX Free ring is empty\n");
         return 0;
     }
@@ -161,12 +163,16 @@ alloc_rx_buf(size_t buf_size, void **cookie)
 
 static void fill_rx_bufs()
 {
+    printf("Test 1\n");
+    printf("start of fill_rx_bufs %d\n", rx_ring->free_ring->write_idx);
     ring_ctx_t *ring = &rx;
     __sync_synchronize();
     while (ring->remain > 0) {
         /* request a buffer */
         void *cookie = NULL;
+        printf("Test 2\n");
         uintptr_t phys = alloc_rx_buf(MAX_PACKET_SIZE, &cookie);
+        printf("Test 3\n");
         if (!phys) {
             break;
         }
@@ -178,17 +184,21 @@ static void fill_rx_bufs()
             stat |= WRAP;
         }
         ring->cookies[idx] = cookie;
+        printf("Test 4\n");
         update_ring_slot(ring, idx, phys, 0, stat);
+        printf("Test 5\n");
         ring->tail = new_tail;
         /* There is a race condition if add/remove is not synchronized. */
         ring->remain--;
     }
+    printf("Test 6\n");
     __sync_synchronize();
 
     if (ring->tail != ring->head) {
         /* Make sure rx is enabled */
         eth->rdar = RDAR_RDAR;
     }
+    printf("Test 7\n");
 }
 
 static void
@@ -198,10 +208,10 @@ handle_rx(volatile struct enet_regs *eth)
     unsigned int head = ring->head;
 
     int num = 1;
-    int was_empty = ring_empty(rx_ring.used_ring);
+    int was_empty = ring_empty(rx_ring->used_ring);
 
     // we don't want to dequeue packets if we have nothing to replace it with
-    while (head != ring->tail && (ring_size(rx_ring.free_ring) > num)) {
+    while (head != ring->tail && (ring_size(rx_ring->free_ring) > num)) {
         volatile struct descriptor *d = &(ring->descr[head]);
 
         /* If the slot is still marked as empty we are done. */
@@ -278,7 +288,7 @@ complete_tx(volatile struct enet_regs *eth)
             /* give the buffer back */
             buff_desc_t *desc = (buff_desc_t *)cookie;
 
-            enqueue_free(&tx_ring, desc->encoded_addr, desc->len, desc->cookie);
+            enqueue_free(tx_ring, desc->encoded_addr, desc->len, desc->cookie);
         }
     }
 }
@@ -365,8 +375,11 @@ handle_tx(volatile struct enet_regs *eth)
     unsigned int len = 0;
     void *cookie = NULL;
 
-    // We need to put in an empty condition here. 
-    while ((tx.remain > 1) && !driver_dequeue(tx_ring.used_ring, &buffer, &len, &cookie)) {
+    sel4cp_dbg_puts("handle_tx\n");
+
+    int dequeue = driver_dequeue(tx_ring->used_ring, &buffer, &len, &cookie);
+    while ((tx.remain > 1) && !dequeue) {
+        sel4cp_dbg_puts("key received on eth\n");
         uintptr_t phys = getPhysAddr(buffer);
         raw_tx(eth, 1, &phys, &len, cookie);
     }
@@ -469,9 +482,16 @@ eth_setup(void)
 
 void init_post()
 {
+    printf("entered eth init_post\n");
+    rx_ring = kmem_zalloc(sizeof(*rx_ring), 0);
+    tx_ring = kmem_zalloc(sizeof(*tx_ring), 0);
+    printf("rx_ring is %p\n", rx_ring);
     /* Set up shared memory regions */
-    ring_init(&rx_ring, (ring_buffer_t *)eth_rx_free, (ring_buffer_t *)eth_rx_used, NULL, 0);
-    ring_init(&tx_ring, (ring_buffer_t *)eth_tx_free, (ring_buffer_t *)eth_tx_used, NULL, 0);
+    sel4cp_dbg_puts("eth init_post\n");
+    ring_init(rx_ring, (ring_buffer_t *)eth_rx_free, (ring_buffer_t *)eth_rx_used, NULL, 0);
+    sel4cp_dbg_puts("eth init_post 2\n");
+    ring_init(tx_ring, (ring_buffer_t *)eth_tx_free, (ring_buffer_t *)eth_tx_used, NULL, 0);
+    sel4cp_dbg_puts("eth init_post 3\n");
 
     fill_rx_bufs();
     sel4cp_dbg_puts(sel4cp_name);
@@ -529,6 +549,7 @@ void notified(sel4cp_channel ch)
             init_post();
             break;
         case TX_CH:
+            sel4cp_dbg_puts("Eth notified\n");
             handle_tx(eth);
             break;
         default:

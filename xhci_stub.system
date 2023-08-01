@@ -109,6 +109,9 @@
         <map mr="rx_used" vaddr="0x4_200_000" perms="rw" cached="true" setvar_vaddr="rx_used" />
         <map mr="tx_free" vaddr="0x4_400_000" perms="rw" cached="true" setvar_vaddr="tx_free" />
         <map mr="tx_used" vaddr="0x4_600_000" perms="rw" cached="true" setvar_vaddr="tx_used" />
+        
+        <map mr="eth_tx_free" vaddr="0x8_000_000" perms="rw" cached="true" setvar_vaddr="eth_tx_free" />
+        <map mr="eth_tx_used" vaddr="0x8_200_000" perms="rw" cached="true" setvar_vaddr="eth_tx_used" />
 
         <setvar symbol="hw_ring_buffer_paddr" region_paddr="hw_ring_buffer" />
 
@@ -137,7 +140,7 @@
         <setvar symbol="ring_cp_paddr" region_paddr="ring_mem" />
     </protection_domain>
 
-    <protection_domain name="eth" priority="95" pp="true">
+    <protection_domain name="eth" priority="105" pp="true">
         <program_image path="eth.elf" />
         <map mr="eth0" vaddr="0x9_000_000" perms="rw" cached="false"/>
 
@@ -153,6 +156,7 @@
         <map mr="eth_tx_used" vaddr="0x8_200_000" perms="rw" cached="true" setvar_vaddr="eth_tx_used" />
 
         <map mr="eth_dma" vaddr="0x8_400_000" perms="rw" cached="true" setvar_vaddr="eth_dma_vaddr" />
+        <map mr="heap_mem" vaddr="0x50000000" perms="rw" cached="false" setvar_vaddr="heap_base"/>
 
         <irq irq="152" id="1" /> <!-- ethernet interrupt -->
 
@@ -176,6 +180,7 @@
         <map mr="eth_tx_used" vaddr="0x8_200_000" perms="rw" cached="true" setvar_vaddr="eth_tx_used" />
 
         <map mr="eth_dma" vaddr="0x8_400_000" perms="rw" cached="true" setvar_vaddr="eth_dma_vaddr" />
+        <map mr="heap_mem" vaddr="0x50000000" perms="rw" cached="false" setvar_vaddr="heap_base"/>
 
         <map mr="data_packet" vaddr="0x8_700_000" perms="rw" cached="true" setvar_vaddr="data_packet" />
 
@@ -270,6 +275,30 @@
         <end pd="mem_handler" id="7"/>
         <end pd="kbd_logger" id="32"/>
     </channel>
+    <channel>
+        <end pd="mem_handler" id="23"/>
+        <end pd="eth" id="30"/>
+    </channel>
+    <channel>
+        <end pd="mem_handler" id="24"/>
+        <end pd="eth" id="31"/>
+    </channel>
+    <channel>
+        <end pd="mem_handler" id="25"/>
+        <end pd="eth" id="32"/>
+    </channel>
+    <channel>
+        <end pd="mem_handler" id="26"/>
+        <end pd="lwip" id="30"/>
+    </channel>
+    <channel>
+        <end pd="mem_handler" id="27"/>
+        <end pd="lwip" id="31"/>
+    </channel>
+    <channel>
+        <end pd="mem_handler" id="28"/>
+        <end pd="lwip" id="32"/>
+    </channel>
 
 
     <!--bus method handlers-->
@@ -333,5 +362,9 @@
     <channel>
         <end pd="lwip" id="4" />
         <end pd="eth" id="4" />
+    </channel>
+    <channel>
+        <end pd="software_interrupt" id="14" />
+        <end pd="eth" id="14" />
     </channel>
 </system>

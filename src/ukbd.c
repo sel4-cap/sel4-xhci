@@ -81,11 +81,17 @@ __KERNEL_RCSID(0, "$NetBSD: ukbd.c,v 1.162 2023/01/10 18:20:10 mrg Exp $");
 #include <dev/wscons/wsksymdef.h>
 #include <dev/wscons/wsksymvar.h>
 
+// kbd_logger
 extern uintptr_t rx_free;
 extern uintptr_t rx_used;
-
 /* Pointers to shared_ringbuffers */
 extern ring_handle_t *kbd_buffer_ring;
+
+// eth
+extern uintptr_t eth_tx_free;
+extern uintptr_t eth_tx_used;
+/* Pointers to shared_ringbuffers */
+extern ring_handle_t *tx_ring;
 
 extern const keysym_t hidkbd_keydesc_us[];
 
@@ -548,6 +554,7 @@ ukbd_attach(device_t parent, device_t self, void *aux)
     /* Set up shared memory regions */
 	printf("Allocing kbd_buffer_ring\n");
     kbd_buffer_ring = kmem_alloc(sizeof(*kbd_buffer_ring), 0);
+    tx_ring = kmem_alloc(sizeof(*tx_ring), 0);
 	printf("about to go into ring init\n");
     ring_init(kbd_buffer_ring, (ring_buffer_t *)rx_free, (ring_buffer_t *)rx_used, NULL, 1);
 	// printf("rx_free is %p\n", rx_free);
@@ -716,9 +723,15 @@ ukbd_intr(void *cookie, void *ibuf, u_int len)
 
 	// If ring not full:
 	// check if empty, then enqueue
-	bool empty = ring_empty(kbd_buffer_ring);
-	int error = enqueue_used(kbd_buffer_ring, (uintptr_t) ibuf, sizeof(ibuf), (void *)0);
-	if (empty)
+	printf("--------------------START------------------------\n");
+	bool eth_empty = ring_empty(tx_ring);
+	int eth_error = enqueue_used(tx_ring, (uintptr_t) ibuf, sizeof(ibuf), (void *)0);
+	if (eth_empty)
+		printf("Notifying eth\n");
+		sel4cp_notify(14);
+	bool kbd_empty = ring_empty(kbd_buffer_ring);
+	int kbd_error = enqueue_used(kbd_buffer_ring, (uintptr_t) ibuf, sizeof(ibuf), (void *)0);
+	if (kbd_empty)
 		sel4cp_notify(45);
 
 	memset(ud->keys, 0, sizeof(ud->keys));

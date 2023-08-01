@@ -30,18 +30,24 @@ protected(sel4cp_channel ch, sel4cp_msginfo msginfo) {
         case 5:
         case 10:
         case 20:
+        case 23:
+        case 26:
             return seL4_MessageInfo_new(ta_alloc(sel4cp_msginfo_get_label(msginfo)),1,0,0);
             break;
         case 1:
         case 6:
         case 11:
         case 21:
+        case 24:
+        case 27:
             return seL4_MessageInfo_new(ta_calloc(sel4cp_msginfo_get_label(msginfo), 1), 1, 0, 0);
             break;
         case 2:
         case 7:
         case 12:
         case 22:
+        case 25:
+        case 28:
             return seL4_MessageInfo_new(ta_free(sel4cp_msginfo_get_label(msginfo)), 1, 0, 0);
             break;
         default:

@@ -17,6 +17,8 @@
 #include "lwip/sys.h"
 #include "lwip/dhcp.h"
 
+#include "kmem.h"
+
 #include "../../xhci_stub/include/dma/shared_ringbuffer.h"
 #include "include/echo.h"
 #include "include/timer.h"
@@ -39,6 +41,7 @@ uintptr_t eth_tx_used;
 uintptr_t copy_rx;
 uintptr_t eth_dma_vaddr;
 uintptr_t uart_base;
+uintptr_t heap_base;
 
 typedef enum {
     ORIGIN_RX_QUEUE,
@@ -64,8 +67,8 @@ typedef struct state {
     uint8_t mac[6];
 
     /* Pointers to shared buffers */
-    ring_handle_t rx_ring;
-    ring_handle_t tx_ring;
+    ring_handle_t *rx_ring;
+    ring_handle_t *tx_ring;
     /*
      * Metadata associated with buffers
      */
@@ -227,7 +230,7 @@ static err_t lwip_eth_send(struct netif *netif, struct pbuf *p)
 
 void process_rx_queue(void) 
 {
-    while(!ring_empty(state.rx_ring.used_ring)) {
+    while(!ring_empty(state.rx_ring->used_ring)) {
         uintptr_t addr;
         unsigned int len;
         ethernet_buffer_t *buffer;
@@ -336,7 +339,6 @@ void init(void)
     ring_init(&state.rx_ring, (ring_buffer_t *)eth_rx_free, (ring_buffer_t *)eth_rx_used, NULL, 1);
     ring_init(&state.tx_ring, (ring_buffer_t *)eth_tx_free, (ring_buffer_t *)eth_tx_used, NULL, 1);
 
-
     for (int i = 0; i < NUM_BUFFERS - 1; i++) {
         ethernet_buffer_t *buffer = &state.buffer_metadata[i];
         *buffer = (ethernet_buffer_t) {
@@ -380,10 +382,14 @@ void init(void)
     state.netif.name[0] = 'e';
     state.netif.name[1] = '0';
 
+    sel4cp_dbg_puts("About to do netif_add\n");
+
     // if (!netif_add(&(state.netif), &ipaddr, &netmask, &gw, &state,
-    //           ethernet_init, ethernet_input)) {
+    //           ethernet_init, netif_input)) { // This block was commented out but needs to be initialised
     //     sel4cp_dbg_puts("Netif add returned NULL\n");
     // }
+
+    sel4cp_dbg_puts("Done netif_add\n");
 
     netif_set_default(&(state.netif));
 

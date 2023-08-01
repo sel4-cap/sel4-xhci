@@ -66,6 +66,7 @@ uintptr_t device_intr_pointer_other;
 
 /* Pointers to shared_ringbuffers */
 ring_handle_t *kbd_buffer_ring;
+ring_handle_t *tx_ring = 0;
 
 void
 init(void) {

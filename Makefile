@@ -45,7 +45,7 @@ HARDWARE_OBJS 		:=  hardware_interrupts.o sel4_bus_funcs.o tinyalloc.o printf.o 
 MEM_OBJS			:=  mem_handler.o tinyalloc.o tinyalloc.o printf.o
 KBD_LOGGER_OBJS 	:=  kbd_logger.o shared_ringbuffer.o printf.o tinyalloc.o hidkbdmap.o 
 SIMULATED_KBD_OBJS	:=  simulated_kbd.o printf.o tinyalloc.o
-ETH_OBJS 			:=  eth.o shared_ringbuffer.o
+ETH_OBJS 			:=  eth.o shared_ringbuffer.o printf.o tinyalloc.o
 
 # COREFILES, CORE4FILES: The minimum set of files needed for lwIP.
 COREFILES=$(LWIPDIR)/core/init.c \
@@ -81,13 +81,14 @@ CORE4FILES=$(LWIPDIR)/core/ipv4/autoip.c \
 CFLAGS_ETH += -I$(BOARD_DIR)/include \
 	-Iinclude	\
 	-Iinclude/arch	\
+	-Iinclude/netbsd_include/sys/kmem  \
 	-I$(LWIPDIR)/include \
 	-I$(LWIPDIR)/include/ipv4 \
 	-I$(RINGBUFFERDIR)/include
 
 # LWIPFILES: All the above.
 LWIPFILES=lwip.c $(COREFILES) $(CORE4FILES) $(NETIFFILES)
-LWIP_OBJS := $(LWIPFILES:.c=.o) lwip.o shared_ringbuffer.o utilization_socket.o udp_echo_socket.o eth_timer.o
+LWIP_OBJS := $(LWIPFILES:.c=.o) lwip.o shared_ringbuffer.o utilization_socket.o udp_echo_socket.o eth_timer.o printf.o 
 
 BOARD_DIR := $(SEL4CP_SDK)/board/$(SEL4CP_BOARD)/$(SEL4CP_CONFIG)
 
@@ -95,7 +96,7 @@ IMAGES := xhci_stub.elf hardware.elf pipe_handler.elf software.elf mem_handler.e
 INC := $(BOARD_DIR)/include include/tinyalloc include/wrapper include/dma include/netbsd_include include/bus include/printf include/timer echo_server/include echo_server/libsharedringbuffer/include echo_server/lwip/src/include
 INC_PARAMS=$(foreach d, $(INC), -I$d)
 # INC_ETH := $(BOARD_DIR)/include $(SEL4CP_DIR)/libsel4cp/include
-INC_ETH := $(BOARD_DIR)/include $(SEL4CP_DIR)/example/maaxboard/xhci_stub/echo_server/include $(SEL4CP_DIR)/example/maaxboard/xhci_stub/echo_server/lwip/src/include
+INC_ETH := $(BOARD_DIR)/include $(SEL4CP_DIR)/example/maaxboard/xhci_stub/echo_server/include $(SEL4CP_DIR)/example/maaxboard/xhci_stub/echo_server/lwip/src/include include/printf include/netbsd_include/sys/kmem
 INC_PARAMS_ETH=$(foreach d, $(INC_ETH), -I$d)
 WARNINGS := -Wall -Wno-comment -Wno-unused-function -Wno-return-type -Wno-unused-value
 CFLAGS := -mcpu=$(CPU) -mstrict-align -ffreestanding -g3 -O3 $(WARNINGS) $(INC_PARAMS) -I$(BOARD_DIR)/include # -DSEL4_USB_DEBUG

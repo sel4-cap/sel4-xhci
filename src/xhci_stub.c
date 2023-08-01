@@ -88,6 +88,8 @@ uintptr_t software_heap;
 /* Pointers to shared_ringbuffers */
 ring_handle_t *kbd_buffer_ring;
 
+ring_handle_t *tx_ring = 0;
+
 // TODO: put these in a header file so can change it in a single place for a platform
 
 int phy_setup() {
