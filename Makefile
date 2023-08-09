@@ -101,7 +101,7 @@ INC_PARAMS_ETH=$(foreach d, $(INC_ETH), -I$d)
 WARNINGS := -Wall -Wno-comment -Wno-unused-function -Wno-return-type -Wno-unused-value
 CFLAGS := -mcpu=$(CPU) -mstrict-align -ffreestanding -g3 -O3 $(WARNINGS) $(INC_PARAMS) -I$(BOARD_DIR)/include # -DSEL4_USB_DEBUG
 CFLAGS_ETH := -mcpu=$(CPU) -mstrict-align -ffreestanding -g3 -O3 -Wall  -Wno-unused-function $(INC_PARAMS_ETH)
-LDFLAGS := -L$(BOARD_DIR)/lib
+LDFLAGS := -L$(BOARD_DIR)/lib -L.
 LIBS := -lsel4cp -Tsel4cp.ld -lc
 
 IMAGE_FILE = $(BUILD_DIR)/loader.img

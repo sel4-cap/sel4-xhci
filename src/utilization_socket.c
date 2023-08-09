@@ -236,6 +236,7 @@ int setup_utilization_socket(void)
         sel4cp_dbg_puts("Failed to listen on the utilization socket");
         return -1;
     }
+    printf("About to tcp_accept\n");
     tcp_accept(utiliz_socket, utilization_accept_callback);
 
     return 0;

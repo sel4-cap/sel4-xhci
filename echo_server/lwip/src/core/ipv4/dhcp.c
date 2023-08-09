@@ -81,6 +81,7 @@
 #include "lwip/prot/iana.h"
 
 #include <string.h>
+#include <printf.h>
 
 #ifdef LWIP_HOOK_FILENAME
 #include LWIP_HOOK_FILENAME
@@ -748,17 +749,22 @@ dhcp_start(struct netif *netif)
   struct dhcp *dhcp;
   err_t result;
 
+  printf("dhcp_start 1\n");
   LWIP_ASSERT_CORE_LOCKED();
   LWIP_ERROR("netif != NULL", (netif != NULL), return ERR_ARG;);
   LWIP_ERROR("netif is not up, old style port?", netif_is_up(netif), return ERR_ARG;);
   dhcp = netif_dhcp_data(netif);
   LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE | LWIP_DBG_STATE, ("dhcp_start(netif=%p) %c%c%"U16_F"\n", (void *)netif, netif->name[0], netif->name[1], (u16_t)netif->num));
+  printf("dhcp_start 2\n");
 
   /* check MTU of the netif */
   if (netif->mtu < DHCP_MAX_MSG_LEN_MIN_REQUIRED) {
     LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE, ("dhcp_start(): Cannot use this netif with DHCP: MTU is too small\n"));
+    printf("mtu is %d\n", netif->mtu);
+    printf("dhcp_start(): Cannot use this netif with DHCP: MTU is too small\n");
     return ERR_MEM;
   }
+  printf("dhcp_start 3\n");
 
   /* no DHCP client attached yet? */
   if (dhcp == NULL) {
@@ -766,13 +772,16 @@ dhcp_start(struct netif *netif)
     dhcp = (struct dhcp *)mem_malloc(sizeof(struct dhcp));
     if (dhcp == NULL) {
       LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE, ("dhcp_start(): could not allocate dhcp\n"));
+      printf("dhcp_start(): could not allocate dhcp\n");
       return ERR_MEM;
     }
+  printf("dhcp_start 4\n");
 
     /* store this dhcp client in the netif */
     netif_set_client_data(netif, LWIP_NETIF_CLIENT_DATA_INDEX_DHCP, dhcp);
     LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE, ("dhcp_start(): allocated dhcp"));
     /* already has DHCP client attached */
+  printf("dhcp_start 5\n");
   } else {
     LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE | LWIP_DBG_STATE, ("dhcp_start(): restarting DHCP configuration\n"));
 
@@ -781,23 +790,27 @@ dhcp_start(struct netif *netif)
     }
     /* dhcp is cleared below, no need to reset flag*/
   }
+  printf("dhcp_start 6\n");
 
   /* clear data structure */
   memset(dhcp, 0, sizeof(struct dhcp));
   /* dhcp_set_state(&dhcp, DHCP_STATE_OFF); */
 
+  printf("dhcp_start 7\n");
   LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE, ("dhcp_start(): starting DHCP configuration\n"));
 
   if (dhcp_inc_pcb_refcount() != ERR_OK) { /* ensure DHCP PCB is allocated */
     return ERR_MEM;
   }
   dhcp->pcb_allocated = 1;
+  printf("dhcp_start 8\n");
 
   if (!netif_is_link_up(netif)) {
     /* set state INIT and wait for dhcp_network_changed() to call dhcp_discover() */
     dhcp_set_state(dhcp, DHCP_STATE_INIT);
     return ERR_OK;
   }
+  printf("dhcp_start 9\n");
 
   /* (re)start the DHCP negotiation */
   result = dhcp_discover(netif);
@@ -806,6 +819,7 @@ dhcp_start(struct netif *netif)
     dhcp_release_and_stop(netif);
     return ERR_MEM;
   }
+  printf("dhcp_start 10\n");
   return result;
 }
 

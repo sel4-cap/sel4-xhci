@@ -724,12 +724,12 @@ ukbd_intr(void *cookie, void *ibuf, u_int len)
 	// If ring not full:
 	// check if empty, then enqueue
 	printf("--------------------START------------------------\n");
-	bool eth_empty = ring_empty(tx_ring);
+	bool eth_empty = ring_empty(tx_ring->free_ring);
 	int eth_error = enqueue_used(tx_ring, (uintptr_t) ibuf, sizeof(ibuf), (void *)0);
 	if (eth_empty)
 		printf("Notifying eth\n");
 		sel4cp_notify(14);
-	bool kbd_empty = ring_empty(kbd_buffer_ring);
+	bool kbd_empty = ring_empty(kbd_buffer_ring->free_ring);
 	int kbd_error = enqueue_used(kbd_buffer_ring, (uintptr_t) ibuf, sizeof(ibuf), (void *)0);
 	if (kbd_empty)
 		sel4cp_notify(45);

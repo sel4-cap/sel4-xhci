@@ -167,7 +167,7 @@
         <setvar symbol="eth_dma_paddr" region_paddr="eth_dma" />
     </protection_domain>
 
-    <protection_domain name="lwip" priority="67" budget="20000">
+    <protection_domain name="lwip" priority="102" budget="20000">
         <program_image path="lwip.elf" />
 
         <map mr="timer" vaddr="0x8_510_000" perms="rw" cached="false" setvar_vaddr="gpt_regs" />

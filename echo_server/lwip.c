@@ -16,6 +16,7 @@
 #include "lwip/snmp.h"
 #include "lwip/sys.h"
 #include "lwip/dhcp.h"
+#include "lwip/prot/etharp.h"
 
 #include "kmem.h"
 
@@ -67,8 +68,8 @@ typedef struct state {
     uint8_t mac[6];
 
     /* Pointers to shared buffers */
-    ring_handle_t *rx_ring;
-    ring_handle_t *tx_ring;
+    ring_handle_t rx_ring;
+    ring_handle_t tx_ring;
     /*
      * Metadata associated with buffers
      */
@@ -170,7 +171,7 @@ static inline ethernet_buffer_t *alloc_tx_buffer(state_t *state, size_t length)
 
     dequeue_free(&state->tx_ring, &addr, &len, (void **)&buffer);
     if (!buffer) {
-        print("lwip: dequeued a null ethernet buffer\n");
+        printf("lwip: dequeued a null ethernet buffer\n");
     }
 
     return buffer;
@@ -207,14 +208,14 @@ static err_t lwip_eth_send(struct netif *netif, struct pbuf *p)
 
     int err = seL4_ARM_VSpace_Clean_Data(3, (uintptr_t)frame, (uintptr_t)frame + copied);
     if (err) {
-        print("ARM Vspace clean failed\n");
-        print(err);
+        printf("ARM Vspace clean failed\n");
+        printf(err);
     }
 
     /* insert into the used tx queue */
     int error = enqueue_used(&state->tx_ring, (uintptr_t)frame, copied, buffer);
     if (error) {
-        print("TX used ring full\n");
+        printf("TX used ring full\n");
         enqueue_free(&(state->tx_ring), (uintptr_t)frame, BUF_SIZE, buffer);
         return ERR_MEM;
     }
@@ -230,7 +231,8 @@ static err_t lwip_eth_send(struct netif *netif, struct pbuf *p)
 
 void process_rx_queue(void) 
 {
-    while(!ring_empty(state.rx_ring->used_ring)) {
+    printf("process rx queue calling ring_empty\n");
+    while(!ring_empty(state.rx_ring.used_ring)) {
         uintptr_t addr;
         unsigned int len;
         ethernet_buffer_t *buffer;
@@ -238,21 +240,21 @@ void process_rx_queue(void)
         dequeue_used(&state.rx_ring, &addr, &len, (void **)&buffer);
 
         if (addr != buffer->buffer) {
-            print("sanity check failed\n");
+            printf("sanity check failed\n");
         }
 
         /* Invalidate the memory */
         int err = seL4_ARM_VSpace_Invalidate_Data(3, buffer->buffer, buffer->buffer + ETHER_MTU);
         if (err) {
-            print("ARM Vspace invalidate failed\n");
-            print(err);
+            printf("ARM Vspace invalidate failed\n");
+            printf(err);
         }
 
         struct pbuf *p = create_interface_buffer(&state, (void *)buffer, len);
 
         if (state.netif.input(p, &state.netif) != ERR_OK) {
             // If it is successfully received, the receiver controls whether or not it gets freed.
-            print("netif.input() != ERR_OK");
+            printf("netif.input() != ERR_OK");
             pbuf_free(p);
         }
     }
@@ -265,10 +267,12 @@ void process_rx_queue(void)
  */
 static err_t ethernet_init(struct netif *netif)
 {
+    printf("ethernet_init\n");
     if (netif->state == NULL) {
         return ERR_ARG;
     }
 
+    printf("ethernet_init 1\n");
     state_t *data = netif->state;
 
     netif->hwaddr[0] = data->mac[0];
@@ -278,8 +282,10 @@ static err_t ethernet_init(struct netif *netif)
     netif->hwaddr[4] = data->mac[4];
     netif->hwaddr[5] = data->mac[5];
     netif->mtu = ETHER_MTU;
-    // netif->hwaddr_len = ETHARP_HWADDR_LEN;
-    // netif->output = etharp_output;
+    netif->hwaddr_len = ETHARP_HWADDR_LEN;
+    printf("ethernet_init 2\n");
+    netif->output = etharp_output;
+    printf("ethernet_init 3\n");
     netif->linkoutput = lwip_eth_send;
     NETIF_INIT_SNMP(netif, snmp_ifType_ethernet_csmacd, LINK_SPEED);
     netif->flags = NETIF_FLAG_BROADCAST | NETIF_FLAG_ETHARP | NETIF_FLAG_LINK_UP | NETIF_FLAG_IGMP;
@@ -290,11 +296,11 @@ static err_t ethernet_init(struct netif *netif)
 static void netif_status_callback(struct netif *netif)
 {
     if (dhcp_supplied_address(netif)) {
-        print("DHCP request finished, IP address for netif ");
-        print(netif->name);
-        print(" is: ");
-        print(ip4addr_ntoa(netif_ip4_addr(netif)));
-        print("\n");
+        printf("DHCP request finished, IP address for netif ");
+        printf(netif->name);
+        printf(" is: ");
+        printf(ip4addr_ntoa(netif_ip4_addr(netif)));
+        printf("\n");
     }
 }
 
@@ -316,7 +322,9 @@ static void get_mac(void)
 
 void init_post(void)
 {   
+    printf("init post lwip\n");
     netif_set_status_callback(&(state.netif), netif_status_callback);
+    printf("init post 2 lwip\n");
     netif_set_up(&(state.netif));
 
     if (dhcp_start(&(state.netif))) {
@@ -335,6 +343,8 @@ void init(void)
     sel4cp_dbg_puts(sel4cp_name);
     sel4cp_dbg_puts(": elf PD init function running\n");
 
+    // state.rx_ring = kmem_alloc(sizeof(*state.rx_ring), 0);
+    // state.tx_ring = kmem_alloc(sizeof(*state.tx_ring), 0);
     /* Set up shared memory regions */
     ring_init(&state.rx_ring, (ring_buffer_t *)eth_rx_free, (ring_buffer_t *)eth_rx_used, NULL, 1);
     ring_init(&state.tx_ring, (ring_buffer_t *)eth_tx_free, (ring_buffer_t *)eth_tx_used, NULL, 1);
@@ -384,10 +394,10 @@ void init(void)
 
     sel4cp_dbg_puts("About to do netif_add\n");
 
-    // if (!netif_add(&(state.netif), &ipaddr, &netmask, &gw, &state,
-    //           ethernet_init, netif_input)) { // This block was commented out but needs to be initialised
-    //     sel4cp_dbg_puts("Netif add returned NULL\n");
-    // }
+    if (!netif_add(&(state.netif), &ipaddr, &netmask, &gw, &state,
+              ethernet_init, netif_input)) { // This block was commented out but needs to be initialised
+        sel4cp_dbg_puts("Netif add returned NULL\n");
+    }
 
     sel4cp_dbg_puts("Done netif_add\n");
 

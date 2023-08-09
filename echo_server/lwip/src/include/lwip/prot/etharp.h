@@ -107,6 +107,9 @@ enum etharp_opcode {
   ARP_REPLY   = 2
 };
 
+err_t
+etharp_output(struct netif *, struct pbuf *, const ip4_addr_t *);
+
 #ifdef __cplusplus
 }
 #endif
