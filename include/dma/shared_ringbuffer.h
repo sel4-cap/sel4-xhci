@@ -60,9 +60,6 @@ void ring_init(ring_handle_t *ring, ring_buffer_t *free, ring_buffer_t *used, no
  */
 static inline int ring_empty(ring_buffer_t *ring)
 {
-    printf("mem addr ring %p\n", ring);
-    printf("ring empty start write idx is %d\n", ring->write_idx);
-    printf("ring empty start read idx is %d\n", ring->read_idx);
     return !((ring->write_idx - ring->read_idx) % SIZE);
 }
 
@@ -114,7 +111,6 @@ static inline int enqueue(ring_buffer_t *ring, uintptr_t buffer, unsigned int le
     ring->buffers[ring->write_idx % SIZE].len = len;
     ring->buffers[ring->write_idx % SIZE].cookie = cookie;
     ring->write_idx++;
-    // sel4cp_dbg_puts("Write idx ++\n");
 
     THREAD_MEMORY_RELEASE();
 

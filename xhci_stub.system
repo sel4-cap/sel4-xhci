@@ -46,7 +46,7 @@
     <memory_region name="data_packet" size="0x1000"/>
     <!-- end of eth-->
 
-    <protection_domain name="xhci_stub" pp="true" priority="100">
+    <protection_domain name="xhci_stub" pp="true" priority="10">
         <map mr="software_mem" vaddr="0x58000000" perms="rw" cached="false" setvar_vaddr="software_heap"/>
         <map mr="heap_mem" vaddr="0x50000000" perms="rw" cached="false" setvar_vaddr="heap_base"/>
         <map mr="pipe_heap_mem" vaddr="0x56000000" perms="rw" cached="false" setvar_vaddr="pipe_heap_base"/>
@@ -140,49 +140,49 @@
         <setvar symbol="ring_cp_paddr" region_paddr="ring_mem" />
     </protection_domain>
 
-    <protection_domain name="eth" priority="105" pp="true">
+    <protection_domain name="eth" priority="105" budget="160" period="300" pp="true">
         <program_image path="eth.elf" />
-        <map mr="eth0" vaddr="0x9_000_000" perms="rw" cached="false"/>
+        <map mr="eth0" vaddr="0x6_200_0000" perms="rw" cached="false"/>
 
-        <map mr="eth_hw_ring_buffer" vaddr="0x7_000_000" perms="rw" cached="false" setvar_vaddr="eth_hw_ring_buffer_vaddr" />
+        <map mr="eth_hw_ring_buffer" vaddr="0x5_000_000" perms="rw" cached="false" setvar_vaddr="eth_hw_ring_buffer_vaddr" />
 
-        <map mr="eth_rx_cookies" vaddr="0x7_200_000" perms="rw" cached="true" setvar_vaddr="eth_rx_cookies" />
-        <map mr="eth_tx_cookies" vaddr="0x7_400_000" perms="rw" cached="true" setvar_vaddr="eth_tx_cookies" />
+        <map mr="eth_rx_cookies" vaddr="0x5_200_000" perms="rw" cached="true" setvar_vaddr="eth_rx_cookies" />
+        <map mr="eth_tx_cookies" vaddr="0x5_400_000" perms="rw" cached="true" setvar_vaddr="eth_tx_cookies" />
 
         <!-- shared memory for ring buffer mechanism -->
-        <map mr="eth_rx_free" vaddr="0x7_600_000" perms="rw" cached="true" setvar_vaddr="eth_rx_free" />
-        <map mr="eth_rx_used" vaddr="0x7_800_000" perms="rw" cached="true" setvar_vaddr="eth_rx_used" />
-        <map mr="eth_tx_free" vaddr="0x8_000_000" perms="rw" cached="true" setvar_vaddr="eth_tx_free" />
-        <map mr="eth_tx_used" vaddr="0x8_200_000" perms="rw" cached="true" setvar_vaddr="eth_tx_used" />
+        <map mr="eth_rx_free" vaddr="0x5_600_000" perms="rw" cached="true" setvar_vaddr="eth_rx_free" />
+        <map mr="eth_rx_used" vaddr="0x5_800_000" perms="rw" cached="true" setvar_vaddr="eth_rx_used" />
+        <map mr="eth_tx_free" vaddr="0x6_000_000" perms="rw" cached="true" setvar_vaddr="eth_tx_free" />
+        <map mr="eth_tx_used" vaddr="0x6_200_000" perms="rw" cached="true" setvar_vaddr="eth_tx_used" />
 
-        <map mr="eth_dma" vaddr="0x8_400_000" perms="rw" cached="true" setvar_vaddr="eth_dma_vaddr" />
+        <map mr="eth_dma" vaddr="0x6_400_000" perms="rw" cached="true" setvar_vaddr="eth_dma_vaddr" />
         <map mr="heap_mem" vaddr="0x50000000" perms="rw" cached="false" setvar_vaddr="heap_base"/>
 
         <irq irq="152" id="1" /> <!-- ethernet interrupt -->
 
-        <map mr="uart" vaddr="0x8_600_000" perms="rw" cached="false" setvar_vaddr="uart_base" />
+        <map mr="uart" vaddr="0x6_600_000" perms="rw" cached="false" setvar_vaddr="uart_base" />
 
         <!-- we need physical addresses of hw rings and dma region -->
         <setvar symbol="eth_hw_ring_buffer_paddr" region_paddr="eth_hw_ring_buffer" />
         <setvar symbol="eth_dma_paddr" region_paddr="eth_dma" />
     </protection_domain>
 
-    <protection_domain name="lwip" priority="102" budget="20000">
+    <protection_domain name="lwip" priority="50" budget="20000">
         <program_image path="lwip.elf" />
 
-        <map mr="timer" vaddr="0x8_510_000" perms="rw" cached="false" setvar_vaddr="gpt_regs" />
-        <map mr="uart" vaddr="0x8_500_000" perms="rw" cached="false" setvar_vaddr="uart_base" />
+        <map mr="timer" vaddr="0x6_510_000" perms="rw" cached="false" setvar_vaddr="gpt_regs" />
+        <map mr="uart" vaddr="0x6_500_000" perms="rw" cached="false" setvar_vaddr="uart_base" />
 
         <!-- shared memory for ring buffer mechanism -->
-        <map mr="eth_rx_free" vaddr="0x7_600_000" perms="rw" cached="true" setvar_vaddr="eth_rx_free" />
-        <map mr="eth_rx_used" vaddr="0x7_800_000" perms="rw" cached="true" setvar_vaddr="eth_rx_used" />
-        <map mr="eth_tx_free" vaddr="0x8_000_000" perms="rw" cached="true" setvar_vaddr="eth_tx_free" />
-        <map mr="eth_tx_used" vaddr="0x8_200_000" perms="rw" cached="true" setvar_vaddr="eth_tx_used" />
+        <map mr="eth_rx_free" vaddr="0x5_600_000" perms="rw" cached="true" setvar_vaddr="eth_rx_free" />
+        <map mr="eth_rx_used" vaddr="0x5_800_000" perms="rw" cached="true" setvar_vaddr="eth_rx_used" />
+        <map mr="eth_tx_free" vaddr="0x6_000_000" perms="rw" cached="true" setvar_vaddr="eth_tx_free" />
+        <map mr="eth_tx_used" vaddr="0x6_200_000" perms="rw" cached="true" setvar_vaddr="eth_tx_used" />
 
-        <map mr="eth_dma" vaddr="0x8_400_000" perms="rw" cached="true" setvar_vaddr="eth_dma_vaddr" />
+        <map mr="eth_dma" vaddr="0x6_400_000" perms="rw" cached="true" setvar_vaddr="eth_dma_vaddr" />
         <map mr="heap_mem" vaddr="0x50000000" perms="rw" cached="false" setvar_vaddr="heap_base"/>
 
-        <map mr="data_packet" vaddr="0x8_700_000" perms="rw" cached="true" setvar_vaddr="data_packet" />
+        <map mr="data_packet" vaddr="0x6_700_000" perms="rw" cached="true" setvar_vaddr="data_packet" />
 
         <irq irq="87" id="1" /> <!-- timer interrupt -->
     </protection_domain>

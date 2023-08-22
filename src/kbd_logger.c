@@ -236,9 +236,9 @@ handle_keypress()
 
 void
 init(void) {
-    printf("kbd logger init\n");
     kbd_buffer_ring = kmem_alloc(sizeof(*kbd_buffer_ring), 0);
     ring_setup();
+    printf("123\n");
     // ta_limit = keyboard_base + keyboard_size;
     // bool error = ta_init((void*)keyboard_base, (void*)ta_limit, ta_blocks, ta_thresh, ta_align);
     // printf("Init malloc: %d\n", error);

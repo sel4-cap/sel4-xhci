@@ -14,7 +14,7 @@
 #include <kmem.h>
 
 #define IRQ_CH 1
-#define TX_CH  14
+#define TX_CH  2
 #define RX_CH  2
 #define INIT   4
 
@@ -70,7 +70,7 @@ ring_handle_t tx_ring;
 
 static uint8_t mac[6];
 
-volatile struct enet_regs *eth = (void *)(uintptr_t)0x9000000;
+volatile struct enet_regs *eth = (void *)(uintptr_t)0x62000000;
 
 static void get_mac_addr(volatile struct enet_regs *reg, uint8_t *mac)
 {
@@ -242,7 +242,6 @@ complete_tx(volatile struct enet_regs *eth)
     ring_ctx_t *ring = &tx;
     unsigned int head = ring->head;
     unsigned int cnt = 0;
-    printf("Entered complete_tx\n");
     while (head != ring->tail) {
         if (0 == cnt) {
             cnt = tx_lengths[head];
@@ -279,7 +278,6 @@ complete_tx(volatile struct enet_regs *eth)
             ring->remain += cnt_org;
             /* give the buffer back */
             buff_desc_t *desc = (buff_desc_t *)cookie;
-            printf("About to enter enqueue_free\n");
             enqueue_free(&tx_ring, desc->encoded_addr, desc->len, desc->cookie);
         }
     }
@@ -289,15 +287,11 @@ static void
 raw_tx(volatile struct enet_regs *eth, unsigned int num, uintptr_t *phys,
                   unsigned int *len, void *cookie)
 {
-    printf("entered raw_tx\n");
     ring_ctx_t *ring = &tx;
-    printf("remain is %d\n", ring->remain);
-    printf("num is %d\n", num);
 
     /* Ensure we have room */
     if (ring->remain < num) {
         /* not enough room, try to complete some and check again */
-        printf("About to enter complete_tx\n");
         complete_tx(eth);
         unsigned int rem = ring->remain;
         if (rem < num) {
@@ -476,14 +470,12 @@ eth_setup(void)
 
 void init_post()
 {
-    printf("entered eth init_post\n");
     // rx_ring = kmem_alloc(sizeof(ring_handle_t), 0);
     // tx_ring = kmem_alloc(sizeof(ring_handle_t), 0);
     printf("rx_ring is %p\n", rx_ring);
     /* Set up shared memory regions */
     ring_init(&rx_ring, (ring_buffer_t *)eth_rx_free, (ring_buffer_t *)eth_rx_used, NULL, 0);
     ring_init(&tx_ring, (ring_buffer_t *)eth_tx_free, (ring_buffer_t *)eth_tx_used, NULL, 0);
-    sel4cp_dbg_puts("eth init_post 3\n");
 
     fill_rx_bufs();
     sel4cp_dbg_puts(sel4cp_name);
@@ -532,11 +524,13 @@ void notified(sel4cp_channel ch)
 {
     switch(ch) {
         case IRQ_CH:
+            printf("ethernet interrupt\n");
             handle_eth(eth);
             have_signal = true;
             signal_msg = seL4_MessageInfo_new(IRQAckIRQ, 0, 0, 0);
             signal = (BASE_IRQ_CAP + IRQ_CH);
-            return;
+            sel4cp_irq_ack(IRQ_CH);
+            break;
         case INIT:
             init_post();
             break;
@@ -545,8 +539,8 @@ void notified(sel4cp_channel ch)
             handle_tx(eth);
             break;
         default:
-            sel4cp_dbg_puts("eth driver: received notification on unexpected channel\n");
-            printf("Channel supplied : %d\n", ch);
+            // sel4cp_dbg_puts("eth driver: received notification on unexpected channel\n");
+            printf("eth driver: received notification on unexpected channel : %d\n", ch);
             break;
     }
 }

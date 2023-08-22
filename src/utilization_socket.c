@@ -152,6 +152,7 @@ static err_t utilization_recv_callback(void *arg, struct tcp_pcb *pcb, struct pb
         idle_ccount_start = bench->ccount;
         idle_overflow_start = bench->overflows;
 
+        printf("uti notify START_PMU\n");
         sel4cp_notify(START_PMU);
 
     } else if (msg_match(data_packet, STOP)) {        
@@ -236,7 +237,6 @@ int setup_utilization_socket(void)
         sel4cp_dbg_puts("Failed to listen on the utilization socket");
         return -1;
     }
-    printf("About to tcp_accept\n");
     tcp_accept(utiliz_socket, utilization_accept_callback);
 
     return 0;

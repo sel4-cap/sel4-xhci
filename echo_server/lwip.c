@@ -267,12 +267,10 @@ void process_rx_queue(void)
  */
 static err_t ethernet_init(struct netif *netif)
 {
-    printf("ethernet_init\n");
     if (netif->state == NULL) {
         return ERR_ARG;
     }
 
-    printf("ethernet_init 1\n");
     state_t *data = netif->state;
 
     netif->hwaddr[0] = data->mac[0];
@@ -283,9 +281,7 @@ static err_t ethernet_init(struct netif *netif)
     netif->hwaddr[5] = data->mac[5];
     netif->mtu = ETHER_MTU;
     netif->hwaddr_len = ETHARP_HWADDR_LEN;
-    printf("ethernet_init 2\n");
     netif->output = etharp_output;
-    printf("ethernet_init 3\n");
     netif->linkoutput = lwip_eth_send;
     NETIF_INIT_SNMP(netif, snmp_ifType_ethernet_csmacd, LINK_SPEED);
     netif->flags = NETIF_FLAG_BROADCAST | NETIF_FLAG_ETHARP | NETIF_FLAG_LINK_UP | NETIF_FLAG_IGMP;
@@ -322,9 +318,7 @@ static void get_mac(void)
 
 void init_post(void)
 {   
-    printf("init post lwip\n");
     netif_set_status_callback(&(state.netif), netif_status_callback);
-    printf("init post 2 lwip\n");
     netif_set_up(&(state.netif));
 
     if (dhcp_start(&(state.netif))) {

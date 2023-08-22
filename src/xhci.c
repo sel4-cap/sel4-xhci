@@ -1801,6 +1801,7 @@ xhci_intr(void *v)
 		// else
 		// 	usb_schedsoftintr(&sc->sc_bus2);
 
+        printf("XHCI notify 7\n");
 		sel4cp_notify(7); 
 		/* xhci_softintr(&sc->sc_bus); */
 	}

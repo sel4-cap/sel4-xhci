@@ -559,6 +559,7 @@ ukbd_attach(device_t parent, device_t self, void *aux)
     ring_init(kbd_buffer_ring, (ring_buffer_t *)rx_free, (ring_buffer_t *)rx_used, NULL, 1);
 	// printf("rx_free is %p\n", rx_free);
 	// printf("free_ring is %p\n", kbd_buffer_ring->free_ring);
+	printf("UKBD notify 42\n");
 	sel4cp_notify(42); // notify kbd_logger#
 	return;
 }
@@ -728,10 +729,12 @@ ukbd_intr(void *cookie, void *ibuf, u_int len)
 	int eth_error = enqueue_used(tx_ring, (uintptr_t) ibuf, sizeof(ibuf), (void *)0);
 	if (eth_empty)
 		printf("Notifying eth\n");
+		printf("UKBD notify 14\n");
 		sel4cp_notify(14);
 	bool kbd_empty = ring_empty(kbd_buffer_ring->free_ring);
 	int kbd_error = enqueue_used(kbd_buffer_ring, (uintptr_t) ibuf, sizeof(ibuf), (void *)0);
 	if (kbd_empty)
+		printf("UKBD notify 45\n");
 		sel4cp_notify(45);
 
 	memset(ud->keys, 0, sizeof(ud->keys));

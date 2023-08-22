@@ -63,6 +63,8 @@
 #include "lwip/snmp.h"
 #include "lwip/dhcp.h"
 
+#include "kmem.h"
+
 #include <string.h>
 
 #ifndef UDP_LOCAL_PORT_RANGE_START
@@ -1226,7 +1228,7 @@ udp_new(void)
 
   LWIP_ASSERT_CORE_LOCKED();
 
-  pcb = (struct udp_pcb *)memp_malloc(MEMP_UDP_PCB);
+  pcb = (struct udp_pcb *)kmem_alloc(sizeof(*pcb), 0);
   /* could allocate UDP PCB? */
   if (pcb != NULL) {
     /* UDP Lite: by initializing to all zeroes, chksum_len is set to 0
