@@ -246,6 +246,7 @@ dhcp_inc_pcb_refcount(void)
     /* set up local and remote port for the pcb -> listen on all interfaces on all src/dest IPs */
     udp_bind(dhcp_pcb, IP4_ADDR_ANY, LWIP_IANA_PORT_DHCP_CLIENT);
     udp_connect(dhcp_pcb, IP4_ADDR_ANY, LWIP_IANA_PORT_DHCP_SERVER);
+    sel4cp_dbg_puts("UDP_RECV\n");
     udp_recv(dhcp_pcb, dhcp_recv, NULL);
   }
 
@@ -1146,7 +1147,7 @@ dhcp_bind(struct netif *netif)
   /* netif is now bound to DHCP leased address - set this before assigning the address
      to ensure the callback can use dhcp_supplied_address() */
   dhcp_set_state(dhcp, DHCP_STATE_BOUND);
-
+  printf("offered IP is %d\n", &dhcp->offered_ip_addr);
   netif_set_addr(netif, &dhcp->offered_ip_addr, &sn_mask, &gw_addr);
   /* interface is used by routing now that an address is set */
 }
@@ -1839,6 +1840,7 @@ dhcp_recv(void *arg, struct udp_pcb *pcb, struct pbuf *p, const ip_addr_t *addr,
     /* in requesting state? */
     if (dhcp->state == DHCP_STATE_REQUESTING) {
       dhcp_handle_ack(netif, msg_in);
+printf("GOT HERE\n");
 #if 0 //DHCP_DOES_ARP_CHECK
       if ((netif->flags & NETIF_FLAG_ETHARP) != 0) {
         /* check if the acknowledged lease address is already in use */
@@ -1849,6 +1851,7 @@ dhcp_recv(void *arg, struct udp_pcb *pcb, struct pbuf *p, const ip_addr_t *addr,
       }
 #else
       /* bind interface to the acknowledged lease address */
+      printf("ABOUT TO BIND DHCP 1\n");
       dhcp_bind(netif);
 #endif
     }
@@ -1856,6 +1859,7 @@ dhcp_recv(void *arg, struct udp_pcb *pcb, struct pbuf *p, const ip_addr_t *addr,
     else if ((dhcp->state == DHCP_STATE_REBOOTING) || (dhcp->state == DHCP_STATE_REBINDING) ||
              (dhcp->state == DHCP_STATE_RENEWING)) {
       dhcp_handle_ack(netif, msg_in);
+      printf("ABOUT TO BIND DHCP 2\n");
       dhcp_bind(netif);
     }
   }

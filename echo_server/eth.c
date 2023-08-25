@@ -34,6 +34,8 @@ uintptr_t eth_tx_used;
 uintptr_t uart_base;
 uintptr_t heap_base;
 
+bool eth_irq = false;
+
 /* Make the minimum frame buffer 2k. This is a bit of a waste of memory, but ensures alignment */
 #define PACKET_BUFFER_SIZE  2048
 #define MAX_PACKET_SIZE     1536
@@ -340,12 +342,14 @@ handle_eth(volatile struct enet_regs *eth)
     uint32_t e = eth->eir & IRQ_MASK;
     /* write to clear events */
     eth->eir = e;
-
+    printf("Entered handle eth\n");
     while (e & IRQ_MASK) {
         if (e & NETIRQ_TXF) {
+            printf("complete tx\n");
             complete_tx(eth);
         }
         if (e & NETIRQ_RXF) {
+            printf("hanndle rx\n");
             handle_rx(eth);
             fill_rx_bufs(eth);
         }
@@ -524,7 +528,9 @@ void notified(sel4cp_channel ch)
 {
     switch(ch) {
         case IRQ_CH:
-            printf("ethernet interrupt\n");
+            if (!eth_irq)
+                printf("ethernet interrupt\n");
+                eth_irq = true;
             handle_eth(eth);
             have_signal = true;
             signal_msg = seL4_MessageInfo_new(IRQAckIRQ, 0, 0, 0);

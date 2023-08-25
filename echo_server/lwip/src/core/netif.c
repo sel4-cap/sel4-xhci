@@ -52,6 +52,7 @@
 
 // #include <string.h> /* memset */
 #include <stdlib.h> /* atoi */
+#include <printf.h>
 
 #include "lwip/def.h"
 #include "lwip/ip_addr.h"
@@ -459,31 +460,50 @@ netif_do_ip_addr_changed(const ip_addr_t *old_addr, const ip_addr_t *new_addr)
 static int
 netif_do_set_ipaddr(struct netif *netif, const ip4_addr_t *ipaddr, ip_addr_t *old_addr)
 {
+  // sel4cp_dbg_puts("netif_do_set_ipaddr 1\n");
   LWIP_ASSERT("invalid pointer", ipaddr != NULL);
+  // sel4cp_dbg_puts("netif_do_set_ipaddr 2\n");
   LWIP_ASSERT("invalid pointer", old_addr != NULL);
+  // sel4cp_dbg_puts("netif_do_set_ipaddr 3\n");
 
   /* address is actually being changed? */
+  printf("ipaddr is %d\n", ipaddr->addr);
+  printf("netif addr is %d\n", netif_ip4_addr(netif)->addr);
+  printf("%d\n", ip4_addr_cmp(ipaddr, netif_ip4_addr(netif)));
   if (ip4_addr_cmp(ipaddr, netif_ip4_addr(netif)) == 0) {
+  // if (ip4_addr_cmp(ipaddr, netif_ip4_addr(netif)) == 1) {
+    sel4cp_dbg_puts("comparison entered\n");
     ip_addr_t new_addr;
     *ip_2_ip4(&new_addr) = *ipaddr;
     IP_SET_TYPE_VAL(new_addr, IPADDR_TYPE_V4);
+  // sel4cp_dbg_puts("netif_do_set_ipaddr 5\n");
 
     ip_addr_copy(*old_addr, *netif_ip_addr4(netif));
 
+  // sel4cp_dbg_puts("netif_do_set_ipaddr 6\n");
     LWIP_DEBUGF(NETIF_DEBUG | LWIP_DBG_STATE, ("netif_set_ipaddr: netif address being changed\n"));
     netif_do_ip_addr_changed(old_addr, &new_addr);
+  // sel4cp_dbg_puts("netif_do_set_ipaddr 7\n");
 
     mib2_remove_ip4(netif);
+  sel4cp_dbg_puts("netif_do_set_ipaddr 8\n");
     mib2_remove_route_ip4(0, netif);
+  sel4cp_dbg_puts("netif_do_set_ipaddr 9\n");
     /* set new IP address to netif */
     ip4_addr_set(ip_2_ip4(&netif->ip_addr), ipaddr);
+  sel4cp_dbg_puts("netif_do_set_ipaddr 10\n");
     IP_SET_TYPE_VAL(netif->ip_addr, IPADDR_TYPE_V4);
+  sel4cp_dbg_puts("netif_do_set_ipaddr 11\n");
     mib2_add_ip4(netif);
+  sel4cp_dbg_puts("netif_do_set_ipaddr 12\n");
     mib2_add_route_ip4(0, netif);
+  sel4cp_dbg_puts("netif_do_set_ipaddr 13\n");
 
     netif_issue_reports(netif, NETIF_REPORT_TYPE_IPV4);
-
+  sel4cp_dbg_puts("netif_do_set_ipaddr 14\n");
+  printf("netif callback : %p\n", netif->status_callback);
     NETIF_STATUS_CALLBACK(netif);
+  sel4cp_dbg_puts("netif_do_set_ipaddr 15\n");
     return 1; /* address changed */
   }
   return 0; /* address unchanged */
@@ -689,6 +709,8 @@ netif_set_addr(struct netif *netif, const ip4_addr_t *ipaddr, const ip4_addr_t *
   }
 
   remove = ip4_addr_isany(ipaddr);
+  printf("ipaddr is %d\n", ipaddr);
+  printf("remove is %d\n", remove);
   if (remove) {
     /* when removing an address, we have to remove it *before* changing netmask/gw
        to ensure that tcp RST segment can be sent correctly */
