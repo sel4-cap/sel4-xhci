@@ -230,7 +230,9 @@ handle_keypress()
         // printf("index is %d\n", index);
         // printf("shiftOrControl is %d\n", shiftOrControl);
         keysym_t keypress = hidkbd_keydesc_us[index + lowercaseAdd + shiftOrControl];
-        printf("%c\n", keypress);
+        printf("%c", keypress);
+        sel4cp_ppcall(40, seL4_MessageInfo_new((uint64_t) keypress,1,0,0));
+        // sel4cp_ppcall();
     }
 }
 

@@ -231,7 +231,7 @@ static err_t lwip_eth_send(struct netif *netif, struct pbuf *p)
 
 void process_rx_queue(void) 
 {
-    printf("process rx queue calling ring_empty\n");
+    // printf("process rx queue calling ring_empty\n");
     while(!ring_empty(state.rx_ring.used_ring)) {
         uintptr_t addr;
         unsigned int len;
@@ -418,4 +418,19 @@ void notified(sel4cp_channel ch)
             sel4cp_dbg_puts("lwip: received notification on unexpected channel\n");
             break;
     }
+}
+
+sel4cp_msginfo
+protected(sel4cp_channel ch, sel4cp_msginfo msginfo) {
+    char c;
+    switch (ch) {
+        case 40:
+            // return addr of root_intr_methods
+            c = (char) sel4cp_msginfo_get_label(msginfo);
+            send_keypress(c);
+            break;
+        default:
+            printf("lwip received protected unexpected channel\n");
+    }
+    return seL4_MessageInfo_new(0,0,0,0);
 }

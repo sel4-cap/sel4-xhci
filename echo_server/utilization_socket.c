@@ -18,6 +18,7 @@
 #include "lwip/tcp.h"
 
 #include "echo.h"
+#include <printf.h>
 // #include "bench.h"
 
 #define START_PMU 3
@@ -62,6 +63,7 @@ uintptr_t cyclecounters_vaddr;
 #define START "START\n"
 #define STOP "STOP\n"
 #define QUIT "QUIT\n"
+#define KBD "KBD\n"
 #define RESPONSE "220 VALID DATA (Data to follow)\n"    \
     "Content-length: %d\n"                              \
     "%s\n"
@@ -80,6 +82,10 @@ uintptr_t cyclecounters_vaddr;
 #define ULONG_MAX 0xffffffffffffffff
 
 struct bench *bench = (void *)(uintptr_t)0x5010000;
+struct tcb_pcb *curr_pcb;
+#define BUFLEN 7
+char kbd_buf[BUFLEN];
+int buf_index = 0;
 
 uint64_t start;
 uint64_t idle_ccount_start;
@@ -189,10 +195,35 @@ static err_t utilization_recv_callback(void *arg, struct tcp_pcb *pcb, struct pb
         sel4cp_notify(STOP_PMU);
     } else if (msg_match(data_packet, QUIT)) {
         /* Do nothing for now */
+    } else if (msg_match(data_packet, KBD)) {
+        if (curr_pcb) {
+            printf("\nsent '%s'\n", kbd_buf);
+            char* str = "RECEIVED: '";
+            error = tcp_write(curr_pcb, str, strlen(str), TCP_WRITE_FLAG_COPY);
+            error = tcp_write(curr_pcb, kbd_buf, strlen(kbd_buf), TCP_WRITE_FLAG_COPY);
+            str = "'\n";
+            error = tcp_write(curr_pcb, str, strlen(str), TCP_WRITE_FLAG_COPY);
+            for (int i = 0; i < 20; i++) {
+                kbd_buf[i] = '\0';
+            }
+            buf_index = 0;
+            if (error) {
+                sel4cp_dbg_puts("Failed to send OK message through utilization peer");
+            }
+        } else {
+            curr_pcb = pcb;
+            printf("Keyboard primed\n");
+            char* return_string = "Keyboard ready for input\n";
+            error = tcp_write(pcb, return_string, strlen(return_string), TCP_WRITE_FLAG_COPY);
+            if (error) {
+                sel4cp_dbg_puts("Failed to send OK message through utilization peer");
+            }
+        }
     } else {
         sel4cp_dbg_puts("Received a message that we can't handle ");
         sel4cp_dbg_puts(data_packet);
         sel4cp_dbg_puts("\n");
+        // printf("input :%s:, match = :%s:\n", data_packet, KBD);
         error = tcp_write(pcb, ERROR, strlen(ERROR), TCP_WRITE_FLAG_COPY);
         if (error) {
             sel4cp_dbg_puts("Failed to send OK message through utilization peer");
@@ -205,6 +236,7 @@ static err_t utilization_recv_callback(void *arg, struct tcp_pcb *pcb, struct pb
 static err_t utilization_accept_callback(void *arg, struct tcp_pcb *newpcb, err_t err)
 {
     sel4cp_dbg_puts("Utilization connection established!\n");
+    curr_pcb = newpcb;
     err_t error = tcp_write(newpcb, WHOAMI, strlen(WHOAMI), TCP_WRITE_FLAG_COPY);
     if (error) {
         sel4cp_dbg_puts("Failed to send WHOAMI message through utilization peer");
@@ -238,5 +270,21 @@ int setup_utilization_socket(void)
     }
     tcp_accept(utiliz_socket, utilization_accept_callback);
 
+    return 0;
+}
+
+int send_keypress(char c) {
+    if (curr_pcb) {
+        if (buf_index < BUFLEN) {
+            kbd_buf[buf_index] = c;
+            buf_index++;
+            /* kbd_buf[buf_index++] = '\0'; */
+        } else {
+            printf("\nbuffer full (max 7 chars)!\n");
+        }
+        // int error = tcp_write(curr_pcb, str, strlen(str), TCP_WRITE_FLAG_COPY);
+    } else {
+        printf("keyboard not ready, type KBD in terminal\n");
+    }
     return 0;
 }

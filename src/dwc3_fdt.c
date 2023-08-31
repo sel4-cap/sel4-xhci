@@ -93,11 +93,11 @@ static int	dwc3_fdt_match(device_t, cfdata_t, void *);
 
 uint32_t read_print_4(bus_space_tag_t tag, bus_space_handle_t bsh, bus_size_t size){
     uint32_t busval = (bus_space_read_4(tag, bsh, size));
-    printf("DWC3: Read4: Handle: %lx, Offset: %lx. Result: %08x\n", bsh, size, busval);
+    // printf("DWC3: Read4: Handle: %lx, Offset: %lx. Result: %08x\n", bsh, size, busval);
     return busval;
 }
 void write_print_4(bus_space_tag_t tag, bus_space_handle_t bsh, bus_size_t size, uint32_t val){
-    printf("DWC3: Wrte4: Handle: %lx, Offset: %lx.  Value: %08x\n", bsh, size, val);
+    // printf("DWC3: Wrte4: Handle: %lx, Offset: %lx.  Value: %08x\n", bsh, size, val);
     bus_space_write_4(tag, bsh, size, val);
 }
 

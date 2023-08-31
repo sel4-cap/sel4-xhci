@@ -199,7 +199,7 @@ handle_rx(volatile struct enet_regs *eth)
     unsigned int head = ring->head;
 
     int num = 1;
-    print("Handle rx calling ring_empty\n");
+    // printf("Handle rx calling ring_empty\n");
     int was_empty = ring_empty(rx_ring.used_ring);
 
     // we don't want to dequeue packets if we have nothing to replace it with
@@ -365,10 +365,10 @@ handle_tx(volatile struct enet_regs *eth)
     unsigned int len = 0;
     void *cookie = NULL;
 
-    sel4cp_dbg_puts("handle_tx\n");
-    printf("tx.remain is %d\n", tx.remain);
+    // sel4cp_dbg_puts("handle_tx\n");
+    // printf("tx.remain is %d\n", tx.remain);
     while ((tx.remain > 1) && !driver_dequeue(tx_ring.used_ring, &buffer, &len, &cookie)) {
-        sel4cp_dbg_puts("key received on eth\n");
+        // sel4cp_dbg_puts("key received on eth\n");
         uintptr_t phys = getPhysAddr(buffer);
         raw_tx(eth, 1, &phys, &len, cookie);
     }
@@ -524,18 +524,17 @@ void notified(sel4cp_channel ch)
 {
     switch(ch) {
         case IRQ_CH:
-            printf("ethernet interrupt\n");
+            // printf("ethernet interrupt\n");
             handle_eth(eth);
             have_signal = true;
             signal_msg = seL4_MessageInfo_new(IRQAckIRQ, 0, 0, 0);
             signal = (BASE_IRQ_CAP + IRQ_CH);
-            sel4cp_irq_ack(IRQ_CH);
-            break;
+            return;
         case INIT:
             init_post();
             break;
         case TX_CH:
-            sel4cp_dbg_puts("Eth notified\n");
+            // sel4cp_dbg_puts("Eth notified\n");
             handle_tx(eth);
             break;
         default:

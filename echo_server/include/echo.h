@@ -10,3 +10,4 @@
 
 int setup_udp_socket(void);
 int setup_utilization_socket(void);
+int send_keypress(char);

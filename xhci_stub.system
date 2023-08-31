@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!--
+<?xml version="1.0" encoding="UTF-8"?>
  Copyright 2021, Breakaway Consulting Pty. Ltd.
 
  SPDX-License-Identifier: BSD-2-Clause
 -->
 <system>
-    <memory_region name="heap_mem" size="0x200000"/>
+    <memory_region name="heap_mem" size="0x2000000"/>
     <memory_region name="software_mem" size="0x200000"/>
     <memory_region name="pipe_heap_mem" size="0x200000"/>
     <memory_region name="dma_pool" size="0x2000000"/>
@@ -119,7 +119,7 @@
         <setvar symbol="ring_cp_paddr" region_paddr="ring_mem" />
     </protection_domain>
 
-    <protection_domain name="kbd_logger" pp="true" priority="101">
+    <protection_domain name="kbd_logger" pp="true" priority="24">
         <map mr="heap_mem" vaddr="0x50000000" perms="rw" cached="false" setvar_vaddr="heap_base"/>
         <map mr="pipe_heap_mem" vaddr="0x56000000" perms="rw" cached="false" setvar_vaddr="pipe_heap_base"/>
         <map mr="dma_pool" vaddr="0x54000000" perms="rw" cached="true" setvar_vaddr="dma_base"/>
@@ -140,7 +140,7 @@
         <setvar symbol="ring_cp_paddr" region_paddr="ring_mem" />
     </protection_domain>
 
-    <protection_domain name="eth" priority="105" budget="160" period="300" pp="true">
+    <protection_domain name="eth" priority="254" budget="150000" period="300000" pp="true">
         <program_image path="eth.elf" />
         <map mr="eth0" vaddr="0x6_200_0000" perms="rw" cached="false"/>
 
@@ -167,7 +167,7 @@
         <setvar symbol="eth_dma_paddr" region_paddr="eth_dma" />
     </protection_domain>
 
-    <protection_domain name="lwip" priority="50" budget="20000">
+    <protection_domain name="lwip" priority="25" budget="20000" pp="true">
         <program_image path="lwip.elf" />
 
         <map mr="timer" vaddr="0x6_510_000" perms="rw" cached="false" setvar_vaddr="gpt_regs" />
@@ -366,5 +366,9 @@
     <channel>
         <end pd="software_interrupt" id="14" />
         <end pd="eth" id="14" />
+    </channel>
+    <channel>
+        <end pd="lwip" id="40" />
+        <end pd="kbd_logger" id="40" />
     </channel>
 </system>

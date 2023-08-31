@@ -70,12 +70,12 @@ struct imx8mq_usbphy_softc {
 
 uint32_t imx8_read_print_4(bus_space_tag_t tag, bus_space_handle_t bsh, bus_size_t size){
     uint32_t busval = bus_space_read_4(tag, bsh, size);
-    printf("imx8_phy: Read4: Handle: %lx, Offset: %lx. Result: %08x\n", bsh, size, busval);
+    // printf("imx8_phy: Read4: Handle: %lx, Offset: %lx. Result: %08x\n", bsh, size, busval);
     return busval;
 }
 
 void imx8_write_print_4(bus_space_tag_t tag, bus_space_handle_t bsh, bus_size_t size, uint32_t val){
-    printf("imx8_phy: Wrte4: Handle: %lx, Offset: %lx.  Value: %08x\n", bsh, size, val);
+    // printf("imx8_phy: Wrte4: Handle: %lx, Offset: %lx.  Value: %08x\n", bsh, size, val);
     bus_space_write_4(tag, bsh, size, val);
 }
 
