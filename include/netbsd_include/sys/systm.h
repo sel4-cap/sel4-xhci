@@ -3,12 +3,12 @@
 
 #define aprint_naive(...)   printf(__VA_ARGS__)
 #define aprint_normal(...)  printf(__VA_ARGS__)
-#define aprint_debug(...)   printf(__VA_ARGS__)
 #ifdef SEL4_USB_DEBUG
 #define aprint_verbose(...) printf(__VA_ARGS__)
-// #define aprint_debug(...)   printf(__VA_ARGS__)
+#define aprint_debug(...)   printf(__VA_ARGS__)
 #define aprint_error(...)   printf(__VA_ARGS__)
 #else
+#define aprint_debug(...)   0
 #define aprint_verbose(...) 0
 #define aprint_error(...)   0
 #endif

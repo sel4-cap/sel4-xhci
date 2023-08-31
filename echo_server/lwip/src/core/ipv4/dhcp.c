@@ -1148,10 +1148,7 @@ dhcp_bind(struct netif *netif)
   /* netif is now bound to DHCP leased address - set this before assigning the address
      to ensure the callback can use dhcp_supplied_address() */
   dhcp_set_state(dhcp, DHCP_STATE_BOUND);
-
-  ip_addr_t *ip = ip_2_ip4(&dhcp->offered_ip_addr);
-  printf("OFFERED IP IS %d\n", &ip);
-
+  printf("OFFERED IP IS %d\n", &dhcp->offered_ip_addr);
   netif_set_addr(netif, &dhcp->offered_ip_addr, &sn_mask, &gw_addr);
   /* interface is used by routing now that an address is set */
 }

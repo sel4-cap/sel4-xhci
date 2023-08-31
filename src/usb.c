@@ -507,7 +507,6 @@ usb_doattach(device_t self)
 			return;
 		}
 		sc->sc_bus->ub_roothub = dev;
-		printf("HUB SET HERE: %p\n", dev);
 		usb_create_event_thread(self);
 	} else {
 		aprint_error("%s: root hub problem, error=%s\n",

@@ -34,6 +34,8 @@ uintptr_t eth_tx_used;
 uintptr_t uart_base;
 uintptr_t heap_base;
 
+bool eth_irq = false;
+
 /* Make the minimum frame buffer 2k. This is a bit of a waste of memory, but ensures alignment */
 #define PACKET_BUFFER_SIZE  2048
 #define MAX_PACKET_SIZE     1536
@@ -340,7 +342,6 @@ handle_eth(volatile struct enet_regs *eth)
     uint32_t e = eth->eir & IRQ_MASK;
     /* write to clear events */
     eth->eir = e;
-
     while (e & IRQ_MASK) {
         if (e & NETIRQ_TXF) {
             complete_tx(eth);

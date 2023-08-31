@@ -177,10 +177,6 @@ void
 init_post()
 {
     /* Set up shared memory regions */
-    printf("kbd_logger ring_init\n");
-	printf("rx_free is %p\n", rx_free);
-	printf("ring is %p\n", kbd_buffer_ring);
-	printf("used_ring is %p\n", kbd_buffer_ring->used_ring);
     ring_init(kbd_buffer_ring, (ring_buffer_t *)rx_free, (ring_buffer_t *)rx_used, NULL, 0);
 
     fill_rx_bufs();

@@ -140,7 +140,7 @@
         <setvar symbol="ring_cp_paddr" region_paddr="ring_mem" />
     </protection_domain>
 
-    <protection_domain name="eth" priority="254" budget="150000" period="300000" pp="true">
+    <protection_domain name="eth" priority="254" budget="160" period="300" pp="true">
         <program_image path="eth.elf" />
         <map mr="eth0" vaddr="0x6_200_0000" perms="rw" cached="false"/>
 
