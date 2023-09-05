@@ -728,7 +728,7 @@ ukbd_intr(void *cookie, void *ibuf, u_int len)
 	bool kbd_empty = ring_empty(kbd_buffer_ring->free_ring);
 	int kbd_error = enqueue_used(kbd_buffer_ring, (uintptr_t) ibuf, sizeof(ibuf), (void *)0);
 	if (kbd_empty) {
-		/* printf("UKBD notify 45\n"); */
+		// /* printf("UKBD notify 45\n"); */
 		sel4cp_notify(45);
 	}
 

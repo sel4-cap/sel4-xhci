@@ -311,7 +311,6 @@ dhcp_check(struct netif *netif)
   struct dhcp *dhcp = netif_dhcp_data(netif);
   err_t result;
   u16_t msecs;
-  sel4cp_dbg_puts("dhcp_check\n");
   LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE, ("dhcp_check(netif=%p) %c%c\n", (void *)netif, (s16_t)netif->name[0],
               (s16_t)netif->name[1]));
   dhcp_set_state(dhcp, DHCP_STATE_CHECKING);
@@ -320,7 +319,6 @@ dhcp_check(struct netif *netif)
   result = etharp_query(netif, &dhcp->offered_ip_addr, NULL);
   if (result != ERR_OK) {
     LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE | LWIP_DBG_LEVEL_WARNING, ("dhcp_check: could not perform ARP query\n"));
-    sel4cp_dbg_puts("dhcp_check could not perform ARP query\n");
   }
   if (dhcp->tries < 255) {
     dhcp->tries++;
@@ -344,9 +342,7 @@ dhcp_handle_offer(struct netif *netif, struct dhcp_msg *msg_in)
   LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE, ("dhcp_handle_offer(netif=%p) %c%c%"U16_F"\n",
               (void *)netif, netif->name[0], netif->name[1], (u16_t)netif->num));
   /* obtain the server address */
-  sel4cp_dbg_puts("got here\n");
   if (dhcp_option_given(dhcp, DHCP_OPTION_IDX_SERVER_ID)) {
-    sel4cp_dbg_puts("got here 2\n");
     dhcp->request_timeout = 0; /* stop timer */
 
     ip_addr_set_ip4_u32(&dhcp->server_ip_addr, lwip_htonl(dhcp_get_option_value(dhcp, DHCP_OPTION_IDX_SERVER_ID)));
@@ -381,8 +377,6 @@ dhcp_select(struct netif *netif)
   u8_t i;
   struct pbuf *p_out;
   u16_t options_out_len;
-
-  sel4cp_dbg_puts("DHCP_select\n");
 
   LWIP_ERROR("dhcp_select: netif != NULL", (netif != NULL), return ERR_ARG;);
   dhcp = netif_dhcp_data(netif);
@@ -537,7 +531,6 @@ dhcp_timeout(struct netif *netif)
          looks like the IP address is indeed free */
     } else {
       /* bind the interface to the offered address */
-      sel4cp_dbg_puts("ABOUT TO BIND DHCP 1");
       dhcp_bind(netif);
     }
 #endif /* DHCP_DOES_ARP_CHECK */
@@ -1003,8 +996,6 @@ dhcp_discover(struct netif *netif)
   struct pbuf *p_out;
   u16_t options_out_len;
 
-  sel4cp_dbg_puts("DHCP discover\n");
-
   LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE, ("dhcp_discover()\n"));
 
   ip4_addr_set_any(&dhcp->offered_ip_addr);
@@ -1057,7 +1048,6 @@ dhcp_discover(struct netif *netif)
 static void
 dhcp_bind(struct netif *netif)
 {
-  sel4cp_dbg_puts("dhcp bind 1\n");
   u32_t timeout;
   struct dhcp *dhcp;
   ip4_addr_t sn_mask, gw_addr;
@@ -1065,7 +1055,6 @@ dhcp_bind(struct netif *netif)
   dhcp = netif_dhcp_data(netif);
   LWIP_ERROR("dhcp_bind: dhcp != NULL", (dhcp != NULL), return;);
   LWIP_DEBUGF(DHCP_DEBUG | LWIP_DBG_TRACE, ("dhcp_bind(netif=%p) %c%c%"U16_F"\n", (void *)netif, netif->name[0], netif->name[1], (u16_t)netif->num));
-  sel4cp_dbg_puts("dhcp bind 2\n");
 
   /* reset time used of lease */
   dhcp->lease_used = 0;
@@ -1148,7 +1137,6 @@ dhcp_bind(struct netif *netif)
   /* netif is now bound to DHCP leased address - set this before assigning the address
      to ensure the callback can use dhcp_supplied_address() */
   dhcp_set_state(dhcp, DHCP_STATE_BOUND);
-  printf("OFFERED IP IS %d\n", &dhcp->offered_ip_addr);
   netif_set_addr(netif, &dhcp->offered_ip_addr, &sn_mask, &gw_addr);
   /* interface is used by routing now that an address is set */
 }

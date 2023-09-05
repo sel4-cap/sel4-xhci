@@ -93,7 +93,6 @@ ring_handle_t *tx_ring = 0;
 // TODO: put these in a header file so can change it in a single place for a platform
 
 int phy_setup() {
-    printf("setting up phy (imx8)\n");
     struct imx8mq_usbphy_softc *sc_usbphy;
 	sc_usbphy = kmem_alloc(sizeof(*sc_usbphy), 0);
     device_t parent_usbphy = NULL;
@@ -102,11 +101,8 @@ int phy_setup() {
 	sc_usbphy->sc_bsh = 0x382f0040;
 	sc_usbphy->sc_bst = kmem_alloc(sizeof(bus_space_tag_t), 0);
 	self_usbphy->dv_private = sc_usbphy;
-	printf("starting phy attach\n");
 	imx8mq_usbphy_attach(parent_usbphy, self_usbphy,aux_usbphy);
 
-
-	printf("enable phy...\n");
     imx8mq_usbphy_enable(self_usbphy, NULL, true); //imx8 doesn't need priv 
     return 0;
 }
@@ -129,7 +125,6 @@ init(void) {
 
     pipe_thread = false;
     // init
-    printf("XHCI_STUB: dmapaddr = %p\n", dma_cp_paddr);
     xhci_root_intr_pointer = get_root_intr_methods();
     xhci_bus_methods_ptr = get_bus_methods();
     device_ctrl_pointer = get_device_methods();
@@ -147,16 +142,13 @@ init(void) {
     initialise_and_start_timer(timer_base);
 
     sel4_dma_init(dma_cp_paddr, dma_cp_vaddr, dma_cp_vaddr + 0x200000);
-    printf("dma init ok\n");
 
     device_t parent_xhci = NULL;
     kbd_buffer_ring = kmem_alloc(sizeof(*kbd_buffer_ring), 0);
-    printf("Allocing mem\n");
 
     phy_setup();
     device_t self_xhci = kmem_alloc(sizeof(device_t), 0);
     void *aux_xhci = kmem_alloc(sizeof(struct fdt_attach_args), 0);
-    printf("Alloc ok\n");
 
     struct xhci_softc *sc_xhci = kmem_alloc(sizeof(struct xhci_softc), 0);
     glob_xhci_sc = sc_xhci;
@@ -168,7 +160,6 @@ init(void) {
 
     self_xhci->dv_private = sc_xhci;
 
-    printf("Starting fdt_attach\n");
     dwc3_fdt_attach(parent_xhci,self_xhci,aux_xhci);
 
     struct usb_softc *usb_sc = kmem_alloc(sizeof(struct usb_softc),0);
@@ -176,33 +167,22 @@ init(void) {
     device_t self = kmem_alloc(sizeof(device_t), 0);
     *sc_bus = glob_xhci_sc->sc_bus;
     sc_bus->ub_methods = glob_xhci_sc->sc_bus.ub_methods;
-    printf("does sc_bus have newdev? %d\n", (xhci_bus_methods_ptr->ubm_newdev != NULL));
-    // sc_bus->ub_revision = USBREV_3_0;
     self->dv_unit = 1;
     self->dv_private = usb_sc;
     device_t parent = NULL;
     usb_attach(parent, self, sc_bus);
-    // int response  = bus_space_read_4(0, 0x38200020, 4);
-    // printf("Attempted bus_space_read_4: %08x\n", response);
 	usb_sc->sc_bus->ub_needsexplore = 1;
     usb_discover(usb_sc);
-    /* void *aux = aux_xhci; */
-    /* ukbd_attach(self, parent, aux); */
-    printf("ready for keyboard press\n");
+    printf("Setup finished, type on keyboard to begin\n");
 }
-
 
 
 void
 notified(sel4cp_channel ch)
 {
     switch (ch) {
-        case 7:
-            printf("handling soft intr\n");
-            xhci_softintr(&glob_xhci_sc->sc_bus);
-            break;
         default:
-            printf("xhci_stub: unexpected channel notified\n");
+            printf("XHCI_STUB: unexpected channel\n");
             break;
     }
 }
@@ -212,11 +192,10 @@ protected(sel4cp_channel ch, sel4cp_msginfo msginfo) {
     switch (ch) {
         case 1:
             // return addr of root_intr_methods
-            printf("got root_intr pointer\n");
             xhci_root_intr_pointer = (uintptr_t) sel4cp_msginfo_get_label(msginfo);
             break;
         default:
-            printf("xhci_stub received protected unexpected channel\n");
+            printf("XHCI_STUB: received protected unexpected channel\n");
     }
     return seL4_MessageInfo_new(0,0,0,0);
 }

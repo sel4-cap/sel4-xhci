@@ -131,12 +131,10 @@ alloc_rx_buf(size_t buf_size, void **cookie)
 
     /* Try to grab a buffer from the free ring */
     if (driver_dequeue(kbd_buffer_ring->free_ring, &addr, &len, cookie)) {
-        printf("RX Free ring is empty\n");
         return 0;
     }
 
     uintptr_t phys = getPhysAddr(addr);
-    printf("phys is %p\n", phys);
 
     return getPhysAddr(addr);
 }
@@ -236,13 +234,6 @@ void
 init(void) {
     kbd_buffer_ring = kmem_alloc(sizeof(*kbd_buffer_ring), 0);
     ring_setup();
-    printf("123\n");
-    // ta_limit = keyboard_base + keyboard_size;
-    // bool error = ta_init((void*)keyboard_base, (void*)ta_limit, ta_blocks, ta_thresh, ta_align);
-    // printf("Init malloc: %d\n", error);
-    // kbd_mem_write = ta_alloc(sizeof(char));
-    // printf("Sending memory address to be written to %p\n", kbd_mem_write);
-    // sel4cp_msginfo addr = sel4cp_ppcall(13, seL4_MessageInfo_new((uint64_t) kbd_mem_write,1,0,0));
 }
 
 void
@@ -251,21 +242,21 @@ notified(sel4cp_channel ch) {
         case(16):
             ;
             // char data = *kbd_mem_write;
-            printf("kbd_logger notified by similated_kbd. Data   : %c\n", *kbd_mem_write);
+            // printf("kbd_logger notified by similated_kbd. Data   : %c\n", *kbd_mem_write);
             break;
         case 42:
             break;
         case INIT:
-            printf("notified by ukbd\n");
+            // printf("notified by ukbd\n");
             init_post();
             break;
         case TX_CH:
-            printf("Got here");
+            printf("KBD_LOGGER: TX_CH notified (does nothing)\n");
             break;
         case 45:
             handle_keypress();
             break;
         default:
-            printf("Unexpected channel\n");
+            printf("KBD_LOGGER: Unexpected channel\n");
     }
 }

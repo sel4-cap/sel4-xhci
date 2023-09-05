@@ -46,6 +46,12 @@ uintptr_t device_ctrl_pointer;
 uintptr_t device_ctrl_pointer_other;
 bool pipe_thread;
 
+#ifndef SEL4_USB_DEBUG
+#define print
+#else
+#define print(...) printf(__VA_ARGS__)
+#endif
+
 uint32_t xhci_read_print_4(bus_space_tag_t tag, bus_space_handle_t bsh, bus_size_t size){
     uint32_t busval = bus_space_read_4(tag, bsh, size);
     // printf("xhci: Read4: Handle: %lx, Offset: %lx. Result: %08x\n", bsh, size, busval);
@@ -193,7 +199,7 @@ protected(sel4cp_channel ch, sel4cp_msginfo msginfo) {
             break;
         case 1:
             xhci_root_intr_pointer_other = sel4cp_msginfo_get_label(msginfo);
-            printf("sending xhci_root_intr_pointer: %p\n", xhci_root_intr_pointer);
+            print("sending xhci_root_intr_pointer: %p\n", xhci_root_intr_pointer);
             return seL4_MessageInfo_new((uint64_t) xhci_root_intr_pointer, 1, 0, 0);
         default:
             printf("Unexpected channel hardware int %d\n", ch);
