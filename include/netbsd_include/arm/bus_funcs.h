@@ -66,7 +66,7 @@
 
 #include <sel4_bus_funcs.h>
 #include <dma.h>
-#include <sel4cp.h>
+#include <microkit.h>
 
 #ifdef _KERNEL_OPT
 #include "opt_cputypes.h"

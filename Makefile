@@ -7,20 +7,20 @@ ifeq ($(strip $(BUILD_DIR)),)
 $(error BUILD_DIR must be specified)
 endif
 
-ifeq ($(strip $(SEL4CP_SDK)),)
-$(error SEL4CP_SDK must be specified)
+ifeq ($(strip $(MICROKIT_SDK)),)
+$(error MICROKIT_SDK must be specified)
 endif
 
-ifeq ($(strip $(SEL4CP_BOARD)),)
-$(error SEL4CP_BOARD must be specified)
+ifeq ($(strip $(MICROKIT_BOARD)),)
+$(error MICROKIT_BOARD must be specified)
 endif
 
-ifeq ($(strip $(SEL4CP_CONFIG)),)
-$(error SEL4CP_CONFIG must be specified)
+ifeq ($(strip $(MICROKIT_CONFIG)),)
+$(error MICROKIT_CONFIG must be specified)
 endif
 
-ifeq ($(strip $(SEL4CP_DIR)),)
-$(error SEL4CP_DIR must be specified)
+ifeq ($(strip $(MICROKIT_DIR)),)
+$(error MICROKIT_DIR must be specified)
 endif
 
 LWIPDIR=lwip/src
@@ -32,7 +32,7 @@ CPU := cortex-a53
 CC := $(TOOLCHAIN)-gcc
 LD := $(TOOLCHAIN)-ld
 AS := $(TOOLCHAIN)-as
-SEL4CP_TOOL ?= $(SEL4CP_SDK)/bin/sel4cp
+MICROKIT_TOOL ?= $(MICROKIT_SDK)/bin/microkit
 
 # NETIFFILES: Files implementing various generic network interface functions
 NETIFFILES=$(LWIPDIR)/netif/ethernet.c
@@ -90,19 +90,19 @@ CFLAGS_ETH += -I$(BOARD_DIR)/include \
 LWIPFILES=lwip.c $(COREFILES) $(CORE4FILES) $(NETIFFILES)
 LWIP_OBJS := $(LWIPFILES:.c=.o) lwip.o shared_ringbuffer.o utilization_socket.o udp_echo_socket.o eth_timer.o printf.o 
 
-BOARD_DIR := $(SEL4CP_SDK)/board/$(SEL4CP_BOARD)/$(SEL4CP_CONFIG)
+BOARD_DIR := $(MICROKIT_SDK)/board/$(MICROKIT_BOARD)/$(MICROKIT_CONFIG)
 
 IMAGES := xhci_stub.elf hardware.elf pipe_handler.elf software.elf mem_handler.elf kbd_logger.elf simulated_kbd.elf eth.elf lwip.elf
 INC := $(BOARD_DIR)/include include/tinyalloc include/wrapper include/dma include/netbsd_include include/bus include/printf include/timer echo_server/include echo_server/libsharedringbuffer/include echo_server/lwip/src/include
 INC_PARAMS=$(foreach d, $(INC), -I$d)
-# INC_ETH := $(BOARD_DIR)/include $(SEL4CP_DIR)/libsel4cp/include
-INC_ETH := $(BOARD_DIR)/include $(SEL4CP_DIR)/example/maaxboard/xhci_stub/echo_server/include $(SEL4CP_DIR)/example/maaxboard/xhci_stub/echo_server/lwip/src/include include/printf include/netbsd_include/sys/kmem
+# INC_ETH := $(BOARD_DIR)/include $(MICROKIT_DIR)/libmicrokit/include
+INC_ETH := $(BOARD_DIR)/include $(MICROKIT_DIR)/example/maaxboard/xhci_stub/echo_server/include $(MICROKIT_DIR)/example/maaxboard/xhci_stub/echo_server/lwip/src/include include/printf include/netbsd_include/sys/kmem
 INC_PARAMS_ETH=$(foreach d, $(INC_ETH), -I$d)
 WARNINGS := -Wall -Wno-comment -Wno-unused-function -Wno-return-type -Wno-unused-value
 CFLAGS := -mcpu=$(CPU) -mstrict-align -ffreestanding -g3 -O3 $(WARNINGS) $(INC_PARAMS) -I$(BOARD_DIR)/include # -DSEL4_USB_DEBUG
 CFLAGS_ETH := -mcpu=$(CPU) -mstrict-align -ffreestanding -g3 -O3 -Wall  -Wno-unused-function $(INC_PARAMS_ETH)
 LDFLAGS := -L$(BOARD_DIR)/lib -L.
-LIBS := -lsel4cp -Tsel4cp.ld -lc
+LIBS := -lmicrokit -Tmicrokit.ld -lc
 
 IMAGE_FILE = $(BUILD_DIR)/loader.img
 REPORT_FILE = $(BUILD_DIR)/report.txt
@@ -146,7 +146,7 @@ $(BUILD_DIR)/lwip.elf: $(addprefix $(BUILD_DIR)/, $(LWIP_OBJS))
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
 $(IMAGE_FILE) $(REPORT_FILE): $(addprefix $(BUILD_DIR)/, $(IMAGES)) xhci_stub.system
-	$(SEL4CP_TOOL) xhci_stub.system --search-path $(BUILD_DIR) --board $(SEL4CP_BOARD) --config $(SEL4CP_CONFIG) -o $(IMAGE_FILE) -r $(REPORT_FILE)
+	$(MICROKIT_TOOL) xhci_stub.system --search-path $(BUILD_DIR) --board $(MICROKIT_BOARD) --config $(MICROKIT_CONFIG) -o $(IMAGE_FILE) -r $(REPORT_FILE)
 
 # %.o:
 # 	$(CC) $(CFLAGS_ETH) $(@:.o=.c) -o $@

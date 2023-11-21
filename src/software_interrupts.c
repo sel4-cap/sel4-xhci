@@ -1,4 +1,4 @@
-#include <sel4cp.h>
+#include <microkit.h>
 #include <printf.h>
 
 #include <evbarm/bus_funcs.h>
@@ -115,7 +115,7 @@ init(void) {
 }
 
 void
-notified(sel4cp_channel ch) {
+notified(microkit_channel ch) {
     switch (ch) {
         case 7:
             if (glob_xhci_sc != NULL) {
@@ -127,29 +127,29 @@ notified(sel4cp_channel ch) {
     }
 }
 
-sel4cp_msginfo
-protected(sel4cp_channel ch, sel4cp_msginfo msginfo) {
+microkit_msginfo
+protected(microkit_channel ch, microkit_msginfo msginfo) {
     struct set_cfg *cfg;
     switch (ch) {
         case 1:
-            xhci_root_intr_pointer_other = sel4cp_msginfo_get_label(msginfo);
+            xhci_root_intr_pointer_other = microkit_msginfo_get_label(msginfo);
             print("sending xhci_root_intr_pointer: %p\n", xhci_root_intr_pointer);
             return seL4_MessageInfo_new((uint64_t) xhci_root_intr_pointer, 1, 0, 0);
             break;
         case 2:
-            glob_xhci_sc = (struct xhci_softc *) sel4cp_msginfo_get_label(msginfo);
+            glob_xhci_sc = (struct xhci_softc *) microkit_msginfo_get_label(msginfo);
             break;
         case 3:
-            device_ctrl_pointer_other = sel4cp_msginfo_get_label(msginfo);
+            device_ctrl_pointer_other = microkit_msginfo_get_label(msginfo);
             print("sending device_ctrl_pointer: %p\n", device_ctrl_pointer);
             return seL4_MessageInfo_new((uint64_t) device_ctrl_pointer, 1, 0, 0);
         case 4:
-            device_intr_pointer_other = sel4cp_msginfo_get_label(msginfo);
+            device_intr_pointer_other = microkit_msginfo_get_label(msginfo);
             printf("sending device_intr_pointer: %p\n", device_intr_pointer);
             return seL4_MessageInfo_new((uint64_t) device_intr_pointer, 1, 0, 0);
         case 5:
             usbd_delay_ms(0, 100);
-            cfg = (struct set_cfg*) sel4cp_msginfo_get_label(msginfo);
+            cfg = (struct set_cfg*) microkit_msginfo_get_label(msginfo);
             cfg->dev->ud_quirks = get_quirks(); //assume no quirks
             print("config dev = %p\n", cfg->dev);
             usbd_status err = usbd_set_config_index(cfg->dev, cfg->confi, cfg->msg);

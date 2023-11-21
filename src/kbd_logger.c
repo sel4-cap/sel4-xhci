@@ -1,6 +1,6 @@
 #include <sys/kmem.h>
 
-#include <sel4cp.h>
+#include <microkit.h>
 #include <printf.h>
 #include <shared_ringbuffer.h>
 #include <tinyalloc.h>
@@ -131,6 +131,7 @@ alloc_rx_buf(size_t buf_size, void **cookie)
 
     /* Try to grab a buffer from the free ring */
     if (driver_dequeue(kbd_buffer_ring->free_ring, &addr, &len, cookie)) {
+        printf("RX free is empty\n");
         return 0;
     }
 
@@ -225,8 +226,8 @@ handle_keypress()
         // printf("shiftOrControl is %d\n", shiftOrControl);
         keysym_t keypress = hidkbd_keydesc_us[index + lowercaseAdd + shiftOrControl];
         printf("%c", keypress);
-        sel4cp_ppcall(40, seL4_MessageInfo_new((uint64_t) keypress,1,0,0));
-        // sel4cp_ppcall();
+        microkit_ppcall(40, seL4_MessageInfo_new((uint64_t) keypress,1,0,0));
+        // microkit_ppcall();
     }
 }
 
@@ -237,7 +238,8 @@ init(void) {
 }
 
 void
-notified(sel4cp_channel ch) {
+notified(microkit_channel ch) {
+    printf("kbd_logger notified on %d\n", ch);
     switch(ch) {
         case(16):
             ;

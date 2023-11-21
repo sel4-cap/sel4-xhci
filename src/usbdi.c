@@ -484,7 +484,7 @@ usbd_transfer(struct usbd_xfer *xfer)
 		// pmr->pipe = pipe;
 		// pmr->xfer = xfer;
 		// pmr->method_ptr = TRANSFER;
-		// sel4cp_ppcall(PIPE_METHOD_CHANNEL, seL4_MessageInfo_new((uint64_t) pmr, 1, 0, 0));
+		// microkit_ppcall(PIPE_METHOD_CHANNEL, seL4_MessageInfo_new((uint64_t) pmr, 1, 0, 0));
 		if (pipe->up_methods == xhci_root_intr_pointer_other) {
             aprint_verbose("switch context root intr (upm_transfer)\n");
             pipe->up_methods = xhci_root_intr_pointer;
@@ -556,7 +556,7 @@ usbd_transfer(struct usbd_xfer *xfer)
 				pmr->pipe = pipe;
 				pmr->xfer = xfer;
 				pmr->method_ptr = ABORT;
-				sel4cp_ppcall(PIPE_METHOD_CHANNEL, seL4_MessageInfo_new((uint64_t) pmr, 1, 0, 0));
+				microkit_ppcall(PIPE_METHOD_CHANNEL, seL4_MessageInfo_new((uint64_t) pmr, 1, 0, 0));
 				// pipe->up_methods->upm_abort(xfer);
 			}
 			break;
@@ -952,7 +952,7 @@ usbd_clear_endpoint_toggle(struct usbd_pipe *pipe)
 	// struct pipe_method_rpc *pmr = kmem_alloc(sizeof(struct pipe_method_rpc), 0);
 	// pmr->pipe = pipe;
 	// pmr->xfer = xfer;
-	// sel4cp_ppcall(CLEARTOGGLE, seL4_MessageInfo_new((uint64_t) pmr, 1, 0, 0));
+	// microkit_ppcall(CLEARTOGGLE, seL4_MessageInfo_new((uint64_t) pmr, 1, 0, 0));
 	aprint_debug("cleartoggle is a noop, so ignored\n");
 	// pipe->up_methods->upm_cleartoggle(pipe);
 }
@@ -1250,7 +1250,7 @@ usb_transfer_complete(struct usbd_xfer *xfer)
     //     pmr->pipe = pipe;
     //     pmr->xfer = xfer;
     //     pmr->method_ptr = DONE;
-    //     sel4cp_ppcall(PIPE_METHOD_CHANNEL, seL4_MessageInfo_new((uint64_t) pmr, 1, 0, 0));
+    //     microkit_ppcall(PIPE_METHOD_CHANNEL, seL4_MessageInfo_new((uint64_t) pmr, 1, 0, 0));
 	// 	// kmem_free(pmr, 0);
     // } else {
 	// 	USBHIST_LOG(usbdebug, "xfer %#jx doing done %#jx", (uintptr_t)xfer,
@@ -1357,7 +1357,7 @@ usbd_start_next(struct usbd_pipe *pipe)
 		// pmr->pipe = pipe;
 		// pmr->xfer = xfer;
 		// pmr->method_ptr = START;
-		// err = sel4cp_msginfo_get_label(sel4cp_ppcall(PIPE_METHOD_CHANNEL, seL4_MessageInfo_new((uint64_t) pmr, 1, 0, 0)));
+		// err = microkit_msginfo_get_label(microkit_ppcall(PIPE_METHOD_CHANNEL, seL4_MessageInfo_new((uint64_t) pmr, 1, 0, 0)));
 		err = pipe->up_methods->upm_start(xfer);
 
 		if (err != USBD_IN_PROGRESS) {

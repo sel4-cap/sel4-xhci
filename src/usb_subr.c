@@ -1300,7 +1300,7 @@ usbd_probe_and_attach(device_t parent, struct usbd_device *dev,
 		cfg->dev = dev;
 		cfg->confi = confi;
 		cfg->msg = 1;
-		// err = sel4cp_msginfo_get_label(sel4cp_ppcall(5, seL4_MessageInfo_new((uint64_t) cfg, 1, 0, 0)));
+		// err = microkit_msginfo_get_label(microkit_ppcall(5, seL4_MessageInfo_new((uint64_t) cfg, 1, 0, 0)));
 		err = usbd_set_config_index(dev, confi, 1);
 		if (err) {
 			DPRINTF("port %jd, set config at addr %jd failed, "
@@ -1334,7 +1334,7 @@ usbd_probe_and_attach(device_t parent, struct usbd_device *dev,
 		cfg->dev = dev;
 		cfg->confi = 0;
 		cfg->msg = 0;
-		err = sel4cp_msginfo_get_label(sel4cp_ppcall(5, seL4_MessageInfo_new((uint64_t) cfg, 1, 0, 0)));
+		err = microkit_msginfo_get_label(microkit_ppcall(5, seL4_MessageInfo_new((uint64_t) cfg, 1, 0, 0)));
     }
 
 	DPRINTF("no interface drivers found", 0, 0, 0, 0);

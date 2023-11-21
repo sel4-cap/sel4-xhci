@@ -11,7 +11,7 @@
  */
 
 #include <string.h>
-#include <sel4cp.h>
+#include <microkit.h>
 
 #include "lwip/ip.h"
 #include "lwip/pbuf.h"
@@ -139,17 +139,17 @@ static err_t utilization_recv_callback(void *arg, struct tcp_pcb *pcb, struct pb
     if (msg_match(data_packet, HELLO)) {
         error = tcp_write(pcb, OK_READY, strlen(OK_READY), TCP_WRITE_FLAG_COPY);
         if (error) {
-            sel4cp_dbg_puts("Failed to send OK_READY message through utilization peer");
+            microkit_dbg_puts("Failed to send OK_READY message through utilization peer");
         }
     } else if (msg_match(data_packet, LOAD)) {
         error = tcp_write(pcb, OK, strlen(OK), TCP_WRITE_FLAG_COPY);
         if (error) {
-            sel4cp_dbg_puts("Failed to send OK message through utilization peer");
+            microkit_dbg_puts("Failed to send OK message through utilization peer");
         }
     } else if (msg_match(data_packet, SETUP)) {
         error = tcp_write(pcb, OK, strlen(OK), TCP_WRITE_FLAG_COPY);
         if (error) {
-            sel4cp_dbg_puts("Failed to send OK message through utilization peer");
+            microkit_dbg_puts("Failed to send OK message through utilization peer");
         }
     } else if (msg_match(data_packet, START)) {
         print("measurement starting... \n");
@@ -158,7 +158,7 @@ static err_t utilization_recv_callback(void *arg, struct tcp_pcb *pcb, struct pb
         // idle_ccount_start = bench->ccount;
         // idle_overflow_start = bench->overflows;
 
-        sel4cp_notify(START_PMU);
+        microkit_notify(START_PMU);
 
     } else if (msg_match(data_packet, STOP)) {        
         print("measurement finished \n");;
@@ -187,12 +187,12 @@ static err_t utilization_recv_callback(void *arg, struct tcp_pcb *pcb, struct pb
         strcat(buffer, ",");
         strcat(buffer, tbuf);
 
-        // sel4cp_dbg_puts(buffer);
+        // microkit_dbg_puts(buffer);
         error = tcp_write(pcb, buffer, strlen(buffer), TCP_WRITE_FLAG_COPY);
 
         tcp_shutdown(pcb, 0, 1);
         
-        sel4cp_notify(STOP_PMU);
+        microkit_notify(STOP_PMU);
     } else if (msg_match(data_packet, QUIT)) {
         /* Do nothing for now */
     } else if (msg_match(data_packet, KBD)) {
@@ -208,7 +208,7 @@ static err_t utilization_recv_callback(void *arg, struct tcp_pcb *pcb, struct pb
             }
             buf_index = 0;
             if (error) {
-                sel4cp_dbg_puts("Failed to send OK message through utilization peer");
+                microkit_dbg_puts("Failed to send OK message through utilization peer");
             }
         } else {
             curr_pcb = pcb;
@@ -216,17 +216,17 @@ static err_t utilization_recv_callback(void *arg, struct tcp_pcb *pcb, struct pb
             char* return_string = "Keyboard ready for input\n";
             error = tcp_write(pcb, return_string, strlen(return_string), TCP_WRITE_FLAG_COPY);
             if (error) {
-                sel4cp_dbg_puts("Failed to send OK message through utilization peer");
+                microkit_dbg_puts("Failed to send OK message through utilization peer");
             }
         }
     } else {
-        sel4cp_dbg_puts("Received a message that we can't handle ");
-        sel4cp_dbg_puts(data_packet);
-        sel4cp_dbg_puts("\n");
+        microkit_dbg_puts("Received a message that we can't handle ");
+        microkit_dbg_puts(data_packet);
+        microkit_dbg_puts("\n");
         // printf("input :%s:, match = :%s:\n", data_packet, KBD);
         error = tcp_write(pcb, ERROR, strlen(ERROR), TCP_WRITE_FLAG_COPY);
         if (error) {
-            sel4cp_dbg_puts("Failed to send OK message through utilization peer");
+            microkit_dbg_puts("Failed to send OK message through utilization peer");
         }
     }
 
@@ -235,11 +235,11 @@ static err_t utilization_recv_callback(void *arg, struct tcp_pcb *pcb, struct pb
 
 static err_t utilization_accept_callback(void *arg, struct tcp_pcb *newpcb, err_t err)
 {
-    sel4cp_dbg_puts("Utilization connection established!\n");
+    microkit_dbg_puts("Utilization connection established!\n");
     curr_pcb = newpcb;
     err_t error = tcp_write(newpcb, WHOAMI, strlen(WHOAMI), TCP_WRITE_FLAG_COPY);
     if (error) {
-        sel4cp_dbg_puts("Failed to send WHOAMI message through utilization peer");
+        microkit_dbg_puts("Failed to send WHOAMI message through utilization peer");
     }
     tcp_sent(newpcb, utilization_sent_callback);
     tcp_recv(newpcb, utilization_recv_callback);
@@ -251,21 +251,21 @@ int setup_utilization_socket(void)
 {
     utiliz_socket = tcp_new_ip_type(IPADDR_TYPE_V4);
     if (utiliz_socket == NULL) {
-        sel4cp_dbg_puts("Failed to open a socket for listening!");
+        microkit_dbg_puts("Failed to open a socket for listening!");
         return -1;
     }
 
     err_t error = tcp_bind(utiliz_socket, IP_ANY_TYPE, UTILIZATION_PORT);
     if (error) {
-        sel4cp_dbg_puts("Failed to bind the TCP socket");
+        microkit_dbg_puts("Failed to bind the TCP socket");
         return -1;
     } else {
-        sel4cp_dbg_puts("Utilisation port bound to port 1236");
+        microkit_dbg_puts("Utilisation port bound to port 1236");
     }
 
     utiliz_socket = tcp_listen_with_backlog_and_err(utiliz_socket, 1, &error);
     if (error != ERR_OK) {
-        sel4cp_dbg_puts("Failed to listen on the utilization socket");
+        microkit_dbg_puts("Failed to listen on the utilization socket");
         return -1;
     }
     tcp_accept(utiliz_socket, utilization_accept_callback);

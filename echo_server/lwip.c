@@ -5,7 +5,7 @@
 
 // #include <stdbool.h>
 #include <string.h>
-#include <sel4cp.h>
+#include <microkit.h>
 
 #include "lwip/init.h"
 #include "netif/etharp.h"
@@ -161,7 +161,7 @@ static struct pbuf *create_interface_buffer(state_t *state, ethernet_buffer_t *b
 static inline ethernet_buffer_t *alloc_tx_buffer(state_t *state, size_t length)
 {   
     if (BUF_SIZE < length) {
-        sel4cp_dbg_puts("Requested buffer size too large.");
+        microkit_dbg_puts("Requested buffer size too large.");
         return NULL;
     }
 
@@ -302,12 +302,12 @@ static void netif_status_callback(struct netif *netif)
 
 static void get_mac(void)
 {
-    sel4cp_dbg_puts("lwip get mac\n");
-    // sel4cp_dbg_puts((char) state.mac[0]);
+    microkit_dbg_puts("lwip get mac\n");
+    // microkit_dbg_puts((char) state.mac[0]);
 
-    sel4cp_ppcall(INIT, sel4cp_msginfo_new(0, 0));
-    uint32_t palr = sel4cp_mr_get(0);
-    uint32_t paur = sel4cp_mr_get(1);
+    microkit_ppcall(INIT, microkit_msginfo_new(0, 0));
+    uint32_t palr = microkit_mr_get(0);
+    uint32_t paur = microkit_mr_get(1);
     state.mac[0] = palr >> 24;
     state.mac[1] = palr >> 16 & 0xff;
     state.mac[2] = palr >> 8 & 0xff;
@@ -322,20 +322,20 @@ void init_post(void)
     netif_set_up(&(state.netif));
 
     if (dhcp_start(&(state.netif))) {
-        sel4cp_dbg_puts("failed to start DHCP negotiation\n");
+        microkit_dbg_puts("failed to start DHCP negotiation\n");
     }
 
     setup_udp_socket();
     setup_utilization_socket();
 
-    sel4cp_dbg_puts(sel4cp_name);
-    sel4cp_dbg_puts(": init complete -- waiting for notification\n");
+    microkit_dbg_puts(microkit_name);
+    microkit_dbg_puts(": init complete -- waiting for notification\n");
 }
 
 void init(void)
 {
-    sel4cp_dbg_puts(sel4cp_name);
-    sel4cp_dbg_puts(": elf PD init function running\n");
+    microkit_dbg_puts(microkit_name);
+    microkit_dbg_puts(": elf PD init function running\n");
 
     // state.rx_ring = kmem_alloc(sizeof(*state.rx_ring), 0);
     // state.tx_ring = kmem_alloc(sizeof(*state.tx_ring), 0);
@@ -386,21 +386,21 @@ void init(void)
     state.netif.name[0] = 'e';
     state.netif.name[1] = '0';
 
-    sel4cp_dbg_puts("About to do netif_add\n");
+    microkit_dbg_puts("About to do netif_add\n");
 
     if (!netif_add(&(state.netif), &ipaddr, &netmask, &gw, &state,
               ethernet_init, netif_input)) { // This block was commented out but needs to be initialised
-        sel4cp_dbg_puts("Netif add returned NULL\n");
+        microkit_dbg_puts("Netif add returned NULL\n");
     }
 
-    sel4cp_dbg_puts("Done netif_add\n");
+    microkit_dbg_puts("Done netif_add\n");
 
     netif_set_default(&(state.netif));
 
-    sel4cp_notify(INIT);
+    microkit_notify(INIT);
 }
 
-void notified(sel4cp_channel ch)
+void notified(microkit_channel ch)
 {
     switch(ch) {
         case RX_CH:
@@ -412,21 +412,21 @@ void notified(sel4cp_channel ch)
         case IRQ:
             /* Timer */
             irq(ch);
-            sel4cp_irq_ack(ch);
+            microkit_irq_ack(ch);
             return;
         default:
-            sel4cp_dbg_puts("lwip: received notification on unexpected channel\n");
+            microkit_dbg_puts("lwip: received notification on unexpected channel\n");
             break;
     }
 }
 
-sel4cp_msginfo
-protected(sel4cp_channel ch, sel4cp_msginfo msginfo) {
+microkit_msginfo
+protected(microkit_channel ch, microkit_msginfo msginfo) {
     char c;
     switch (ch) {
         case 40:
             // return addr of root_intr_methods
-            c = (char) sel4cp_msginfo_get_label(msginfo);
+            c = (char) microkit_msginfo_get_label(msginfo);
             send_keypress(c);
             break;
         default:

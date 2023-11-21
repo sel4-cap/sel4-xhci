@@ -31,7 +31,7 @@
 #include <sys/device.h>
 #include <evbarm/types.h>
 #include <sel4_bus_funcs.h>
-#include <sel4cp.h>
+#include <microkit.h>
 
 #ifdef TIMER_DEBUG
 #define timer_print(...) printf(__VA_ARGS__)

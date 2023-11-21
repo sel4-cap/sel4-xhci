@@ -30,7 +30,7 @@
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <sel4cp.h>
+#include <microkit.h>
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -147,7 +147,7 @@ static inline void _out_null(char character, void* buffer, size_t idx, size_t ma
 }
 
 void _putchar(char character) {
-  sel4cp_dbg_putc(character);
+  microkit_dbg_putc(character);
 }
 
 // internal _putchar wrapper

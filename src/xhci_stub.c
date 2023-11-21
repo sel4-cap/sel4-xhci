@@ -1,4 +1,4 @@
-#include <sel4cp.h>
+#include <microkit.h>
 #include <printf.h>
 
 #include <evbarm/bus_funcs.h>
@@ -113,7 +113,7 @@ init(void) {
         uint32_t read_offset    = 0xc120;
         // uint32_t write_offset   = 0xc2c0;
 
-        sel4cp_dbg_puts("Starting read and write tests\n");
+        microkit_dbg_puts("Starting read and write tests\n");
         /* read test */
         printf("xhci_base: %p\n", xhci_base);
         uint32_t response;
@@ -128,14 +128,14 @@ init(void) {
     xhci_root_intr_pointer = get_root_intr_methods();
     xhci_bus_methods_ptr = get_bus_methods();
     device_ctrl_pointer = get_device_methods();
-    sel4cp_msginfo addr = sel4cp_ppcall(1, seL4_MessageInfo_new((uint64_t) xhci_root_intr_pointer,1,0,0));
-    xhci_root_intr_pointer_other = sel4cp_msginfo_get_label(addr);
+    microkit_msginfo addr = microkit_ppcall(1, seL4_MessageInfo_new((uint64_t) xhci_root_intr_pointer,1,0,0));
+    xhci_root_intr_pointer_other = microkit_msginfo_get_label(addr);
     device_ctrl_pointer = get_device_methods();
-    addr = sel4cp_ppcall(3, seL4_MessageInfo_new((uint64_t) device_ctrl_pointer,1,0,0));
-    device_ctrl_pointer_other = sel4cp_msginfo_get_label(addr);
+    addr = microkit_ppcall(3, seL4_MessageInfo_new((uint64_t) device_ctrl_pointer,1,0,0));
+    device_ctrl_pointer_other = microkit_msginfo_get_label(addr);
     device_intr_pointer = get_device_intr_methods();
-    addr = sel4cp_ppcall(4, seL4_MessageInfo_new((uint64_t) device_intr_pointer,1,0,0));
-    device_intr_pointer_other = sel4cp_msginfo_get_label(addr);
+    addr = microkit_ppcall(4, seL4_MessageInfo_new((uint64_t) device_intr_pointer,1,0,0));
+    device_intr_pointer_other = microkit_msginfo_get_label(addr);
     /* memcpy(&xhci_root_intr_pointer, get_root_intr_methods(), sizeof(struct usbd_pipe_methods)); */
     /* printf("xhci_stub received root_intr ptr %p\n", xhci_root_intr_pointer); */
 
@@ -153,8 +153,8 @@ init(void) {
     struct xhci_softc *sc_xhci = kmem_alloc(sizeof(struct xhci_softc), 0);
     glob_xhci_sc = sc_xhci;
     sc_xhci->sc_ioh=0x38200000;
-    sel4cp_ppcall(0, seL4_MessageInfo_new((uint64_t) sc_xhci,1,0,0));
-    sel4cp_ppcall(2, seL4_MessageInfo_new((uint64_t) sc_xhci,1,0,0));
+    microkit_ppcall(0, seL4_MessageInfo_new((uint64_t) sc_xhci,1,0,0));
+    microkit_ppcall(2, seL4_MessageInfo_new((uint64_t) sc_xhci,1,0,0));
 	bus_space_tag_t iot = kmem_alloc(sizeof(bus_space_tag_t), 0);
     sc_xhci->sc_iot=iot;
 
@@ -178,7 +178,7 @@ init(void) {
 
 
 void
-notified(sel4cp_channel ch)
+notified(microkit_channel ch)
 {
     switch (ch) {
         default:
@@ -187,12 +187,12 @@ notified(sel4cp_channel ch)
     }
 }
 
-sel4cp_msginfo
-protected(sel4cp_channel ch, sel4cp_msginfo msginfo) {
+microkit_msginfo
+protected(microkit_channel ch, microkit_msginfo msginfo) {
     switch (ch) {
         case 1:
             // return addr of root_intr_methods
-            xhci_root_intr_pointer = (uintptr_t) sel4cp_msginfo_get_label(msginfo);
+            xhci_root_intr_pointer = (uintptr_t) microkit_msginfo_get_label(msginfo);
             break;
         default:
             printf("XHCI_STUB: received protected unexpected channel\n");

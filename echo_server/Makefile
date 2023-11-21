@@ -8,19 +8,19 @@ ifeq ($(strip $(BUILD_DIR)),)
 $(error BUILD_DIR must be specified)
 endif
 
-ifeq ($(strip $(SEL4CP_SDK)),)
-$(error SEL4CP_SDK must be specified)
+ifeq ($(strip $(MICROKIT_SDK)),)
+$(error MICROKIT_SDK must be specified)
 endif
 
-ifeq ($(strip $(SEL4CP_BOARD)),)
-$(error SEL4CP_BOARD must be specified)
+ifeq ($(strip $(MICROKIT_BOARD)),)
+$(error MICROKIT_BOARD must be specified)
 endif
 
-ifeq ($(strip $(SEL4CP_CONFIG)),)
-$(error SEL4CP_CONFIG must be specified)
+ifeq ($(strip $(MICROKIT_CONFIG)),)
+$(error MICROKIT_CONFIG must be specified)
 endif
 
-ifeq ($(strip $(SEL4CP_DIR)),)
+ifeq ($(strip $(MICROKIT_DIR)),)
 $(error SEL4_DIR must be specified)
 endif
 
@@ -31,21 +31,21 @@ CPU := cortex-a53
 CC := $(TOOLCHAIN)-gcc
 LD := $(TOOLCHAIN)-ld
 AS := $(TOOLCHAIN)-as
-SEL4CP_TOOL ?= $(SEL4CP_SDK)/bin/sel4cp
+MICROKIT_TOOL ?= $(MICROKIT_SDK)/bin/microkit
 
 LWIPDIR=lwip/src
 # BENCHDIR=benchmark
 RINGBUFFERDIR=libsharedringbuffer
 
-BOARD_DIR := $(SEL4CP_SDK)/board/$(SEL4CP_BOARD)/$(SEL4CP_CONFIG)
+BOARD_DIR := $(MICROKIT_SDK)/board/$(MICROKIT_BOARD)/$(MICROKIT_CONFIG)
 
-INC := $(BOARD_DIR)/include $(SEL4CP_DIR)/libsel4cp/include 
+INC := $(BOARD_DIR)/include $(MICROKIT_DIR)/libmicrokit/include 
 INC_PARAMS=$(foreach d, $(INC), -I$d)
 
 IMAGES := eth.elf lwip.elf
 CFLAGS := -mcpu=$(CPU) -mstrict-align -ffreestanding -g3 -O3 -Wall  -Wno-unused-function $(INC_PARAMS)
 LDFLAGS := -L$(BOARD_DIR)/lib -L.
-LIBS := -lsel4cp -Tsel4cp.ld -lc
+LIBS := -lmicrokit -Tmicrokit.ld -lc
 
 IMAGE_FILE = $(BUILD_DIR)/loader.img
 REPORT_FILE = $(BUILD_DIR)/report.txt
@@ -117,7 +117,7 @@ $(BUILD_DIR)/lwip.elf: $(addprefix $(BUILD_DIR)/, $(LWIP_OBJS))
 # 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
 $(IMAGE_FILE) $(REPORT_FILE): $(addprefix $(BUILD_DIR)/, $(IMAGES)) eth.system
-	$(SEL4CP_TOOL) eth.system --search-path $(BUILD_DIR) --board $(SEL4CP_BOARD) --config $(SEL4CP_CONFIG) -o $(IMAGE_FILE) -r $(REPORT_FILE)
+	$(MICROKIT_TOOL) eth.system --search-path $(BUILD_DIR) --board $(MICROKIT_BOARD) --config $(MICROKIT_CONFIG) -o $(IMAGE_FILE) -r $(REPORT_FILE)
 
 .PHONY: all depend compile clean
 

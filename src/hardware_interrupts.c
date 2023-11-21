@@ -1,4 +1,4 @@
-#include <sel4cp.h>
+#include <microkit.h>
 #include <printf.h>
 
 #include <evbarm/bus_funcs.h>
@@ -150,7 +150,7 @@ xhci_intr(void *v)
 
 	ret = xhci_intr1(sc);
 	if (ret) {
-		sel4cp_notify(7); 
+		microkit_notify(7); 
 	}
 done:
 	mutex_spin_exit(&sc->sc_intr_lock);
@@ -168,7 +168,7 @@ init(void) {
 }
 
 void
-notified(sel4cp_channel ch) {
+notified(microkit_channel ch) {
     switch (ch) {
         case 6:
             // printf("!!xhci hard interrupt!!\n");
@@ -178,7 +178,7 @@ notified(sel4cp_channel ch) {
                 printf("FATAL: sc not defined");
             }
             // printf("end of ch\n");
-            sel4cp_irq_ack(ch);
+            microkit_irq_ack(ch);
             break;
             while (1) {
                 
@@ -190,15 +190,15 @@ notified(sel4cp_channel ch) {
     // }
 }
 
-sel4cp_msginfo
-protected(sel4cp_channel ch, sel4cp_msginfo msginfo) {
+microkit_msginfo
+protected(microkit_channel ch, microkit_msginfo msginfo) {
     switch (ch) {
         case 0:
-            glob_xhci_sc = (struct xhci_softc *) sel4cp_msginfo_get_label(msginfo);
+            glob_xhci_sc = (struct xhci_softc *) microkit_msginfo_get_label(msginfo);
             return seL4_MessageInfo_new(0,0,0,0);
             break;
         case 1:
-            xhci_root_intr_pointer_other = sel4cp_msginfo_get_label(msginfo);
+            xhci_root_intr_pointer_other = microkit_msginfo_get_label(msginfo);
             print("sending xhci_root_intr_pointer: %p\n", xhci_root_intr_pointer);
             return seL4_MessageInfo_new((uint64_t) xhci_root_intr_pointer, 1, 0, 0);
         default:

@@ -6,7 +6,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <printf.h>
-#include <sel4cp.h>
+#include <microkit.h>
 #include <sel4/sel4.h>
 #include "include/eth.h"
 #include "../../xhci_stub/include/dma/shared_ringbuffer.h"
@@ -98,10 +98,10 @@ static void
 dump_mac(uint8_t *mac)
 {
     for (unsigned i = 0; i < 6; i++) {
-        sel4cp_dbg_putc(hexchar((mac[i] >> 4) & 0xf));
-        sel4cp_dbg_putc(hexchar(mac[i] & 0xf));
+        microkit_dbg_putc(hexchar((mac[i] >> 4) & 0xf));
+        microkit_dbg_putc(hexchar(mac[i] & 0xf));
         if (i < 5) {
-            sel4cp_dbg_putc(':');
+            microkit_dbg_putc(':');
         }
     }
 }
@@ -232,7 +232,7 @@ handle_rx(volatile struct enet_regs *eth)
     /* Notify client (only if we have actually processed a packet and 
     the client hasn't already been notified!) */
     if (num > 1 && was_empty) {
-        sel4cp_notify(RX_CH);
+        microkit_notify(RX_CH);
     } 
 }
 
@@ -366,10 +366,10 @@ handle_tx(volatile struct enet_regs *eth)
     unsigned int len = 0;
     void *cookie = NULL;
 
-    // sel4cp_dbg_puts("handle_tx\n");
+    // microkit_dbg_puts("handle_tx\n");
     // printf("tx.remain is %d\n", tx.remain);
     while ((tx.remain > 1) && !driver_dequeue(tx_ring.used_ring, &buffer, &len, &cookie)) {
-        // sel4cp_dbg_puts("key received on eth\n");
+        // microkit_dbg_puts("key received on eth\n");
         uintptr_t phys = getPhysAddr(buffer);
         raw_tx(eth, 1, &phys, &len, cookie);
     }
@@ -379,9 +379,9 @@ static void
 eth_setup(void)
 {
     get_mac_addr(eth, mac);
-    sel4cp_dbg_puts("MAC: ");
+    microkit_dbg_puts("MAC: ");
     dump_mac(mac);
-    sel4cp_dbg_puts("\n");
+    microkit_dbg_puts("\n");
 
     /* set up descriptor rings */
     rx.cnt = RX_COUNT;
@@ -479,9 +479,9 @@ void init_post()
     ring_init(&tx_ring, (ring_buffer_t *)eth_tx_free, (ring_buffer_t *)eth_tx_used, NULL, 0);
 
     fill_rx_bufs();
-    sel4cp_dbg_puts(sel4cp_name);
-    sel4cp_dbg_puts(": init complete -- waiting for interrupt\n");
-    sel4cp_notify(INIT);
+    microkit_dbg_puts(microkit_name);
+    microkit_dbg_puts(": init complete -- waiting for interrupt\n");
+    microkit_notify(INIT);
 
     /* Now take away our scheduling context. Uncomment this for a passive driver. */
     /* have_signal = true;
@@ -492,8 +492,8 @@ void init_post()
 
 void init(void)
 {
-    sel4cp_dbg_puts(sel4cp_name);
-    sel4cp_dbg_puts(": elf PD init function running\n");
+    microkit_dbg_puts(microkit_name);
+    microkit_dbg_puts(": elf PD init function running\n");
 
     eth_setup();
 
@@ -501,27 +501,27 @@ void init(void)
 }
 
 seL4_MessageInfo_t
-protected(sel4cp_channel ch, sel4cp_msginfo msginfo)
+protected(microkit_channel ch, microkit_msginfo msginfo)
 {
-    sel4cp_dbg_puts("entering ppcall from lwip to eth\n");
+    microkit_dbg_puts("entering ppcall from lwip to eth\n");
     switch (ch) {
         case INIT:
             // return the MAC address. 
-            sel4cp_mr_set(0, eth->palr);
-            sel4cp_mr_set(1, eth->paur);
-            return sel4cp_msginfo_new(0, 2);
+            microkit_mr_set(0, eth->palr);
+            microkit_mr_set(1, eth->paur);
+            return microkit_msginfo_new(0, 2);
         case TX_CH:
             handle_tx(eth);
             break;
         default:
-            sel4cp_dbg_puts("Received ppc on unexpected channel ");
+            microkit_dbg_puts("Received ppc on unexpected channel ");
             puthex64(ch);
             break;
     }
-    return sel4cp_msginfo_new(0, 0);
+    return microkit_msginfo_new(0, 0);
 }
 
-void notified(sel4cp_channel ch)
+void notified(microkit_channel ch)
 {
     switch(ch) {
         case IRQ_CH:
@@ -535,11 +535,11 @@ void notified(sel4cp_channel ch)
             init_post();
             break;
         case TX_CH:
-            // sel4cp_dbg_puts("Eth notified\n");
+            // microkit_dbg_puts("Eth notified\n");
             handle_tx(eth);
             break;
         default:
-            // sel4cp_dbg_puts("eth driver: received notification on unexpected channel\n");
+            // microkit_dbg_puts("eth driver: received notification on unexpected channel\n");
             printf("eth driver: received notification on unexpected channel : %d\n", ch);
             break;
     }

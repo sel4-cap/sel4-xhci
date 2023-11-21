@@ -9,7 +9,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <printf.h>
-#include <sel4cp.h>
+#include <microkit.h>
 #include "fence.h"
 
 #define SIZE 512
@@ -104,7 +104,7 @@ static inline void notify(ring_handle_t *ring)
 static inline int enqueue(ring_buffer_t *ring, uintptr_t buffer, unsigned int len, void *cookie)
 {
     if (ring_full(ring)) {
-        sel4cp_dbg_puts("Ring full");
+        microkit_dbg_puts("Ring full");
         return -1;
     }
     ring->buffers[ring->write_idx % SIZE].encoded_addr = buffer;
@@ -131,7 +131,7 @@ static inline int dequeue(ring_buffer_t *ring, uintptr_t *addr, unsigned int *le
 {
     /* printf("Dequeue calling ring-empty\n"); */
     if (ring_empty(ring)) {
-        //sel4cp_dbg_puts("Ring is empty");
+        //microkit_dbg_puts("Ring is empty");
         return -1;
     }
 
@@ -221,6 +221,7 @@ static inline int dequeue_used(ring_handle_t *ring, uintptr_t *addr, unsigned in
  */
 static int driver_dequeue(ring_buffer_t *ring, uintptr_t *addr, unsigned int *len, void **cookie)
 {
+    printf("write idx %d, read idx %d\n", ring->write_idx, ring->read_idx);
     if (!((ring->write_idx - ring->read_idx) % SIZE)) {
         return -1;
     }

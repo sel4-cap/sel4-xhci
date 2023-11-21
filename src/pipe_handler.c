@@ -1,4 +1,4 @@
-#include <sel4cp.h>
+#include <microkit.h>
 #include <printf.h>
 
 #include <evbarm/bus_funcs.h>
@@ -85,12 +85,12 @@ init(void) {
 }
 
 void
-notified(sel4cp_channel ch) {
+notified(microkit_channel ch) {
     printf("pipe_methods_thread called (bad)!\n");
 }
 
-sel4cp_msginfo
-protected(sel4cp_channel ch, sel4cp_msginfo msginfo) {
+microkit_msginfo
+protected(microkit_channel ch, microkit_msginfo msginfo) {
     printf("Inside protected (pipe handler)\n");
     struct pipe_method_rpc *pmr;
     struct pipe_method_init *pmi;
@@ -98,13 +98,13 @@ protected(sel4cp_channel ch, sel4cp_msginfo msginfo) {
     switch (ch) {
         case (PIPE_INIT_CHANNEL):
         case (PIPE_INIT_CHANNEL + 10):
-            pmi = (struct pipe_method_init *) sel4cp_msginfo_get_label(msginfo);
+            pmi = (struct pipe_method_init *) microkit_msginfo_get_label(msginfo);
             pmi->pipe->up_methods = get_up_methods(pmi->method_ptr);
             printf("set init to %p\n", pmi->pipe->up_methods);
             break;
         case (PIPE_METHOD_CHANNEL):
         case (PIPE_METHOD_CHANNEL+10):
-            pmr = (struct pipe_method_rpc *) sel4cp_msginfo_get_label(msginfo);
+            pmr = (struct pipe_method_rpc *) microkit_msginfo_get_label(msginfo);
             usbd_status err = 0;
             printf("pipe handler xfer = %p\n", pmr->xfer);
             switch (pmr->method_ptr) {
