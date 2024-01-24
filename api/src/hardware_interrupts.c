@@ -7,6 +7,7 @@
 #include <dev/usb/xhcivar.h>
 
 #include <wrapper.h>
+#include <tinyalloc.h>
 #include <dma.h>
 #include <sys/bus.h>
 #include <sys/device.h>
@@ -28,28 +29,6 @@
 #include <sel4_bus_funcs.h>
 
 #include <dev/fdt/fdtvar.h>
-
-// Setup for getting printf functionality working {{{
-static int
-libc_microkit_putc(char c, FILE *file)
-{
-    (void) file; /* Not used by us */
-    microkit_dbg_putc(c);
-    return c;
-}
-
-static int
-sample_getc(FILE *file)
-{
-	return -1; /* getc not implemented, return EOF */
-}
-static FILE __stdio = FDEV_SETUP_STREAM(libc_microkit_putc,
-                    sample_getc,
-                    NULL,
-                    _FDEV_SETUP_WRITE);
-FILE *const stdin = &__stdio; __strong_reference(stdin, stdout); __strong_reference(stdin, stderr);
-// END OF LIBC
-// }}}
 
 /* #define INTR_DEBUG */
 

@@ -36,6 +36,10 @@ uintptr_t shared_mem;
 uintptr_t shared_heap;
 uintptr_t shared_soft_heap;
 
+// TEMP: fixes for LIBC DO NOT REMOVE
+int __lshrti3(a,b) { return a >> b; }
+int __ashlti3(a,b) { return a << b; }
+
 // Setup for getting printf functionality working {{{
 static int
 libc_microkit_putc(char c, FILE *file)
@@ -65,7 +69,7 @@ handle_mouseevent() {
     void *cookie = NULL;
 
     while (!dequeue_used(mse_buffer_ring, (uintptr_t*)&buffer, &len, &cookie)) {
-        printf("x: %ld, y: %ld, z:%ld, w:%ld buttons 0x%lx\n", buffer[0], buffer[1], buffer[2], buffer[3], buffer[4]);
+        printf("x: %d, y: %d, z:%d, w:%d buttons 0x%x\n", buffer[0], buffer[1], buffer[2], buffer[3], buffer[4]);
     }
 }
 

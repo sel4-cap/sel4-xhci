@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <printf.h>
 
 char *pd_name;
 // #define PD_DEBUG

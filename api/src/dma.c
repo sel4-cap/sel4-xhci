@@ -7,10 +7,10 @@
 /* Author: alex.kroh@nicta.com.au */
 
 #include <dma.h>
+#include <printf.h>
 #include <wrapper.h>
-#include <stdlib.h>
+#include <tinyalloc.h>
 #include <sys/kmem.h>
-#include <stdio.h>
 
 uintptr_t phys_base;
 uintptr_t virt_base;

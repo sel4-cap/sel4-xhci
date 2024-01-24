@@ -8,6 +8,7 @@
 #include <dev/usb/umassvar.h>
 
 #include <wrapper.h>
+#include <tinyalloc.h>
 #include <dma.h>
 #include <sys/bus.h>
 #include <sys/device.h>
@@ -34,30 +35,6 @@
 #include <dev/fdt/fdtvar.h>
 #include <config_methods.h>
 #include <xhci_api.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-// Setup for getting printf functionality working {{{
-static int
-libc_microkit_putc(char c, FILE *file)
-{
-    (void) file; /* Not used by us */
-    microkit_dbg_putc(c);
-    return c;
-}
-
-static int
-sample_getc(FILE *file)
-{
-	return -1; /* getc not implemented, return EOF */
-}
-static FILE __stdio = FDEV_SETUP_STREAM(libc_microkit_putc,
-                    sample_getc,
-                    NULL,
-                    _FDEV_SETUP_WRITE);
-FILE *const stdin = &__stdio; __strong_reference(stdin, stdout); __strong_reference(stdin, stderr);
-// END OF LIBC
-// }}}
 
 char* pd_name = "software_interrupts";
 int num_devices = 0; //unused
@@ -116,6 +93,13 @@ ring_handle_t *usb_new_device_ring; // unused
 
 void
 init(void) {
+
+    uint64_t shared_heap_size = 0x200000;
+    uint64_t ta_limit = shared_soft_heap + shared_heap_size;
+    int ta_blocks = 2048;
+    int ta_thresh = 16;
+    int ta_align = 64;
+    bool status = ta_init((void*)shared_soft_heap, (void*)ta_limit, ta_blocks, ta_thresh, ta_align);
 
     config_init();
     cold = 0;

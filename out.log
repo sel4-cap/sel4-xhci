@@ -1,0 +1,1406 @@
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhcivar.h:35,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:7:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:42: warning: "WCHAR_MIN" redefined
+   42 | #define WCHAR_MIN __WCHAR_MIN__   /* wchar_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhcivar.h:35,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:7:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:42: warning: "WCHAR_MIN" redefined
+   42 | #define WCHAR_MIN __WCHAR_MIN__   /* wchar_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/release/microkit-sdk-1.2.6/board/maaxboard/debug/include/microkit.h:11,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:2:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:363: note: this is the location of the previous definition
+  363 | #define WCHAR_MIN (__WCHAR_MIN__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/release/microkit-sdk-1.2.6/board/maaxboard/debug/include/microkit.h:11,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:2:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:363: note: this is the location of the previous definition
+  363 | #define WCHAR_MIN (__WCHAR_MIN__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhcivar.h:35,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:7:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:50: warning: "WCHAR_MAX" redefined
+   50 | #define WCHAR_MAX __WCHAR_MAX__   /* wchar_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhcivar.h:35,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:7:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:50: warning: "WCHAR_MAX" redefined
+   50 | #define WCHAR_MAX __WCHAR_MAX__   /* wchar_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/release/microkit-sdk-1.2.6/board/maaxboard/debug/include/microkit.h:11,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:2:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:374: note: this is the location of the previous definition
+  374 | #define WCHAR_MAX (__WCHAR_MAX__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/release/microkit-sdk-1.2.6/board/maaxboard/debug/include/microkit.h:11,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:2:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:374: note: this is the location of the previous definition
+  374 | #define WCHAR_MAX (__WCHAR_MAX__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhcivar.h:35,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:7:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:60: warning: "WINT_MIN" redefined
+   60 | #define WINT_MIN __WINT_MIN__   /* wint_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhcivar.h:35,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:7:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:60: warning: "WINT_MIN" redefined
+   60 | #define WINT_MIN __WINT_MIN__   /* wint_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/release/microkit-sdk-1.2.6/board/maaxboard/debug/include/microkit.h:11,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:2:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:389: note: this is the location of the previous definition
+  389 | #define WINT_MIN (__WINT_MIN__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/release/microkit-sdk-1.2.6/board/maaxboard/debug/include/microkit.h:11,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:2:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:389: note: this is the location of the previous definition
+  389 | #define WINT_MIN (__WINT_MIN__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhcivar.h:35,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:7:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:68: warning: "WINT_MAX" redefined
+   68 | #define WINT_MAX __WINT_MAX__   /* wint_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhcivar.h:35,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:7:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:68: warning: "WINT_MAX" redefined
+   68 | #define WINT_MAX __WINT_MAX__   /* wint_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/release/microkit-sdk-1.2.6/board/maaxboard/debug/include/microkit.h:11,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:2:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:384: note: this is the location of the previous definition
+  384 | #define WINT_MAX (__WINT_MAX__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/release/microkit-sdk-1.2.6/board/maaxboard/debug/include/microkit.h:11,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:2:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:384: note: this is the location of the previous definition
+  384 | #define WINT_MAX (__WINT_MAX__)
+      | 
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c: In function 'init':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c: In function 'init':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:138:17: warning: passing argument 1 of 'fdtbus_init' makes pointer from integer without a cast [-Wint-conversion]
+  138 |     fdtbus_init(fdt);
+      |                 ^~~
+      |                 |
+      |                 uintptr_t {aka long unsigned int}
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:138:17: warning: passing argument 1 of 'fdtbus_init' makes pointer from integer without a cast [-Wint-conversion]
+  138 |     fdtbus_init(fdt);
+      |                 ^~~
+      |                 |
+      |                 uintptr_t {aka long unsigned int}
+In file included from api/include/wrapper/wrapper.h:14,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:10:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdtvar.h:557:19: note: expected 'const void *' but argument is of type 'uintptr_t' {aka 'long unsigned int'}
+  557 | bool  fdtbus_init(const void *);
+      |                   ^~~~~~~~~~~~
+In file included from api/include/wrapper/wrapper.h:14,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:10:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdtvar.h:557:19: note: expected 'const void *' but argument is of type 'uintptr_t' {aka 'long unsigned int'}
+  557 | bool  fdtbus_init(const void *);
+      |                   ^~~~~~~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:165:37: warning: passing argument 1 of 'fdt_next_node' makes pointer from integer without a cast [-Wint-conversion]
+  165 |         for (offset = fdt_next_node(fdt, startoffset, NULL);
+      |                                     ^~~
+      |                                     |
+      |                                     uintptr_t {aka long unsigned int}
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:165:37: warning: passing argument 1 of 'fdt_next_node' makes pointer from integer without a cast [-Wint-conversion]
+  165 |         for (offset = fdt_next_node(fdt, startoffset, NULL);
+      |                                     ^~~
+      |                                     |
+      |                                     uintptr_t {aka long unsigned int}
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:33:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/libfdt.h:181:31: note: expected 'const void *' but argument is of type 'uintptr_t' {aka 'long unsigned int'}
+  181 | int fdt_next_node(const void *fdt, int offset, int *depth);
+      |                   ~~~~~~~~~~~~^~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:33:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/libfdt.h:181:31: note: expected 'const void *' but argument is of type 'uintptr_t' {aka 'long unsigned int'}
+  181 | int fdt_next_node(const void *fdt, int offset, int *depth);
+      |                   ~~~~~~~~~~~~^~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:167:36: warning: passing argument 1 of 'fdt_next_node' makes pointer from integer without a cast [-Wint-conversion]
+  167 |             offset = fdt_next_node(fdt, offset, NULL)) {
+      |                                    ^~~
+      |                                    |
+      |                                    uintptr_t {aka long unsigned int}
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:167:36: warning: passing argument 1 of 'fdt_next_node' makes pointer from integer without a cast [-Wint-conversion]
+  167 |             offset = fdt_next_node(fdt, offset, NULL)) {
+      |                                    ^~~
+      |                                    |
+      |                                    uintptr_t {aka long unsigned int}
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:33:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/libfdt.h:181:31: note: expected 'const void *' but argument is of type 'uintptr_t' {aka 'long unsigned int'}
+  181 | int fdt_next_node(const void *fdt, int offset, int *depth);
+      |                   ~~~~~~~~~~~~^~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:33:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/libfdt.h:181:31: note: expected 'const void *' but argument is of type 'uintptr_t' {aka 'long unsigned int'}
+  181 | int fdt_next_node(const void *fdt, int offset, int *depth);
+      |                   ~~~~~~~~~~~~^~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c: In function 'handle_umass_xfer':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c: In function 'handle_umass_xfer':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:253:58: warning: passing argument 2 of 'driver_dequeue' from incompatible pointer type [-Wincompatible-pointer-types]
+  253 |     while (!driver_dequeue(umass_buffer_ring->used_ring, (uintptr_t**)&buffer, &len, &cookie)) {
+      |                                                          ^~~~~~~~~~~~~~~~~~~~
+      |                                                          |
+      |                                                          uintptr_t ** {aka long unsigned int **}
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:253:58: warning: passing argument 2 of 'driver_dequeue' from incompatible pointer type [-Wincompatible-pointer-types]
+  253 |     while (!driver_dequeue(umass_buffer_ring->used_ring, (uintptr_t**)&buffer, &len, &cookie)) {
+      |                                                          ^~~~~~~~~~~~~~~~~~~~
+      |                                                          |
+      |                                                          uintptr_t ** {aka long unsigned int **}
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:21:
+api/include/shared_ringbuffer/shared_ringbuffer.h:221:59: note: expected 'uintptr_t *' {aka 'long unsigned int *'} but argument is of type 'uintptr_t **' {aka 'long unsigned int **'}
+  221 | static int driver_dequeue(ring_buffer_t *ring, uintptr_t *addr, unsigned int *len, void **cookie)
+      |                                                ~~~~~~~~~~~^~~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:21:
+api/include/shared_ringbuffer/shared_ringbuffer.h:221:59: note: expected 'uintptr_t *' {aka 'long unsigned int *'} but argument is of type 'uintptr_t **' {aka 'long unsigned int **'}
+  221 | static int driver_dequeue(ring_buffer_t *ring, uintptr_t *addr, unsigned int *len, void **cookie)
+      |                                                ~~~~~~~~~~~^~~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/mount.h:49,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:103:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/statvfs.h:61:1: warning: useless type name in empty declaration
+   61 | typedef _BSD_SIZE_T_  size_t;
+      | ^~~~~~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/mount.h:49,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:103:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/statvfs.h:61:1: warning: useless type name in empty declaration
+   61 | typedef _BSD_SIZE_T_  size_t;
+      | ^~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c: In function 'frob_cfdrivervec':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c: In function 'frob_cfdrivervec':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:295:6: warning: initialization of 'void (*)(const char *, ...)' from incompatible pointer type 'int (*)(const char *, ...)' [-Wincompatible-pointer-types]
+  295 |      dopanic ? printf : printf;
+      |      ^~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:295:6: warning: initialization of 'void (*)(const char *, ...)' from incompatible pointer type 'int (*)(const char *, ...)' [-Wincompatible-pointer-types]
+  295 |      dopanic ? printf : printf;
+      |      ^~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c: In function 'frob_cfattachvec':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:327:6: warning: initialization of 'void (*)(const char *, ...)' from incompatible pointer type 'int (*)(const char *, ...)' [-Wincompatible-pointer-types]
+  327 |      dopanic ? printf : printf;
+      |      ^~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c: In function 'frob_cfattachvec':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:327:6: warning: initialization of 'void (*)(const char *, ...)' from incompatible pointer type 'int (*)(const char *, ...)' [-Wincompatible-pointer-types]
+  327 |      dopanic ? printf : printf;
+      |      ^~~~~~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from api/include/wrapper/wrapper.h:5,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:11:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:42: warning: "WCHAR_MIN" redefined
+   42 | #define WCHAR_MIN __WCHAR_MIN__   /* wchar_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from api/include/wrapper/wrapper.h:5,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:11:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:42: warning: "WCHAR_MIN" redefined
+   42 | #define WCHAR_MIN __WCHAR_MIN__   /* wchar_t   */
+      | 
+In file included from api/include/dma/io.h:3,
+                 from api/include/dma/dma.h:4,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:9:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:363: note: this is the location of the previous definition
+  363 | #define WCHAR_MIN (__WCHAR_MIN__)
+      | 
+In file included from api/include/dma/io.h:3,
+                 from api/include/dma/dma.h:4,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:9:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:363: note: this is the location of the previous definition
+  363 | #define WCHAR_MIN (__WCHAR_MIN__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from api/include/wrapper/wrapper.h:5,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:11:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:50: warning: "WCHAR_MAX" redefined
+   50 | #define WCHAR_MAX __WCHAR_MAX__   /* wchar_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from api/include/wrapper/wrapper.h:5,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:11:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:50: warning: "WCHAR_MAX" redefined
+   50 | #define WCHAR_MAX __WCHAR_MAX__   /* wchar_t   */
+      | 
+In file included from api/include/dma/io.h:3,
+                 from api/include/dma/dma.h:4,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:9:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:374: note: this is the location of the previous definition
+  374 | #define WCHAR_MAX (__WCHAR_MAX__)
+      | 
+In file included from api/include/dma/io.h:3,
+                 from api/include/dma/dma.h:4,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:9:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:374: note: this is the location of the previous definition
+  374 | #define WCHAR_MAX (__WCHAR_MAX__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from api/include/wrapper/wrapper.h:5,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:11:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:60: warning: "WINT_MIN" redefined
+   60 | #define WINT_MIN __WINT_MIN__   /* wint_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from api/include/wrapper/wrapper.h:5,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:11:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:60: warning: "WINT_MIN" redefined
+   60 | #define WINT_MIN __WINT_MIN__   /* wint_t   */
+      | 
+In file included from api/include/dma/io.h:3,
+                 from api/include/dma/dma.h:4,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:9:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:389: note: this is the location of the previous definition
+  389 | #define WINT_MIN (__WINT_MIN__)
+      | 
+In file included from api/include/dma/io.h:3,
+                 from api/include/dma/dma.h:4,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:9:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:389: note: this is the location of the previous definition
+  389 | #define WINT_MIN (__WINT_MIN__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from api/include/wrapper/wrapper.h:5,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:11:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:68: warning: "WINT_MAX" redefined
+   68 | #define WINT_MAX __WINT_MAX__   /* wint_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from api/include/wrapper/wrapper.h:5,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:11:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:68: warning: "WINT_MAX" redefined
+   68 | #define WINT_MAX __WINT_MAX__   /* wint_t   */
+      | 
+In file included from api/include/dma/io.h:3,
+                 from api/include/dma/dma.h:4,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:9:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:384: note: this is the location of the previous definition
+  384 | #define WINT_MAX (__WINT_MAX__)
+      | 
+In file included from api/include/dma/io.h:3,
+                 from api/include/dma/dma.h:4,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/dma.c:9:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:384: note: this is the location of the previous definition
+  384 | #define WINT_MAX (__WINT_MAX__)
+      | 
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb.c: In function 'usb_task_thread':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb.c: In function 'usb_task_thread':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb.c:819:13: warning: implicit declaration of function 'ISSET' [-Wimplicit-function-declaration]
+  819 |    mpsafe = ISSET(task->flags, USB_TASKQ_MPSAFE);
+      |             ^~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb.c:819:13: warning: implicit declaration of function 'ISSET' [-Wimplicit-function-declaration]
+  819 |    mpsafe = ISSET(task->flags, USB_TASKQ_MPSAFE);
+      |             ^~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ukbd.c: In function 'ukbd_intr':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ukbd.c: In function 'ukbd_intr':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ukbd.c:716:26: warning: passing argument 1 of 'ring_empty' from incompatible pointer type [-Wincompatible-pointer-types]
+  716 |  bool empty = ring_empty(kbd_buffer_ring);
+      |                          ^~~~~~~~~~~~~~~
+      |                          |
+      |                          ring_handle_t * {aka struct ring_handle *}
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ukbd.c:716:26: warning: passing argument 1 of 'ring_empty' from incompatible pointer type [-Wincompatible-pointer-types]
+  716 |  bool empty = ring_empty(kbd_buffer_ring);
+      |                          ^~~~~~~~~~~~~~~
+      |                          |
+      |                          ring_handle_t * {aka struct ring_handle *}
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ukbd.c:84:
+api/include/shared_ringbuffer/shared_ringbuffer.h:60:45: note: expected 'ring_buffer_t *' {aka 'struct ring_buffer *'} but argument is of type 'ring_handle_t *' {aka 'struct ring_handle *'}
+   60 | static inline int ring_empty(ring_buffer_t *ring)
+      |                              ~~~~~~~~~~~~~~~^~~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ukbd.c:84:
+api/include/shared_ringbuffer/shared_ringbuffer.h:60:45: note: expected 'ring_buffer_t *' {aka 'struct ring_buffer *'} but argument is of type 'ring_handle_t *' {aka 'struct ring_handle *'}
+   60 | static inline int ring_empty(ring_buffer_t *ring)
+      |                              ~~~~~~~~~~~~~~~^~~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:61:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/wscons/wsmousevar.h:45:51: warning: 'struct lwp' declared inside parameter list will not be visible outside of this definition or declaration
+   45 |  int (*ioctl)(void *, u_long, void *, int, struct lwp *);
+      |                                                   ^~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:61:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/wscons/wsmousevar.h:45:51: warning: 'struct lwp' declared inside parameter list will not be visible outside of this definition or declaration
+   45 |  int (*ioctl)(void *, u_long, void *, int, struct lwp *);
+      |                                                   ^~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:62:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/wscons/tpcalibvar.h:45:13: warning: 'struct lwp' declared inside parameter list will not be visible outside of this definition or declaration
+   45 |      struct lwp *);
+      |             ^~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:62:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/wscons/tpcalibvar.h:45:13: warning: 'struct lwp' declared inside parameter list will not be visible outside of this definition or declaration
+   45 |      struct lwp *);
+      |             ^~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:376:61: warning: 'struct lwp' declared inside parameter list will not be visible outside of this definition or declaration
+  376 | uts_ioctl(void *v, u_long cmd, void *data, int flag, struct lwp *l)
+      |                                                             ^~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:376:61: warning: 'struct lwp' declared inside parameter list will not be visible outside of this definition or declaration
+  376 | uts_ioctl(void *v, u_long cmd, void *data, int flag, struct lwp *l)
+      |                                                             ^~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c: In function 'uts_intr':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c: In function 'uts_intr':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:429:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  429 |   processed_buf[0] = (uintptr_t*) dx;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:429:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  429 |   processed_buf[0] = (uintptr_t*) dx;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:430:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  430 |   processed_buf[1] = (uintptr_t*) dy;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:430:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  430 |   processed_buf[1] = (uintptr_t*) dy;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:431:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  431 |   processed_buf[2] = (uintptr_t*) dz;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:431:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  431 |   processed_buf[2] = (uintptr_t*) dz;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:432:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  432 |   processed_buf[3] = (uintptr_t*) buttons;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:432:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  432 |   processed_buf[3] = (uintptr_t*) buttons;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:434:27: warning: passing argument 1 of 'ring_empty' from incompatible pointer type [-Wincompatible-pointer-types]
+  434 |   bool empty = ring_empty(uts_buffer_ring);
+      |                           ^~~~~~~~~~~~~~~
+      |                           |
+      |                           ring_handle_t * {aka struct ring_handle *}
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:434:27: warning: passing argument 1 of 'ring_empty' from incompatible pointer type [-Wincompatible-pointer-types]
+  434 |   bool empty = ring_empty(uts_buffer_ring);
+      |                           ^~~~~~~~~~~~~~~
+      |                           |
+      |                           ring_handle_t * {aka struct ring_handle *}
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:68:
+api/include/shared_ringbuffer/shared_ringbuffer.h:60:45: note: expected 'ring_buffer_t *' {aka 'struct ring_buffer *'} but argument is of type 'ring_handle_t *' {aka 'struct ring_handle *'}
+   60 | static inline int ring_empty(ring_buffer_t *ring)
+      |                              ~~~~~~~~~~~~~~~^~~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:68:
+api/include/shared_ringbuffer/shared_ringbuffer.h:60:45: note: expected 'ring_buffer_t *' {aka 'struct ring_buffer *'} but argument is of type 'ring_handle_t *' {aka 'struct ring_handle *'}
+   60 | static inline int ring_empty(ring_buffer_t *ring)
+      |                              ~~~~~~~~~~~~~~~^~~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.h:34,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:46:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/wscons/wsmousevar.h:45:51: warning: 'struct lwp' declared inside parameter list will not be visible outside of this definition or declaration
+   45 |  int (*ioctl)(void *, u_long, void *, int, struct lwp *);
+      |                                                   ^~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.h:34,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:46:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/wscons/wsmousevar.h:45:51: warning: 'struct lwp' declared inside parameter list will not be visible outside of this definition or declaration
+   45 |  int (*ioctl)(void *, u_long, void *, int, struct lwp *);
+      |                                                   ^~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.h:35,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:46:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/wscons/tpcalibvar.h:45:13: warning: 'struct lwp' declared inside parameter list will not be visible outside of this definition or declaration
+   45 |      struct lwp *);
+      |             ^~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.h:35,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:46:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/wscons/tpcalibvar.h:45:13: warning: 'struct lwp' declared inside parameter list will not be visible outside of this definition or declaration
+   45 |      struct lwp *);
+      |             ^~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c: In function 'hidms_intr':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c: In function 'hidms_intr':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:305:31: warning: implicit declaration of function 'ta_calloc' [-Wimplicit-function-declaration]
+  305 |   uintptr_t **processed_buf = ta_calloc(sizeof(ibuf), 1);
+      |                               ^~~~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:305:31: warning: implicit declaration of function 'ta_calloc' [-Wimplicit-function-declaration]
+  305 |   uintptr_t **processed_buf = ta_calloc(sizeof(ibuf), 1);
+      |                               ^~~~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:305:31: warning: initialization of 'uintptr_t **' {aka 'long unsigned int **'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:305:31: warning: initialization of 'uintptr_t **' {aka 'long unsigned int **'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:307:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  307 |   processed_buf[0] = (uintptr_t*) dx;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:307:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  307 |   processed_buf[0] = (uintptr_t*) dx;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:308:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  308 |   processed_buf[1] = (uintptr_t*) dy;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:308:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  308 |   processed_buf[1] = (uintptr_t*) dy;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:309:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  309 |   processed_buf[2] = (uintptr_t*) dz;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:309:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  309 |   processed_buf[2] = (uintptr_t*) dz;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:310:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  310 |   processed_buf[3] = (uintptr_t*) dw;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:310:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  310 |   processed_buf[3] = (uintptr_t*) dw;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:311:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  311 |   processed_buf[4] = (uintptr_t*) buttons;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:311:22: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  311 |   processed_buf[4] = (uintptr_t*) buttons;
+      |                      ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:313:27: warning: passing argument 1 of 'ring_empty' from incompatible pointer type [-Wincompatible-pointer-types]
+  313 |   bool empty = ring_empty(mse_buffer_ring);
+      |                           ^~~~~~~~~~~~~~~
+      |                           |
+      |                           ring_handle_t * {aka struct ring_handle *}
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:313:27: warning: passing argument 1 of 'ring_empty' from incompatible pointer type [-Wincompatible-pointer-types]
+  313 |   bool empty = ring_empty(mse_buffer_ring);
+      |                           ^~~~~~~~~~~~~~~
+      |                           |
+      |                           ring_handle_t * {aka struct ring_handle *}
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:49:
+api/include/shared_ringbuffer/shared_ringbuffer.h:60:45: note: expected 'ring_buffer_t *' {aka 'struct ring_buffer *'} but argument is of type 'ring_handle_t *' {aka 'struct ring_handle *'}
+   60 | static inline int ring_empty(ring_buffer_t *ring)
+      |                              ~~~~~~~~~~~~~~~^~~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hidms.c:49:
+api/include/shared_ringbuffer/shared_ringbuffer.h:60:45: note: expected 'ring_buffer_t *' {aka 'struct ring_buffer *'} but argument is of type 'ring_handle_t *' {aka 'struct ring_handle *'}
+   60 | static inline int ring_empty(ring_buffer_t *ring)
+      |                              ~~~~~~~~~~~~~~~^~~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/wscons/tpcalib.c:42:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/wscons/tpcalibvar.h:45:13: warning: 'struct lwp' declared inside parameter list will not be visible outside of this definition or declaration
+   45 |      struct lwp *);
+      |             ^~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/wscons/tpcalib.c:42:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/wscons/tpcalibvar.h:45:13: warning: 'struct lwp' declared inside parameter list will not be visible outside of this definition or declaration
+   45 |      struct lwp *);
+      |             ^~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c: In function 'get_umass_scsipi_cb':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c: In function 'get_umass_scsipi_cb':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:125:9: warning: returning 'void (*)(struct umass_softc *, void *, int,  int)' from a function with incompatible return type 'uintptr_t *' {aka 'long unsigned int *'} [-Wincompatible-pointer-types]
+  125 |  return &umass_scsipi_cb;
+      |         ^~~~~~~~~~~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:125:9: warning: returning 'void (*)(struct umass_softc *, void *, int,  int)' from a function with incompatible return type 'uintptr_t *' {aka 'long unsigned int *'} [-Wincompatible-pointer-types]
+  125 |  return &umass_scsipi_cb;
+      |         ^~~~~~~~~~~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c: In function 'get_umass_null_cb':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c: In function 'get_umass_null_cb':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:129:9: warning: returning 'void (*)(struct umass_softc *, void *, int,  int)' from a function with incompatible return type 'uintptr_t *' {aka 'long unsigned int *'} [-Wincompatible-pointer-types]
+  129 |  return &umass_null_cb;
+      |         ^~~~~~~~~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:129:9: warning: returning 'void (*)(struct umass_softc *, void *, int,  int)' from a function with incompatible return type 'uintptr_t *' {aka 'long unsigned int *'} [-Wincompatible-pointer-types]
+  129 |  return &umass_null_cb;
+      |         ^~~~~~~~~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c: In function 'umass_scsipi_minphys':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c: In function 'umass_scsipi_minphys':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:388:2: warning: implicit declaration of function 'minphys' [-Wimplicit-function-declaration]
+  388 |  minphys(bp);
+      |  ^~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:388:2: warning: implicit declaration of function 'minphys' [-Wimplicit-function-declaration]
+  388 |  minphys(bp);
+      |  ^~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c: In function 'umass_null_cb':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c: In function 'umass_null_cb':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:449:34: warning: passing argument 2 of 'enqueue_free' makes integer from pointer without a cast [-Wint-conversion]
+  449 |  enqueue_free(umass_buffer_ring, buf, sizeof(buf), (void*)0);
+      |                                  ^~~
+      |                                  |
+      |                                  int *
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:449:34: warning: passing argument 2 of 'enqueue_free' makes integer from pointer without a cast [-Wint-conversion]
+  449 |  enqueue_free(umass_buffer_ring, buf, sizeof(buf), (void*)0);
+      |                                  ^~~
+      |                                  |
+      |                                  int *
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:82:
+api/include/shared_ringbuffer/shared_ringbuffer.h:158:63: note: expected 'uintptr_t' {aka 'long unsigned int'} but argument is of type 'int *'
+  158 | static inline int enqueue_free(ring_handle_t *ring, uintptr_t addr, unsigned int len, void *cookie)
+      |                                                     ~~~~~~~~~~^~~~
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:82:
+api/include/shared_ringbuffer/shared_ringbuffer.h:158:63: note: expected 'uintptr_t' {aka 'long unsigned int'} but argument is of type 'int *'
+  158 | static inline int enqueue_free(ring_handle_t *ring, uintptr_t addr, unsigned int len, void *cookie)
+      |                                                     ~~~~~~~~~~^~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c: In function 'scsistrategy':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c: In function 'scsistrategy':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c:308:2: warning: implicit declaration of function 'biodone' [-Wimplicit-function-declaration]
+  308 |  biodone(bp);
+      |  ^~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c:308:2: warning: implicit declaration of function 'biodone' [-Wimplicit-function-declaration]
+  308 |  biodone(bp);
+      |  ^~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c: In function 'scsipi_do_ioctl':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c: In function 'scsipi_do_ioctl':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c:394:10: warning: 'error' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  394 |   return (error);
+      |          ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c:394:10: warning: 'error' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  394 |   return (error);
+      |          ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c: In function 'sd_lastclose':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c: In function 'sd_lastclose':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:667:7: warning: implicit declaration of function 'sd_flush' [-Wimplicit-function-declaration]
+  667 |   if (sd_flush(sd, 0)) {
+      |       ^~~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:667:7: warning: implicit declaration of function 'sd_flush' [-Wimplicit-function-declaration]
+  667 |   if (sd_flush(sd, 0)) {
+      |       ^~~~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c: In function 'sdread':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c: In function 'sdread':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:1024:10: warning: implicit declaration of function 'physio' [-Wimplicit-function-declaration]
+ 1024 |  return (physio(sdstrategy, NULL, dev, B_READ, sdminphys, uio));
+      |          ^~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:1024:10: warning: implicit declaration of function 'physio' [-Wimplicit-function-declaration]
+ 1024 |  return (physio(sdstrategy, NULL, dev, B_READ, sdminphys, uio));
+      |          ^~~~~~
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c: In function 'dk_strategy_pending':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c: In function 'dk_strategy_pending':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:389:12: warning: 'bp' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  389 |  return bp != NULL;
+      |            ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:389:12: warning: 'bp' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  389 |  return bp != NULL;
+      |            ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c: In function 'dk_getdisklabel':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c: In function 'dk_getdisklabel':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:973:5: warning: 'errstring' is used uninitialized in this function [-Wuninitialized]
+  973 |  if (errstring) {
+      |     ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:973:5: warning: 'errstring' is used uninitialized in this function [-Wuninitialized]
+  973 |  if (errstring) {
+      |     ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_disk.c: In function 'disk_find':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_disk.c:159:5: warning: 'stat' is used uninitialized in this function [-Wuninitialized]
+  159 |  if ((stat != NULL) && (stat->io_type == IOSTAT_DISK))
+      |     ^
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_disk.c: In function 'disk_find':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_disk.c:159:5: warning: 'stat' is used uninitialized in this function [-Wuninitialized]
+  159 |  if ((stat != NULL) && (stat->io_type == IOSTAT_DISK))
+      |     ^
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:18:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:42: warning: "WCHAR_MIN" redefined
+   42 | #define WCHAR_MIN __WCHAR_MIN__   /* wchar_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:18:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:42: warning: "WCHAR_MIN" redefined
+   42 | #define WCHAR_MIN __WCHAR_MIN__   /* wchar_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:14:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:363: note: this is the location of the previous definition
+  363 | #define WCHAR_MIN (__WCHAR_MIN__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:18:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:50: warning: "WCHAR_MAX" redefined
+   50 | #define WCHAR_MAX __WCHAR_MAX__   /* wchar_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:14:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:363: note: this is the location of the previous definition
+  363 | #define WCHAR_MIN (__WCHAR_MIN__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:18:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:50: warning: "WCHAR_MAX" redefined
+   50 | #define WCHAR_MAX __WCHAR_MAX__   /* wchar_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:14:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:374: note: this is the location of the previous definition
+  374 | #define WCHAR_MAX (__WCHAR_MAX__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:14:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:374: note: this is the location of the previous definition
+  374 | #define WCHAR_MAX (__WCHAR_MAX__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:18:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:60: warning: "WINT_MIN" redefined
+   60 | #define WINT_MIN __WINT_MIN__   /* wint_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:18:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:60: warning: "WINT_MIN" redefined
+   60 | #define WINT_MIN __WINT_MIN__   /* wint_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:14:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:389: note: this is the location of the previous definition
+  389 | #define WINT_MIN (__WINT_MIN__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:14:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:389: note: this is the location of the previous definition
+  389 | #define WINT_MIN (__WINT_MIN__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:18:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:68: warning: "WINT_MAX" redefined
+   68 | #define WINT_MAX __WINT_MAX__   /* wint_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:14:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:384: note: this is the location of the previous definition
+  384 | #define WINT_MAX (__WINT_MAX__)
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/machine/wchar_limits.h:3,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/stdint.h:100,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device_if.h:6,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/device.h:106,
+                 from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:18:
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/mach_include/arm/wchar_limits.h:68: warning: "WINT_MAX" redefined
+   68 | #define WINT_MAX __WINT_MAX__   /* wint_t   */
+      | 
+In file included from /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/timer.c:14:
+/home/jfelmeden/picolibc_build/picolibc/aarch64-linux-gnu/include/stdint.h:384: note: this is the location of the previous definition
+  384 | #define WINT_MAX (__WINT_MAX__)
+      | 
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci_stub.o: in function `init/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci_stub.o: in function `init':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:228: undefined reference to `memcpy'
+':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/api/src/xhci_stub.c:228: undefined reference to `memcpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/dev_verbose.o: in function `dev_untokenstring':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/dev_verbose.o: in function `dev_untokenstring':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dev_verbose.c:51: undefined reference to `strlcat'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dev_verbose.c:51: undefined reference to `strlcat'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_device.o: in function `devhandle_impl_inherit':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_device.o: in function `devhandle_impl_inherit':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_device.c:155: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_device.o: in function `device_is_a/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_device.c:155: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_device.o: in function `device_is_a':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_device.c:315: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_device.o: in function `device_attached_to_iattr':
+':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_device.c:315: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_device.o: in function `device_attached_to_iattr':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_device.c:334: undefined reference to `strcmp'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_device.c:334: undefined reference to `strcmp'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `config_cfdriver_attach':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `config_cfdriver_attach':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:656: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:656: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `config_cfdriver_lookup':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:710: undefined reference to `strcmp: in function `config_cfdriver_lookup':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:710: undefined reference to `strcmp'
+aarch64-none-elf-ld: '
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `config_cfattach_attach':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:732: undefined reference to `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `config_cfattach_attach':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:732: undefined reference to `strcmp'
+aarch64-none-elf-ld: strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:787: more undefined references to `strcmp' follow
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:787: more undefined references to `strcmp' follow
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `cfargs_canonicalize':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:1129/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `cfargs_canonicalize':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:1129: undefined reference to `memset'
+aarch64-none-elf-ld: : undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `config_search_internal':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `config_search_internal':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:1232: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `config_devalloc1232: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `config_devalloc':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:1675: undefined reference to `strlen'
+aarch64-none-elf-ld':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:1675: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:1686: undefined reference to `: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:1686: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:1687: undefined reference to `memcpy'
+aarch64-none-elf-ld: 1687: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:1700: undefined reference to `memcpy'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:1700: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `config_attach_internal':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:1865: undefined reference to `strcmp'
+config_attach_internal':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:1865: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `match_strcmp':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:3050: undefined reference to `strcmp'
+match_strcmp':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:3050: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_autoconf.o: in function `deviter_init':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:3857: undefined reference to `memset'
+deviter_init':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_autoconf.c:3857: undefined reference to `memset'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usbdi_util.o: in function `usbd_get_initial_ddesc':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usbdi_util.o: in function `usbd_get_initial_ddesc':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbdi_util.c:175: undefined reference to `memcpy'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbdi_util.c:175: undefined reference to `memcpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usbdi.o: in function `usbd_transfer':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usbdi.o: in function `usbd_transfer':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbdi.c:430: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbdi.c:430: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usbdi.o: in function `usbd_setup_default_xfer':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbdi.c:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usbdi.o: in function `usbd_setup_default_xfer':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbdi.c:753: undefined reference to `memcpy'
+753: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usbdi.o: in function `aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usbdi.o: in function `usb_transfer_complete':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbdi.c:1234: undefined reference to `memcpy'
+usb_transfer_complete':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbdi.c:1234: undefined reference to `memcpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usbroothub.o: in function `usb_makestrdesc':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usbroothub.o: in function `usb_makestrdesc':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbroothub.c:97: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usbroothub.o: in function `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbroothub.c:97: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usbroothub.o: in function `roothub_ctrl_start':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbroothub.c:413: undefined reference to `memcpy'
+roothub_ctrl_start':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbroothub.c:413: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbroothub.c:416aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbroothub.c:416: undefined reference to `memcpy'
+aarch64-none-elf-ld: : undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbroothub.c:419: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbroothub.c:419: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbroothub.c:425: undefined reference to `memcpy'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbroothub.c:425: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbroothub.c:428: undefined reference to `aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbroothub.c:428: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usbroothub.o:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbroothub.c:431: more undefined references to `memcpy' follow
+memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usbroothub.o:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usbroothub.c:431: more undefined references to `memcpy' follow
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb.o: in function `usb_task_thread':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb.o: in function `usb_task_thread':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb.c:819: undefined reference to `ISSET'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb.o: in function `usb_get_next_event/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb.c:819: undefined reference to `ISSET'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb.o: in function `usb_get_next_event':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb.c:1280: undefined reference to `memcpy'
+':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb.c:1280: undefined reference to `memcpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb.o: in function `usbd_add_drv_event':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb.c:1302: undefined reference to `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb.o: in function `usbd_add_drv_event':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb.c:1302: undefined reference to `strncpy'
+aarch64-none-elf-ld: strncpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb.o: in function `usb_add_event':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb.c:1335: undefined reference to `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb.o: in function `usb_add_event':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb.c:1335: undefined reference to `memcpy'
+memcpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb_quirks.o: in function `usbd_get_desc_fake':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb_quirks.o: in function `usbd_get_desc_fake':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_quirks.c:154: undefined reference to `memcpy'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_quirks.c:154: undefined reference to `memcpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb_subr.o: in function `usbd_devinfo_vp':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb_subr.o: in function `usbd_devinfo_vp':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_subr.c:183: undefined reference to `strlcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_subr.c:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_subr.c:183: undefined reference to `strlcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_subr.c:186: undefined reference to `strlcpy'
+aarch64-none-elf-ld: 186: undefined reference to `strlcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb_subr.o: in function `usbd_iface_init':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_subr.c:425: undefined reference to `memset/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb_subr.o: in function `usbd_iface_init':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_subr.c:425: undefined reference to `memset'
+'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb_subr.o: in function `usbd_fill_deviceinfo':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_subr.c:1771: undefined reference to `strlcpy'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb_subr.o: in function `usbd_fill_deviceinfo':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_subr.c:1771: undefined reference to `strlcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_subr.c:aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_subr.c:1791: undefined reference to `strncpy'
+1791: undefined reference to `strncpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `le64dec':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `le64dec':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/endian.h:225: undefined reference to `memcpy'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/sys/endian.h:225: undefined reference to `memcpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `xhci_resume':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:1053: undefined reference to `memset'
+xhci_resume':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:1053: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `xhci_configure_endpoint':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:1966aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `xhci_configure_endpoint':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:1966: undefined reference to `memset'
+aarch64-none-elf-ld: : undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `xhci_host_dequeue':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `xhci_host_dequeue':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:2306: undefined reference to `memset'
+aarch64-none-elf-ld: 2306: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:2309: undefined reference to `memset'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:2309: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.oaarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `xhci_rhpsc':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:2463: undefined reference to `memset'
+aarch64-none-elf-ld: : in function `xhci_rhpsc':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:2463: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:2837: more undefined references to `memset' follow
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:2837: more undefined references to `memset' follow
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `xhci_new_device':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `xhci_new_device':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3114: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3114: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3115: undefined reference to `strlen/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3115: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3117: undefined reference to `strlen'
+aarch64-none-elf-ld: 3117: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3117: undefined reference to `strncpy'
+aarch64-none-elf-ld/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3117: undefined reference to `strncpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3118: undefined reference to `: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3118: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3118: undefined reference to `strncpy'
+aarch64-none-elf-ld3118: undefined reference to `strncpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3145: undefined reference to `: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3145: undefined reference to `strlen'
+aarch64-none-elf-ld: strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3146: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3146: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3151: undefined reference to `strncpy'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3151: undefined reference to `strncpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3153aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3153: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3153: undefined reference to `strncpy: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3153: undefined reference to `strncpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3155'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3155: undefined reference to `strncpy'
+aarch64-none-elf-ld: : undefined reference to `strncpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3157: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3157: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3157: undefined reference to `strncpy'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3157: undefined reference to `strncpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `xhci_disable_slot':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3535: undefined reference to `memset/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `xhci_disable_slot':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3535: undefined reference to `memset'
+aarch64-none-elf-ld: '
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `xhci_init_slot':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3657: undefined reference to `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `xhci_init_slot':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:3657: undefined reference to `memset'
+aarch64-none-elf-ld: memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `xhci_roothub_ctrl_locked':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci.o: in function `xhci_roothub_ctrl_locked':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:4307: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:4307: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:4317: undefined reference to `memcpy'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:4317: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:4323: undefined reference to `aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:4323: undefined reference to `memset'
+aarch64-none-elf-ld: memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:4375: undefined reference to `memcpy'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/xhci.c:4375: undefined reference to `memcpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb_mem.o: in function `usb_block_allocmem':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/usb_mem.o: in function `usb_block_allocmem':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_mem.c:145: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_mem.c:197: undefined reference to `memset'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_mem.c:145: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/usb_mem.c:197: undefined reference to `memset'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/uhub.o: in function `usbd_get_hub_desc':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/uhub.o: in function `usbd_get_hub_desc':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uhub.c:247: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uhub.c:247: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/uhub.o: in function `uhub_attach':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uhub.c:389: undefined reference to `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/uhub.o: in function `uhub_attach':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uhub.c:389: undefined reference to `memcpy'
+aarch64-none-elf-ld: memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uhub.c:432: undefined reference to `memset'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uhub.c:432: undefined reference to `memset'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/uhub.o: in function `uhub_explore':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uhub.c:902: undefined reference to `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/uhub.o: in function `uhub_explore':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uhub.c:902: undefined reference to `memcpy'
+aarch64-none-elf-ld: memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uhub.c:904: undefined reference to `memset'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uhub.c:904: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/uhub.o: in function `uhub_intraarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/uhub.o: in function `uhub_intr':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uhub.c:1079: undefined reference to `memcpy'
+aarch64-none-elf-ld':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uhub.c:1079: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uhub.c:1081: undefined reference to `memset: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uhub.c:1081: undefined reference to `memset'
+'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/hid.o: in function `hid_get_item':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/hid.o: in function `hid_get_item':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hid.c:138: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hid.c:243: undefined reference to `memcpy'
+aarch64-none-elf-ld/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hid.c:138: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hid.c:243: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hid.c:259: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hid.c:: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hid.c:259: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hid.c:269: undefined reference to `memcpy'
+aarch64-none-elf-ld: 269: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hid.c:312: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hid.c:312: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/hid.o:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hid.c:320: more undefined references to `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/hid.o:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/hid/hid.c:320: more undefined references to `memcpy' follow
+memcpy' follow
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ukbd.o: in function `ukbd_intr':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ukbd.c:721: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ukbd.c:766: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ukbd.o: in function `ukbd_decode':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ukbd.o: in function `ukbd_intr':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ukbd.c:721: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ukbd.c:766: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ukbd.o: in function `ukbd_decode':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ukbd.c:875: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ukbd.c:882: undefined reference to `memcpy'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ukbd.c:875: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ukbd.c:882: undefined reference to `memcpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ums.o: in function `ums_attach':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ums.c:224: undefined reference to `memset'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ums.o: in function `ums_attach':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/ums.c:224: undefined reference to `memset'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/uts.o: in function `uts_attach':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:262: undefined reference to `memset'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/uts.o: in function `uts_attach':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/uts.c:262: undefined reference to `memset'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/umass.o: in function `umass_bbb_transfer':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/umass.o: in function `umass_bbb_transfer':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass.c:1282: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/umass.o: in function `umass_bbb_state':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass.c:1378: undefined reference to `memcpy/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass.c:1282: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/umass.o: in function `umass_bbb_state':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass.c:1378: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass.c:'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass.c:1430: undefined reference to `memcpy'
+1430: undefined reference to `memcpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/umass.o: in function `umass_cbi_adsc':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass.c:1643: undefined reference to `memset/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/umass.o: in function `umass_cbi_adsc':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass.c:1643: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/umass.o: in function `umass_cbi_state':
+'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/umass.o: in function `umass_cbi_state':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass.c:1853: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass.c:1853: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass.c:1902: undefined reference to `memcpy'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass.c:1902: undefined reference to `memcpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/umass_scsipi.o: in function `umass_scsipi_setup':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/umass_scsipi.o: in function `umass_scsipi_setup':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:233: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:233: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:243: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/umass_scsipi.o: in function `umass_scsipi_minphys':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:388: undefined reference to `minphys'
+243: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/umass_scsipi.o: in function `umass_scsipi_minphys':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/usb/umass_scsipi.c:388: undefined reference to `minphys'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/scsipi_base.o: in function `scsipi_get_xs':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/scsipi_base.o: in function `scsipi_get_xs':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_base.c:563: undefined reference to `memset'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_base.c:563: undefined reference to `memset'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/scsipiconf.o: in function `scsipi_make_xs_internal':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/scsipiconf.o: in function `scsipi_make_xs_internal':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_base.h:72: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_base.h:72: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/scsipiconf.o: in function `scsipi_inqmatch':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipiconf.c:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/scsipiconf.o: in function `scsipi_inqmatch':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipiconf.c:206: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipiconf.c:212206: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipiconf.c:212: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipiconf.c:218: undefined reference to `: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipiconf.c:218: undefined reference to `strlen'
+strlen'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/scsipi_ioctl.o: in function `scsipi_user_done':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/scsipi_ioctl.o: in function `scsipi_user_done':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c:188: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c:188: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c:196: undefined reference to `memcpy'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c:196: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/scsipi_ioctl.o: in function `aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/scsipi_ioctl.o: in function `scsistrategy':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c:308: undefined reference to `biodone'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/scsipi_ioctl.o: in function `scsipi_do_ioctl':
+scsistrategy':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c:308: undefined reference to `biodone'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/scsipi_ioctl.o: in function `scsipi_do_ioctl':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c:360: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c:360: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c:392: undefined reference to `memcpy'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_ioctl.c:392: undefined reference to `memcpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `scsipi_make_xs_internal':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `scsipi_make_xs_internal':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_base.h:72: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sdattach':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/scsipi_base.h:72: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sdattach':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:340: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:340: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:341: undefined reference to `memcpy'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:341: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sd_lastclose':
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sd_lastclose':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:667: undefined reference to `sd_flush'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:667: undefined reference to `sd_flush'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sdread':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:1024: undefined reference to `physio/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sdread':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:1024: undefined reference to `physio'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sd_label':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:1136: undefined reference to `strncpy'
+aarch64-none-elf-ld: sd_label':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:1136: undefined reference to `strncpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sd_shutdown':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:1154: undefined reference to `sd_flush'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sd_dumpblocks':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sd_shutdown':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:1154: undefined reference to `sd_flush'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sd_dumpblocks':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:1356: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:1356: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sd_read_capacity':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:1514: undefined reference to `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sd_read_capacity':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:1514: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.omemset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sd_set_geometry':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:2066: undefined reference to `memset'
+aarch64-none-elf-ld: in function `sd_set_geometry':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:2066: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sd_readblocks':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:2111: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/sd.o: in function `sd_readblocks':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/scsipi/sd.c:2111: undefined reference to `memset'
+: undefined reference to `memset'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/dksubr.o: in function `dk_init':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/dksubr.o: in function `dk_init':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:88: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:92: undefined reference to `strlcpy/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:88: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:92: undefined reference to `strlcpy'
+aarch64-none-elf-ld: '
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/dksubr.o: in function `dk_getdefaultlabel':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/dksubr.o: in function `dk_getdefaultlabel':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:920: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:932: undefined reference to `strlcpy'
+aarch64-none-elf-ld920: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:932: undefined reference to `strlcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:934: undefined reference to `strlcpy: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:934: undefined reference to `strlcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/dksubr.o'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/dksubr.o: in function `dk_getdisklabel':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:967: undefined reference to `memset: in function `dk_getdisklabel':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:967: undefined reference to `memset'
+aarch64-none-elf-ld: '
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/dksubr.o: in function `dk_makedisklabel':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/dksubr.o: in function `dk_makedisklabel':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/dksubr.c:1032: undefined reference to `strlcpy'
+1032: undefined reference to `strlcpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_disk.o: in function `convertdisklabel':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/subr_disk.o: in function `convertdisklabel':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_disk.c:510: undefined reference to `memset'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/kern/subr_disk.c:510: undefined reference to `memset'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_openfirm.o: in function `OF_nextprop':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_openfirm.o: in function `OF_nextprop':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:142: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:153: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:163/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:142: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:153: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:163: undefined reference to `strlcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_openfirm.o: undefined reference to `strlcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_openfirm.o: in function `OF_getprop':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:185: undefined reference to `strcmp'
+aarch64-none-elf-ld: : in function `OF_getprop':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:185: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:188: undefined reference to `strchr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:199: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:188: undefined reference to `strchr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:199: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:211: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:222211: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:222: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_openfirm.o: in function `: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_openfirm.o: in function `OF_getproplen':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:245: undefined reference to `strcmp'
+OF_getproplen':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:245: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:248: undefined reference to `aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:248: undefined reference to `strchr'
+aarch64-none-elf-ld: strchr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:265: undefined reference to `strcmp'
+aarch64-none-elf-ld/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:265: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_openfirm.o: in function `OF_package_to_path: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_openfirm.o: in function `OF_package_to_path':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:323: undefined reference to `strlen'
+':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_openfirm.c:323: undefined reference to `strlen'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_subr.o: in function `fdtbus_status_okay':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_subr.o: in function `fdtbus_status_okay':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_subr.c:485: undefined reference to `strncmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_subr.o: in function `fdtbus_get_string/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_subr.c:485: undefined reference to `strncmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_subr.o: in function `fdtbus_get_string':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_subr.c:501: undefined reference to `strcmp'
+':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/fdt_subr.c:501: undefined reference to `strcmp'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/strlist.o: in function `strlist_next':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/strlist.o: in function `strlist_next':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:129: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/strlist.o: in function `strlist_count/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:129: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/strlist.o: in function `strlist_count':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:152: undefined reference to `strlen'
+aarch64-none-elf-ld: ':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:152: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/strlist.o: in function `strlist_string':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:175: undefined reference to `strlen'
+aarch64-none-elf-ld/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/strlist.o: in function `strlist_string':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:175: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/strlist.o: in function `match_strcmp':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:187: undefined reference to `strcmp: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/strlist.o: in function `match_strcmp':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:187: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/strlist.o: in function `strlist_match_internal':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:215'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/strlist.o: in function `strlist_match_internal':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:215: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/strlist.o: in function `strlist_append: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/strlist.o: in function `strlist_append':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:327: undefined reference to `strlen'
+aarch64-none-elf-ld: ':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:327: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:336: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:339/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:336: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/lib/libkern/strlist.c:339: undefined reference to `memcpy'
+: undefined reference to `memcpy'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ofw_subr.o: in function `of_packagename':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ofw_subr.o: in function `of_packagename':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:381: undefined reference to `strlcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:388: undefined reference to `strrchr'
+aarch64-none-elf-ld/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:381: undefined reference to `strlcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:388: undefined reference to `strrchr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:389: undefined reference to `strlcpy'
+: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:389: undefined reference to `strlcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ofw_subr.o: in function `of_find_firstchild_byname':
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ofw_subr.o: in function `of_find_firstchild_byname':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:411: undefined reference to `strcmp'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:411: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ofw_subr.o: in function `of_getnode_bynameaarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ofw_subr.o: in function `of_getnode_byname':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:453: undefined reference to `strcmp'
+':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:453: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ofw_subr.oaarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ofw_subr.o: in function `of_get_mode_string':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:530: undefined reference to `strstr: in function `of_get_mode_string':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:530: undefined reference to `strstr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:533: undefined reference to `strncpy'
+aarch64-none-elf-ld: 533: undefined reference to `strncpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ofw_subr.o: in function `of_getprop_uint64':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/ofw_subr.o: in function `of_getprop_uint64':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/ofw/ofw_subr.c:626: undefined reference to `bswap64'
+626: undefined reference to `bswap64'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt.o: in function `fdt_find_string_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt.o: in function `fdt_find_string_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt.c:274: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt.c:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt.c:274: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt.c:279: undefined reference to `memcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt.o: in function `fdt_move':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt.c:291: undefined reference to `memmove279: undefined reference to `memcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt.o: in function `fdt_move':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt.c:291: undefined reference to `memmove'
+'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_nodename_eq_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:25: undefined reference to `memcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:30: undefined reference to `memchr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_get_string':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:74: undefined reference to `memchr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_string_eq_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:102: undefined reference to `memcmp'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_nodename_eq_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:25: undefined reference to `memcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:30: undefined reference to `memchr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_get_string':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:74: undefined reference to `memchr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_string_eq_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:102: undefined reference to `memcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_subnode_offset':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:235: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_path_offset_namelen':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:248: undefined reference to `memchr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_subnode_offset':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:235: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_path_offset_namelen':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:248: undefined reference to `memchr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:269: undefined reference to `memchr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_path_offset':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:269: undefined reference to `memchr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_path_offset':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:285: undefined reference to `strlen'
+aarch64-none-elf-ld: 285: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_get_name':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:307: undefined reference to `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_get_name':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:307: undefined reference to `strrchr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:316strrchr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:316: undefined reference to `strlen'
+aarch64-none-elf-ld: : undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_get_property':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:434: undefined reference to `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_get_property':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:434: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_getprop':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:486: undefined reference to `strlen'
+fdt_getprop':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:486: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_get_alias':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:520: undefined reference to `strlen'
+fdt_get_alias':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:520: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_get_path':
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_get_path':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:549: undefined reference to `memcpy'
+aarch64-none-elf-ld/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:549: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_node_offset_by_prop_value':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:652: undefined reference to `memcmp'
+: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_node_offset_by_prop_value':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:652: undefined reference to `memcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_stringlist_contains':
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_stringlist_contains':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:686: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:686: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:690: undefined reference to `memcmp'
+aarch64-none-elf-ld/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:690: undefined reference to `memcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:692: undefined reference to `memchr'
+: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:692: undefined reference to `memchr'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_stringlist_count':
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_stringlist_count':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:713: undefined reference to `strnlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:713: undefined reference to `strnlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_stringlist_search':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:736: undefined reference to `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_stringlist_search':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:736: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:740strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:740: undefined reference to `strnlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:: undefined reference to `strnlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:746: undefined reference to `memcmp'
+aarch64-none-elf-ld: 746: undefined reference to `memcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_stringlist_get':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:774: undefined reference to `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_ro.o: in function `fdt_stringlist_get':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_ro.c:774: undefined reference to `strnlen'
+strnlen'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_splice_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:65: undefined reference to `memmove'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_del_last_string_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:99: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_find_add_string_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:122: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:139: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_set_name':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_splice_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:65: undefined reference to `memmove'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_del_last_string_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:99: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_find_add_string_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:122: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:139: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_set_name':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:234: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:241: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_setprop':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:274: undefined reference to `memcpy/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:234: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:241: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_setprop':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:274: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_appendprop'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_appendprop':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:295: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:300: undefined reference to `memcpy'
+':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:295: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:300: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_add_subnode_namelen':
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_add_subnode_namelen':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:353: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:353: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:354: undefined reference to `memcpy'
+aarch64-none-elf-ld/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:354: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_add_subnode':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_add_subnode':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:363: undefined reference to `strlen'
+aarch64-none-elf-ld: 363: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_packblocks_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:389: undefined reference to `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_packblocks_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:389: undefined reference to `memmove'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:392memmove'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:392: undefined reference to `memmove'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:: undefined reference to `memmove'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:396: undefined reference to `memmove'
+aarch64-none-elf-ld: 396: undefined reference to `memmove'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_open_into':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:455: undefined reference to `/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_rw.o: in function `fdt_open_into':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_rw.c:455: undefined reference to `memmove'
+memmove'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_sw.o: in function `fdt_create_with_flags':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:119: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_sw.o: in function `fdt_resize':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:168: undefined reference to `memmove'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:169: undefined reference to `memmove'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:171: undefined reference to `memmove'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_sw.o: in function `fdt_create_with_flags':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:119: undefined reference to `memset'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_sw.o: in function `fdt_resize':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:168: undefined reference to `memmove'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:169: undefined reference to `memmove'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:171: undefined reference to `memmove'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:172: undefined reference to `memmove'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_sw.o: in function `fdt_begin_node':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:220: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:226: undefined reference to `memcpy/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:172: undefined reference to `memmove'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_sw.o: in function `fdt_begin_node':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:220: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:226: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_sw.o: in function `fdt_add_string_':
+'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_sw.o: in function `fdt_add_string_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:248: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:248: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:256: undefined reference to `memcpy'
+aarch64-none-elf-ld/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:256: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_sw.o: in function `fdt_del_last_string_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:265: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_sw.o: in function `: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_sw.o: in function `fdt_del_last_string_':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:265: undefined reference to `strlen'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_sw.o: in function `fdt_property':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:327: undefined reference to `memcpy'
+fdt_property':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:327: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_sw.o: in function `fdt_finish':
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_sw.o: in function `fdt_finish':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:350: undefined reference to `memmove'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_sw.c:350: undefined reference to `memmove'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_wip.o: in function `fdt_setprop_inplace_namelen_partial':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_wip.c:31: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_wip.o: in function `fdt_setprop_inplace':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_wip.c:49: undefined reference to `strlen'
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_wip.o: in function `fdt_setprop_inplace_namelen_partial':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_wip.c:31: undefined reference to `memcpy'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/fdt_wip.o: in function `fdt_setprop_inplace':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/external/bsd/libfdt/dist/fdt_wip.c:49: undefined reference to `strlen'
+aarch64-none-elf-ld: aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/dwc3_fdt.o: in function `dwc3_fdt_enable_phy':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/dwc3_fdt.c:150: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/dwc3_fdt.c:152: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/dwc3_fdt.c:196: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/dwc3_fdt.o: in function `dwc3_fdt_enable_phy':
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/dwc3_fdt.c:150: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/dwc3_fdt.c:152: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/dwc3_fdt.c:196: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/dwc3_fdt.c:198: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/dwc3_fdt.c:200: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/dwc3_fdt.o:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/dwc3_fdt.c:202: more undefined references to `strcmp' follow
+/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/dwc3_fdt.c:198: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/dwc3_fdt.c:200: undefined reference to `strcmp'
+aarch64-none-elf-ld: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/dwc3_fdt.o:/home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/netbsd/src/sys/dev/fdt/dwc3_fdt.c:202: more undefined references to `strcmp' follow
+make: *** [api/Makefile:215: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci_stub.elf] Error 1
+make: *** [api/Makefile:215: /home/jfelmeden/mk-manifest/microkit/example/maaxboard/xhci_stub/xhci_build/xhci_stub.elf] Error 1

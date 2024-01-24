@@ -4,8 +4,11 @@
 
 #include <machine/bus_funcs.h>
 
+#include <dev/usb/xhcivar.h>
+#include <dev/usb/umassvar.h>
 
 #include <wrapper.h>
+#include <tinyalloc.h>
 #include <dma.h>
 #include <sys/bus.h>
 #include <sys/device.h>
@@ -24,37 +27,14 @@
 #include <dev/usb/usb_mem.h>
 #include <dev/usb/xhcireg.h>
 #include <dev/usb/xhcivar.h>
-#include <dev/usb/umassvar.h>
 #include <sys/device.h>
 #include <machine/types.h>
 #include <sel4_bus_funcs.h>
 #include <libfdt.h>
 #include <xhci_api.h>
 
+#include <lib/libkern/libkern.h>
 #include <dev/fdt/fdtvar.h>
-#include <stdio.h>
-
-// Setup for getting printf functionality working {{{
-static int
-libc_microkit_putc(char c, FILE *file)
-{
-    (void) file; /* Not used by us */
-    microkit_dbg_putc(c);
-    return c;
-}
-
-static int
-sample_getc(FILE *file)
-{
-	return -1; /* getc not implemented, return EOF */
-}
-static FILE __stdio = FDEV_SETUP_STREAM(libc_microkit_putc,
-                    sample_getc,
-                    NULL,
-                    _FDEV_SETUP_WRITE);
-FILE *const stdin = &__stdio; __strong_reference(stdin, stdout); __strong_reference(stdin, stderr);
-// END OF LIBC
-// }}}
 
 #define BUS_DEBUG 0
 #define __AARCH64__
@@ -130,7 +110,7 @@ init(void) {
     int ta_blocks = 2048;
     int ta_thresh = 16;
     int ta_align = 64;
-    // bool status = ta_init((void*)shared_heap, (void*)ta_limit, ta_blocks, ta_thresh, ta_align);
+    bool status = ta_init((void*)shared_heap, (void*)ta_limit, ta_blocks, ta_thresh, ta_align);
 
     // init
     xhci_bus_methods_ptr = (struct usbd_bus_methods *) get_bus_methods();
@@ -155,7 +135,7 @@ init(void) {
 
     mkaddr = microkit_ppcall(8, seL4_MessageInfo_new(0,0,0,0));
     intr_ptrs = (struct intr_ptrs_holder *) microkit_msginfo_get_label(mkaddr);
-    fdtbus_init((void*)fdt);
+    fdtbus_init(fdt);
 
     //initialise autoconf data structures
     config_init(); 
@@ -182,9 +162,9 @@ init(void) {
 
     if (offset < 0) {
         print_debug("Traversing FDT to find dwc3 node at 0x%x...\n", xhci_base);
-        for (offset = fdt_next_node((void*)fdt, startoffset, NULL);
+        for (offset = fdt_next_node(fdt, startoffset, NULL);
             offset >= 0;
-            offset = fdt_next_node((void*)fdt, offset, NULL)) {
+            offset = fdt_next_node(fdt, offset, NULL)) {
             fdtbus_get_reg(fdtbus_offset2phandle(offset), 0, &addr, &size);
             if (addr == xhci_base) {
                 dwc3_phandle = fdtbus_offset2phandle(offset);
@@ -192,7 +172,7 @@ init(void) {
                 break;
             } else if (offset < 0) {
                 if (offset == -FDT_ERR_NOTFOUND) {
-                    print_fatal("no dwc3 node at 0x%lx. Exiting.\n", xhci_base);
+                    print_fatal("no dwc3 node at 0x%x. Exiting.\n", xhci_base);
                     return;
                 }
             }
@@ -270,7 +250,7 @@ void handle_umass_xfer()
     void *cookie = NULL;
 
     int index;
-    while (!driver_dequeue(umass_buffer_ring->used_ring, (uintptr_t*)&buffer, &len, &cookie)) {
+    while (!driver_dequeue(umass_buffer_ring->used_ring, (uintptr_t**)&buffer, &len, &cookie)) {
         struct umass_request* xfer = (struct umass_request*)buffer; 
 
         if (xfer->read) {
