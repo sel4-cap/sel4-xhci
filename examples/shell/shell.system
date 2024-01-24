@@ -3,7 +3,6 @@
 <system>
     <!-- driver required functionality MODIFY WITH CAUTION -->
     <memory_region name="heap_mem" size="0x2000000"/>
-    <memory_region name="heap_mem_end" size="0x1000"/>
     <memory_region name="dma_pool" size="0x2000000"/>
 
     <!-- modify THESE physical addresses and sizes to match desired device.
@@ -13,10 +12,7 @@
     <memory_region name="xhci_phys_mem" size="0x1000" phys_addr="0x382f0000"/> <!--won't let me specify the correct size or base address, but this encompasses the phy-->
 
     <memory_region name="shared_heap" size="0x200_000"/>
-    <memory_region name="shared_heap_end" size="0x1000"/>
-
     <memory_region name="shared_soft_heap" size="0x200_000"/>
-    <memory_region name="shared_soft_heap_end" size="0x1000"/>
 
     <!-- !EXAMPLE API:
     These heap and heap ends are needed for the microkit LIBC.  They must
@@ -48,9 +44,7 @@
         <map mr="xhci_phys_mem" vaddr="0x382f0000" perms="rw" cached="false" setvar_vaddr="xhci_phy_base"/>
         <map mr="timer_mem" vaddr="0x306c0000" perms="rw" cached="false" setvar_vaddr="timer_base"/>
         <map mr="shell_heap" vaddr="0x20000000" perms="rw" cached="false" setvar_vaddr="shared_mem"/>
-        <map mr="shared_heap" vaddr="0x5_a00_000" perms="rw" cached="false" setvar_vaddr="__heap_start"/>
-        <map mr="shared_heap_end" vaddr="0x5_bf0_000" perms="rw" cached="false" setvar_vaddr="__heap_end"/>
-        <map mr="shared_soft_heap" vaddr="0x5_800_000" perms="rw" cached="false"/>
+        <map mr="shared_heap" vaddr="0x5_a00_000" perms="rw" cached="false" setvar_vaddr="shared_heap"/>
         
         <!-- shared memory for ring buffer mechanism -->
         <map mr="kbd_free" vaddr="0x4_000_000" perms="rw" cached="true" setvar_vaddr="kbd_free" />
@@ -69,11 +63,7 @@
     </protection_domain>
 
     <protection_domain name="mem_handler" pp="true" priority="252">
-        <map mr="heap_mem" vaddr="0x50000000" perms="rw" cached="false" setvar_vaddr="__heap_start"/>
-        <map mr="heap_mem_end" vaddr="0x52000000" perms="rw" cached="false" setvar_vaddr="__heap_end"/>
-        <map mr="shared_heap" vaddr="0x5_a00_000" perms="rw" cached="false"/>
-        <map mr="shared_soft_heap" vaddr="0x5_800_000" perms="rw" cached="false"/>
-        <map mr="shell_heap" vaddr="0x20000000" perms="rw" cached="false"/>
+        <map mr="heap_mem" vaddr="0x50000000" perms="rw" cached="false" setvar_vaddr="heap_base"/>
         <program_image path="mem_handler.elf" />
     </protection_domain>
 
@@ -94,8 +84,7 @@
         <map mr="timer_mem" vaddr="0x306c0000" perms="rw" cached="false" setvar_vaddr="timer_base"/>
         <map mr="shell_heap" vaddr="0x20000000" perms="rw" cached="false" setvar_vaddr="shared_mem"/>
         <map mr="shared_heap" vaddr="0x5_a00_000" perms="rw" cached="false" setvar_vaddr="shared_heap"/>
-        <map mr="shared_soft_heap" vaddr="0x5_800_000" perms="rw" cached="false" setvar_vaddr="__heap_start"/>
-        <map mr="shared_soft_heap_end" vaddr="0x5_9f0_000" perms="rw" cached="false" setvar_vaddr="__heap_end"/>
+        <map mr="shared_soft_heap" vaddr="0x5_800_000" perms="rw" cached="false" setvar_vaddr="shared_soft_heap"/>
         <program_image path="software.elf" />
 
         <!-- shared memory for ring buffer mechanism (mass storage not handled here) -->
@@ -110,6 +99,7 @@
 
         <setvar symbol="dma_cp_paddr" region_paddr="dma_pool" />
     </protection_domain>
+
 
     <!-- mem handler methods -->
     <channel>

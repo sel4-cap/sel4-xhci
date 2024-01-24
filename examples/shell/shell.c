@@ -5,7 +5,7 @@
 #include <shell.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <printf/pdprint.h>
+// #include <printf/pdprint.h>
 #include <string.h>
 
 // snake globals
@@ -419,7 +419,7 @@ handle_keypress()
                 printf("\x1b[u"); /* move cursor back to saved position */
                 break;
             default:
-                print_fatal("Unrecognised keyboard state\n");
+                printf("shell|FATAL: unrecognised keyboard state\n");
         }
     }
 }
@@ -427,7 +427,7 @@ handle_keypress()
 void
 init(void) {
     api_init(&kbd_buffer_ring, &mse_buffer_ring, &uts_buffer_ring, &umass_buffer_ring);
-    print_info("Initialised\n");
+    printf("SHELL: Initialised\n");
 }
 
 void
@@ -465,7 +465,7 @@ notified(microkit_channel ch) {
             clear_prompt();
             break;
         default:
-            print_warn("Unexpected channel %d\n", ch);
+            printf("shell|WARN: nexpected channel %d\n", ch);
     }
 }
 
