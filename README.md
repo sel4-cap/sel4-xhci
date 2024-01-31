@@ -1,13 +1,13 @@
 # seL4 USB 3.0 (xHCI) driver
 
-This repo contains the code for the xHCI driver developed by capgemini. This is not intended to be standalone and should be used by the [Microkit manifest](https://github.com/sel4-cap/microkit-manifest).
+This repo contains the code for the xHCI driver developed by Capgemini. This is not intended to be standalone and should be used by the [Microkit manifest](https://github.com/sel4-cap/microkit-manifest).
 
 Specifically, we have provided support for these USB devices:
 - Keyboard
-- Optical Mouse
+- Mouse
 - Resistive Touch Screen (Capacitative untested but believed to also be supported)
 - USB Hub
-- Mass Storage Flash Drives
+- Mass Storage Devices
 
 ## Directory structure
 - `api/`: Contains the bulk of the files required by the driver to function
@@ -31,10 +31,12 @@ Specifically, we have provided support for these USB devices:
 - This driver expects to have the accompanying NetBSD fork.
   - TEMP NOTE: use branch 'api' for netbsd
 - This driver assumes the existence of a built microkit sdk.
-- This driver assumes build microkit libc (found in this [repository](https://github.com/sel4-cap/picolibc/tree/linker_crt))
+- This driver assumes a pre-built microkit libc (found in this [repository](https://github.com/sel4-cap/picolibc/tree/linker_crt))
     - Use branch linker_crt
 ## Building
 To build this driver, use the `build.sh` bash script. The script assumes the driver has been pulled using the microkit manifest and therefore assumes the directory structure will mirror this.
+
+The `MICROKIT_DIR` environment variable will need to be changed to equal the location of the "microkit" directory. 
 
 Breakdown of variables set:
 - `MICROKIT_DIR`: Base directory of microkit repository
