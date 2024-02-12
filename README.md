@@ -34,6 +34,8 @@ Specifically, we have provided support for these USB devices:
 ## Building
 To build this driver, use the `build.sh` bash script. The script assumes the driver has been pulled using the microkit manifest and therefore assumes the directory structure will mirror this.
 
+The `MICROKIT_DIR` environment variable will need to be changed to equal the location of the "microkit" directory.
+
 Breakdown of variables set:
 - `MICROKIT_DIR`: Base directory of microkit repository
 - `MICROKIT_SDK`: Repository of microkit SDK
