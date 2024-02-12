@@ -1,13 +1,13 @@
 # seL4 USB 3.0 (xHCI) driver
 
-This repo contains the code for the xHCI driver developed by capgemini. This is not intended to be standalone and should be used by the [Microkit manifest](https://github.com/sel4-cap/microkit-manifest).
+This repo contains the code for the xHCI driver developed by Capgemini. This is not intended to be standalone and should be used by the [Microkit manifest](https://github.com/sel4-cap/microkit-manifest).
 
 Specifically, we have provided support for these USB devices:
 - Keyboard
-- Optical Mouse
+- Mouse
 - Resistive Touch Screen (Capacitative untested but believed to also be supported)
 - USB Hub
-- Mass Storage Flash Drives
+- Mass Storage Devices
 
 ## Directory structure
 - `api/`: Contains the bulk of the files required by the driver to function
@@ -19,20 +19,24 @@ Specifically, we have provided support for these USB devices:
 - `libc`: Libc files (to be replaced by build from [microkit picolibc](https://github.com/sel4-cap/picolibc/tree/linker_crt))
 - `netbsd/`: Capgemini fork of NetBSD customised to function in the context of microkit. Note that the files are included in [this repository](https://github.com/sel4-cap/netbsd) and will be pulled in by the repo file in the manifest.
 - `build.sh`: shell file to set up required environment variables and call makefile. Can be used with the following options:
-    - `clean`: remove all object files
-    - `rebuild`: remove all object files and build from scratch
+    - Specify example with `-e`. Examples:
+        - empty-client: Simple client that prints out list of connected (and supported) devices.
+        - shell: More advanced example shell, demonstrates exensive use of driver and API.
+    - Build options:
+        - `clean`: remove all object files
+        - `rebuild`: remove all object files and build from scratch
 - `Makefile`: to be used via `build.sh`. Builds system.
-- `xhci_stub.system`: microkit system description file.
 
 ## Requirements
 - This driver expects to have the accompanying NetBSD fork.
   - TEMP NOTE: use branch 'api' for netbsd
-  - TEMP NOTE: use branch 'api-empty for xhci_stub
 - This driver assumes the existence of a built microkit sdk.
-- This driver assumes build microkit libc (found in this [repository](https://github.com/sel4-cap/picolibc/tree/linker_crt))
+- This driver assumes a pre-built microkit libc (found in this [repository](https://github.com/sel4-cap/picolibc/tree/linker_crt))
     - Use branch linker_crt
 ## Building
 To build this driver, use the `build.sh` bash script. The script assumes the driver has been pulled using the microkit manifest and therefore assumes the directory structure will mirror this.
+
+The `MICROKIT_DIR` environment variable will need to be changed to equal the location of the "microkit" directory. 
 
 Breakdown of variables set:
 - `MICROKIT_DIR`: Base directory of microkit repository
