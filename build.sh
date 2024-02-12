@@ -3,7 +3,7 @@ export MICROKIT_BOARD="maaxboard"
 export MICROKIT_CONFIG="debug"
 export MICROKIT_TOOL="python -m microkit"
 
-export MICROKIT_DIR="$HOME/mk-manifest/microkit" #! change this to microkit directory
+export MICROKIT_DIR="$HOME/xhci/microkit" #! change this to microkit directory
 export MICROKIT_SDK="$MICROKIT_DIR/release/microkit-sdk-1.2.6"
 export BOARD_DIR="$MICROKIT_SDK/board/$MICROKIT_BOARD/$MICROKIT_CONFIG"
 
@@ -13,6 +13,9 @@ export PATH="$MICROKIT_DIR/../compiler/bin:$PATH"
 export SEL4_XHCI_PATH=$MICROKIT_DIR/example/maaxboard/xhci_stub
 export BUILD_DIR=$SEL4_XHCI_PATH/xhci_build
 export NETBSD_DIR="$SEL4_XHCI_PATH/netbsd/src"
+
+# copy specs file 
+cp $MICROKIT_DIR/../picolibc/picolib-microkit/picolibc.specs $SEL4_XHCI_PATH/libc/picolibc.specs
 
 # make clean
 mkdir -p $BUILD_DIR
