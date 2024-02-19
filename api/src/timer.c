@@ -14,24 +14,7 @@
 #include <stdint.h>
 #include <printf.h>
 #include <timer.h>
-#include <sys/bus.h>
-#include <sys/device.h>
-#include <sys/device_impl.h>
-#include <sys/intr.h>
-#include <sys/kernel.h>
-#include <sys/kmem.h>
-#include <timer.h>
 
-#include <dev/usb/usb.h>
-#include <dev/usb/usbdi.h>
-#include <dev/usb/usbdivar.h>
-#include <dev/usb/usbhist.h>
-#include <dev/usb/usb_mem.h>
-#include <dev/usb/xhcireg.h>
-#include <dev/usb/xhcivar.h>
-#include <sys/device.h>
-#include <machine/types.h>
-#include <sel4_bus_funcs.h>
 #include <microkit.h>
 
 #ifdef TIMER_DEBUG
@@ -53,12 +36,16 @@ struct cntl_reg {
     uint32_t cntfid2;
 };
 
-uint64_t readl(u_long addr, uint32_t offset) {
-    return (uint64_t)bus_space_read_4(0,addr,offset);
+uint64_t readl(unsigned long addr, uint32_t offset) {
+	void *_GET_ADDR;
+	_GET_ADDR = (uint32_t*)(addr + offset);
+	return (*(volatile uint32_t *)(_GET_ADDR));
 }
 
-void writel(uint32_t val, u_long addr, uint32_t offset) {
-    bus_space_write_4(0,addr,offset,val);
+void writel(uint32_t val, unsigned long addr, uint32_t offset) {
+	uint32_t *_GET_ADDR;
+	_GET_ADDR = (uint32_t*)(addr + offset);
+	(*(volatile uint32_t *)(_GET_ADDR) = (val));
 }
 
 #define CNTCR_EN    0x0b
