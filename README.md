@@ -59,23 +59,7 @@ cd <path-to-mk-manifest>/xhci_stub/api/sDDF
 Initialise submodule
 ```
 git submodule update --init --recursive
-```
-
-
-### Building Microkit
-
-Navgigate to the microkit folder
-```
-cd <path-to-mk-manifest>/microkit
-```
-
-Then run make
-
-```
-make get
-make all
-```
-
+``
 ### Build example
 To build this driver, use the `build.sh` bash script. The script assumes the driver has been pulled using the microkit manifest and therefore assumes the directory structure will mirror this.
 
